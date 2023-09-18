@@ -24,5 +24,13 @@ namespace QuanLyBanMayTinh
             nv.ShowDialog();
             this.Show();
         }
+
+        private void muaHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MuaBan mb = new MuaBan();
+            mb.ShowDialog();
+            this.Show();
+        }
     }
 }

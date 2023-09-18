@@ -48,6 +48,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Connect.cs" />
+    <Compile Include="MuaBan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MuaBan.Designer.cs">
+      <DependentUpon>MuaBan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MuaBanManager.cs" />
     <Compile Include="NhanViencs.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +69,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="MuaBan.resx">
+      <DependentUpon>MuaBan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NhanViencs.resx">
       <DependentUpon>NhanViencs.cs</DependentUpon>
     </EmbeddedResource>
