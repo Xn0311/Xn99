@@ -10,6 +10,7 @@ namespace QuanLyBanMayTinh
     {
         public static string ConnectDTB = "server = DINO ; database = BanMayTinh ;integrated security = true";
         // bạn có thể xem không
+        // không đẩy dược từ visual lên git
         
     }
 }
