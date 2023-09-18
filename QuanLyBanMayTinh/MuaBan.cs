@@ -40,7 +40,9 @@ namespace QuanLyBanMayTinh
             da.Fill(tb);
             cbbHang.DataSource = tb;
             cbbTensp.DisplayMember = "HangSX";
+            cbbHang.DisplayMember = "TenSanPham";
             cbbTensp.ValueMember = "MaSanPham";
+            cbbHang.ValueMember = "MaSanPham";
 
         }
         public void showDataGV()

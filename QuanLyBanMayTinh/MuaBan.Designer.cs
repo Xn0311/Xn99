@@ -40,9 +40,11 @@
             this.cbbTensp = new System.Windows.Forms.ComboBox();
             this.cbbHang = new System.Windows.Forms.ComboBox();
             this.dgvDongMay = new System.Windows.Forms.DataGridView();
+            this.dgvKhachHang = new System.Windows.Forms.DataGridView();
             this.menuStrip2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDongMay)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvKhachHang)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -150,12 +152,24 @@
             this.dgvDongMay.Size = new System.Drawing.Size(743, 239);
             this.dgvDongMay.TabIndex = 3;
             // 
+            // dgvKhachHang
+            // 
+            this.dgvKhachHang.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dgvKhachHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvKhachHang.Location = new System.Drawing.Point(842, 196);
+            this.dgvKhachHang.Name = "dgvKhachHang";
+            this.dgvKhachHang.RowHeadersWidth = 51;
+            this.dgvKhachHang.RowTemplate.Height = 24;
+            this.dgvKhachHang.Size = new System.Drawing.Size(302, 411);
+            this.dgvKhachHang.TabIndex = 4;
+            // 
             // MuaBan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1182, 653);
+            this.Controls.Add(this.dgvKhachHang);
             this.Controls.Add(this.dgvDongMay);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
@@ -168,6 +182,7 @@
             this.menuStrip2.PerformLayout();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDongMay)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvKhachHang)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -187,5 +202,6 @@
         private System.Windows.Forms.ComboBox cbbTensp;
         private System.Windows.Forms.ComboBox cbbHang;
         private System.Windows.Forms.DataGridView dgvDongMay;
+        private System.Windows.Forms.DataGridView dgvKhachHang;
     }
 }
