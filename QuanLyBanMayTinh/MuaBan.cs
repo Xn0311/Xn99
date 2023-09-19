@@ -48,14 +48,15 @@ namespace QuanLyBanMayTinh
         // show thông tin máy tính 
         public void showDataGV()
         {
-            con = new SqlConnection(Connect.ConnectDTB);
+            
+            con = new SqlConnection(Connect.ConnectDTB);// kết nối csdl cnnectDTB là chuỗi kết nối
             con.Open();
             cmd = new SqlCommand("select * from SanPham", con);
             da = new SqlDataAdapter();
             da.SelectCommand = cmd;
             DataTable tb = new DataTable();
             da.Fill(tb);
-            dgvDongMay.DataSource = tb;
+            dgvDongMay.DataSource = tb;//dgvDong máy là đatagridview
 
         }
         // show thông tin khách hàng

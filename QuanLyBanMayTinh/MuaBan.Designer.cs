@@ -110,7 +110,7 @@
             this.panel1.Controls.Add(this.btnTimKiem);
             this.panel1.Controls.Add(this.cbbTensp);
             this.panel1.Controls.Add(this.cbbHang);
-            this.panel1.Location = new System.Drawing.Point(283, 81);
+            this.panel1.Location = new System.Drawing.Point(45, 84);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(417, 70);
             this.panel1.TabIndex = 2;

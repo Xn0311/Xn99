@@ -28,9 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // HoaDon
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "HoaDon";
+            this.ClientSize = new System.Drawing.Size(1182, 653);
+            this.Name = "HoaDon";
+            this.Text = "Hóa đơn";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
