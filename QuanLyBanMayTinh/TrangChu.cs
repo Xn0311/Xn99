@@ -33,18 +33,19 @@ namespace QuanLyBanMayTinh
             this.Show();
         }
 
-        private void KhachHangToolStripMenuItem_Click(object sender, EventArgs e)
+        private void quảnLýHóaĐơnToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
-            KHACHHANG kh = new KHACHHANG();
-            kh.ShowDialog();
+            HoaDon hd = new HoaDon();
+            hd.ShowDialog();
             this.Show();
         }
-        private void SanPhamToolStripMenuItem_Click(object sender, EventArgs e)
+
+        private void quảnLýChiTiếtHóaĐơnToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
-            SanPham sp = new SanPham();
-            sp.ShowDialog();
+            ChiTietHoaDon cthd = new ChiTietHoaDon();
+            cthd.ShowDialog();
             this.Show();
         }
 
@@ -54,6 +55,11 @@ namespace QuanLyBanMayTinh
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void trợGiúpToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }

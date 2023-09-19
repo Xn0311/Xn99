@@ -10,19 +10,14 @@ using System.Windows.Forms;
 
 namespace QuanLyBanMayTinh
 {
-    public partial class HoaDon : Form
+    public partial class ChiTietHoaDon : Form
     {
-        public HoaDon()
+        public ChiTietHoaDon()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
+        private void lbcthd_Click(object sender, EventArgs e)
         {
 
         }
