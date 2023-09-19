@@ -45,6 +45,7 @@ namespace QuanLyBanMayTinh
             cbbHang.ValueMember = "MaSanPham";
 
         }
+        // show thông tin máy tính 
         public void showDataGV()
         {
             con = new SqlConnection(Connect.ConnectDTB);
@@ -56,6 +57,18 @@ namespace QuanLyBanMayTinh
             da.Fill(tb);
             dgvDongMay.DataSource = tb;
 
+        }
+        // show thông tin khách hàng
+        public void showKH()
+        {
+            con = new SqlConnection(Connect.ConnectDTB);
+            con.Open();
+            cmd = new SqlCommand("Select kh.TenKhachHang,kh.GioiTinh,kh.NgaySinh,kh.DiaChi,kh.SDT from KhachHang kh", con);
+            da = new SqlDataAdapter();
+            da.SelectCommand = cmd;
+            DataTable tb = new DataTable();
+            da.Fill(tb);
+            dgvKhachHang.DataSource = tb;
         }
 
         private void muaHàngToolStripMenuItem_Click(object sender, EventArgs e)
@@ -75,6 +88,7 @@ namespace QuanLyBanMayTinh
         {
             Showcbb();
             showDataGV();
+            showKH();
         }
     }
 }

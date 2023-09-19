@@ -52,7 +52,7 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Location = new System.Drawing.Point(0, 28);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1182, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1385, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -65,7 +65,7 @@
             this.trợGiúpToolStripMenuItem});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(1182, 28);
+            this.menuStrip2.Size = new System.Drawing.Size(1385, 28);
             this.menuStrip2.TabIndex = 1;
             this.menuStrip2.Text = "menuStrip2";
             // 
@@ -117,9 +117,9 @@
             // 
             // btnTimKiem
             // 
-            this.btnTimKiem.Location = new System.Drawing.Point(324, 20);
+            this.btnTimKiem.Location = new System.Drawing.Point(289, 20);
             this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(75, 23);
+            this.btnTimKiem.Size = new System.Drawing.Size(110, 23);
             this.btnTimKiem.TabIndex = 1;
             this.btnTimKiem.Text = "Tìm Kiếm ";
             this.btnTimKiem.UseVisualStyleBackColor = true;
@@ -127,7 +127,7 @@
             // cbbTensp
             // 
             this.cbbTensp.FormattingEnabled = true;
-            this.cbbTensp.Location = new System.Drawing.Point(176, 20);
+            this.cbbTensp.Location = new System.Drawing.Point(149, 20);
             this.cbbTensp.Name = "cbbTensp";
             this.cbbTensp.Size = new System.Drawing.Size(121, 24);
             this.cbbTensp.TabIndex = 0;
@@ -160,7 +160,7 @@
             this.dgvKhachHang.Name = "dgvKhachHang";
             this.dgvKhachHang.RowHeadersWidth = 51;
             this.dgvKhachHang.RowTemplate.Height = 24;
-            this.dgvKhachHang.Size = new System.Drawing.Size(302, 411);
+            this.dgvKhachHang.Size = new System.Drawing.Size(518, 411);
             this.dgvKhachHang.TabIndex = 4;
             // 
             // MuaBan
@@ -168,7 +168,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(1182, 653);
+            this.ClientSize = new System.Drawing.Size(1385, 680);
             this.Controls.Add(this.dgvKhachHang);
             this.Controls.Add(this.dgvDongMay);
             this.Controls.Add(this.panel1);
