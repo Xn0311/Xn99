@@ -149,18 +149,18 @@
             this.dgvDongMay.Name = "dgvDongMay";
             this.dgvDongMay.RowHeadersWidth = 51;
             this.dgvDongMay.RowTemplate.Height = 24;
-            this.dgvDongMay.Size = new System.Drawing.Size(743, 239);
+            this.dgvDongMay.Size = new System.Drawing.Size(743, 186);
             this.dgvDongMay.TabIndex = 3;
             // 
             // dgvKhachHang
             // 
             this.dgvKhachHang.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvKhachHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvKhachHang.Location = new System.Drawing.Point(842, 196);
+            this.dgvKhachHang.Location = new System.Drawing.Point(45, 412);
             this.dgvKhachHang.Name = "dgvKhachHang";
             this.dgvKhachHang.RowHeadersWidth = 51;
             this.dgvKhachHang.RowTemplate.Height = 24;
-            this.dgvKhachHang.Size = new System.Drawing.Size(518, 411);
+            this.dgvKhachHang.Size = new System.Drawing.Size(743, 182);
             this.dgvKhachHang.TabIndex = 4;
             // 
             // MuaBan

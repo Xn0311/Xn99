@@ -59,5 +59,65 @@ namespace QuanLyBanMayTinh.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _120_7980_7832_7452_11020_asus_tuf_gaming_a15_fa506ihr_1 {
+            get {
+                object obj = ResourceManager.GetObject("120_7980_7832_7452_11020_asus_tuf_gaming_a15_fa506ihr_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _120_8266_hp_minh_900x900_2 {
+            get {
+                object obj = ResourceManager.GetObject("120_8266_hp_minh_900x900_2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _120_8317_msi_bravo_15_b7e_900x900 {
+            get {
+                object obj = ResourceManager.GetObject("120_8317_msi_bravo_15_b7e_900x900", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _7980_anb_sale_h___t_asus_tuf_gaming_fx506hf {
+            get {
+                object obj = ResourceManager.GetObject("7980_anb_sale_h___t_asus_tuf_gaming_fx506hf", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _8317_khung_t8__2_ {
+            get {
+                object obj = ResourceManager.GetObject("8317_khung_t8__2_", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap vi_vn_acer_aspire_7_gaming_a715_76g_5132_i5_nhqmesv002_slider_1 {
+            get {
+                object obj = ResourceManager.GetObject("vi-vn-acer-aspire-7-gaming-a715-76g-5132-i5-nhqmesv002-slider-1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

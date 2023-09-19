@@ -104,6 +104,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -117,6 +118,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\120_7980_7832_7452_11020_asus_tuf_gaming_a15_fa506ihr_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\7980_anb_sale_h___t_asus_tuf_gaming_fx506hf.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\120_8317_msi_bravo_15_b7e_900x900.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\8317_khung_t8__2_.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\120_8266_hp_minh_900x900_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vi-vn-acer-aspire-7-gaming-a715-76g-5132-i5-nhqmesv002-slider-1.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
