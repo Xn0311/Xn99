@@ -67,6 +67,12 @@
     <Compile Include="NhanViencs.Designer.cs">
       <DependentUpon>NhanViencs.cs</DependentUpon>
     </Compile>
+    <Compile Include="SanPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SanPham.Designer.cs">
+      <DependentUpon>SanPham.cs</DependentUpon>
+    </Compile>
     <Compile Include="TrangChu.cs">
       <SubType>Form</SubType>
     </Compile>
