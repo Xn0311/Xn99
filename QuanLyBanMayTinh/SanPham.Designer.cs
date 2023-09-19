@@ -94,7 +94,7 @@
             // 
             this.lbSANPHAM.AutoSize = true;
             this.lbSANPHAM.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSANPHAM.Location = new System.Drawing.Point(419, 9);
+            this.lbSANPHAM.Location = new System.Drawing.Point(377, 23);
             this.lbSANPHAM.Name = "lbSANPHAM";
             this.lbSANPHAM.Size = new System.Drawing.Size(85, 21);
             this.lbSANPHAM.TabIndex = 0;
@@ -231,7 +231,7 @@
             this.Controls.Add(this.lbMASP);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "SanPham";
             this.Text = "Sản phẩm";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
