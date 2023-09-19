@@ -1,0 +1,15 @@
+D:\Học Lập Trình\acb\QuanLyBanMayTinh\obj\Debug\QuanLyBanMayTinh.csproj.AssemblyReference.cache
+D:\Học Lập Trình\acb\QuanLyBanMayTinh\obj\Debug\QuanLyBanMayTinh.csproj.SuggestedBindingRedirects.cache
+D:\Học Lập Trình\acb\QuanLyBanMayTinh\obj\Debug\QuanLyBanMayTinh.MuaBan.resources
+D:\Học Lập Trình\acb\QuanLyBanMayTinh\obj\Debug\QuanLyBanMayTinh.NhanViencs.resources
+D:\Học Lập Trình\acb\QuanLyBanMayTinh\obj\Debug\QuanLyBanMayTinh.TrangChu.resources
+D:\Học Lập Trình\acb\QuanLyBanMayTinh\obj\Debug\QuanLyBanMayTinh.Properties.Resources.resources
+D:\Học Lập Trình\acb\QuanLyBanMayTinh\obj\Debug\QuanLyBanMayTinh.csproj.GenerateResource.cache
+D:\Học Lập Trình\acb\QuanLyBanMayTinh\obj\Debug\QuanLyBanMayTinh.csproj.CoreCompileInputs.cache
+D:\Học Lập Trình\acb\QuanLyBanMayTinh\bin\Debug\QuanLyBanMayTinh.exe.config
+D:\Học Lập Trình\acb\QuanLyBanMayTinh\bin\Debug\QuanLyBanMayTinh.exe
+D:\Học Lập Trình\acb\QuanLyBanMayTinh\bin\Debug\QuanLyBanMayTinh.pdb
+D:\Học Lập Trình\acb\QuanLyBanMayTinh\obj\Debug\QuanLyBanMayTinh.exe
+D:\Học Lập Trình\acb\QuanLyBanMayTinh\obj\Debug\QuanLyBanMayTinh.pdb
+D:\Học Lập Trình\acb\QuanLyBanMayTinh\obj\Debug\QuanLyBanMayTinh.HoaDon.resources
+D:\Học Lập Trình\acb\QuanLyBanMayTinh\obj\Debug\QuanLyBanMayTinh.SanPham.resources
