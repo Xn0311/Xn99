@@ -49,6 +49,22 @@ namespace QuanLyBanMayTinh
             this.Show();
         }
 
+        private void quảnLýKhachHangToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            KHACHHANG kh = new KHACHHANG();
+            kh.ShowDialog();
+            this.Show();
+        }
+
+        private void quảnLýSanPhamToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            SanPham sp = new SanPham();
+            sp.ShowDialog();
+            this.Show();
+        }
+
         private void label4_Click(object sender, EventArgs e)
         {
 
