@@ -21,5 +21,10 @@ namespace QuanLyBanMayTinh
         {
 
         }
+
+        private void lbQLNV_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -54,6 +54,12 @@
     <Compile Include="HoaDon.Designer.cs">
       <DependentUpon>HoaDon.cs</DependentUpon>
     </Compile>
+    <Compile Include="KhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KhachHang.Designer.cs">
+      <DependentUpon>KhachHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="MuaBan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +89,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="HoaDon.resx">
       <DependentUpon>HoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KhachHang.resx">
+      <DependentUpon>KhachHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MuaBan.resx">
       <DependentUpon>MuaBan.cs</DependentUpon>
