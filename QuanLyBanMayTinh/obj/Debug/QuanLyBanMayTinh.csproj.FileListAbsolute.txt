@@ -13,3 +13,5 @@ D:\Học Lập Trình\acb\QuanLyBanMayTinh\obj\Debug\QuanLyBanMayTinh.exe
 D:\Học Lập Trình\acb\QuanLyBanMayTinh\obj\Debug\QuanLyBanMayTinh.pdb
 D:\Học Lập Trình\acb\QuanLyBanMayTinh\obj\Debug\QuanLyBanMayTinh.HoaDon.resources
 D:\Học Lập Trình\acb\QuanLyBanMayTinh\obj\Debug\QuanLyBanMayTinh.SanPham.resources
+D:\Học Lập Trình\acb\QuanLyBanMayTinh\obj\Debug\QuanLyBanMayTinh.ChiTietHoaDon.resources
+D:\Học Lập Trình\acb\QuanLyBanMayTinh\obj\Debug\QuanLyBanMayTinh.KHACHHANG.resources
