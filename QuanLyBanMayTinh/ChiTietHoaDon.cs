@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace QuanLyBanMayTinh
 {
-    public partial class KHACHHANG : Form
+    public partial class ChiTietHoaDon : Form
     {
-        public KHACHHANG()
+        public ChiTietHoaDon()
         {
             InitializeComponent();
+        }
+
+        private void lbcthd_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
