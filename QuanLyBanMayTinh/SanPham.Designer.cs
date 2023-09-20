@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.dtptg = new System.Windows.Forms.DateTimePicker();
+            this.ttbmasp = new System.Windows.Forms.TextBox();
             this.btTHEM = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.lbSANPHAM = new System.Windows.Forms.Label();
@@ -39,13 +39,15 @@
             this.lbMASP = new System.Windows.Forms.Label();
             this.lbHANGSX = new System.Windows.Forms.Label();
             this.lbTENSV = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.ttbtensp = new System.Windows.Forms.TextBox();
+            this.ttbhangsx = new System.Windows.Forms.TextBox();
+            this.ttbthongso = new System.Windows.Forms.TextBox();
             this.btSUA = new System.Windows.Forms.Button();
             this.btXOA = new System.Windows.Forms.Button();
             this.btTIMKIEM = new System.Windows.Forms.Button();
             this.btQUAYLAI = new System.Windows.Forms.Button();
+            this.lbsoluong = new System.Windows.Forms.Label();
+            this.ttbsoluong = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,55 +59,54 @@
             this.label1.Size = new System.Drawing.Size(0, 19);
             this.label1.TabIndex = 0;
             // 
-            // dateTimePicker1
+            // dtptg
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(579, 74);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(165, 26);
-            this.dateTimePicker1.TabIndex = 1;
+            this.dtptg.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtptg.Location = new System.Drawing.Point(630, 84);
+            this.dtptg.Name = "dtptg";
+            this.dtptg.Size = new System.Drawing.Size(165, 26);
+            this.dtptg.TabIndex = 1;
             // 
-            // textBox1
+            // ttbmasp
             // 
-            this.textBox1.Location = new System.Drawing.Point(213, 78);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(149, 26);
-            this.textBox1.TabIndex = 2;
+            this.ttbmasp.Location = new System.Drawing.Point(213, 75);
+            this.ttbmasp.Name = "ttbmasp";
+            this.ttbmasp.Size = new System.Drawing.Size(184, 26);
+            this.ttbmasp.TabIndex = 2;
             // 
             // btTHEM
             // 
             this.btTHEM.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btTHEM.Location = new System.Drawing.Point(300, 570);
+            this.btTHEM.Location = new System.Drawing.Point(99, 447);
             this.btTHEM.Name = "btTHEM";
             this.btTHEM.Size = new System.Drawing.Size(87, 27);
             this.btTHEM.TabIndex = 3;
             this.btTHEM.Text = "Thêm";
             this.btTHEM.UseVisualStyleBackColor = true;
+            this.btTHEM.Click += new System.EventHandler(this.btTHEM_Click);
             // 
             // dataGridView1
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(102, 238);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 210);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(1103, 210);
+            this.dataGridView1.Size = new System.Drawing.Size(883, 231);
             this.dataGridView1.TabIndex = 4;
             // 
             // lbSANPHAM
             // 
             this.lbSANPHAM.AutoSize = true;
             this.lbSANPHAM.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSANPHAM.Location = new System.Drawing.Point(597, 9);
+            this.lbSANPHAM.Location = new System.Drawing.Point(377, 23);
             this.lbSANPHAM.Name = "lbSANPHAM";
-            this.lbSANPHAM.Size = new System.Drawing.Size(199, 27);
+            this.lbSANPHAM.Size = new System.Drawing.Size(108, 27);
             this.lbSANPHAM.TabIndex = 0;
-            this.lbSANPHAM.Text = "Quản Lý Sản Phẩm";
+            this.lbSANPHAM.Text = "Sản Phẩm";
             // 
             // lbTGBH
             // 
             this.lbTGBH.AutoSize = true;
-            this.lbTGBH.Location = new System.Drawing.Point(427, 81);
+            this.lbTGBH.Location = new System.Drawing.Point(484, 84);
             this.lbTGBH.Name = "lbTGBH";
             this.lbTGBH.Size = new System.Drawing.Size(146, 19);
             this.lbTGBH.TabIndex = 0;
@@ -114,7 +115,7 @@
             // lbTHONGSO
             // 
             this.lbTHONGSO.AutoSize = true;
-            this.lbTHONGSO.Location = new System.Drawing.Point(500, 126);
+            this.lbTHONGSO.Location = new System.Drawing.Point(548, 133);
             this.lbTHONGSO.Name = "lbTHONGSO";
             this.lbTHONGSO.Size = new System.Drawing.Size(73, 19);
             this.lbTHONGSO.TabIndex = 0;
@@ -148,31 +149,32 @@
             this.lbTENSV.TabIndex = 0;
             this.lbTENSV.Text = "Tên Sản Phẩm";
             // 
-            // textBox2
+            // ttbtensp
             // 
-            this.textBox2.Location = new System.Drawing.Point(213, 126);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(149, 26);
-            this.textBox2.TabIndex = 2;
+            this.ttbtensp.Location = new System.Drawing.Point(212, 126);
+            this.ttbtensp.Name = "ttbtensp";
+            this.ttbtensp.Size = new System.Drawing.Size(185, 26);
+            this.ttbtensp.TabIndex = 2;
             // 
-            // textBox3
+            // ttbhangsx
             // 
-            this.textBox3.Location = new System.Drawing.Point(213, 174);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(149, 26);
-            this.textBox3.TabIndex = 2;
+            this.ttbhangsx.Location = new System.Drawing.Point(212, 178);
+            this.ttbhangsx.Name = "ttbhangsx";
+            this.ttbhangsx.Size = new System.Drawing.Size(185, 26);
+            this.ttbhangsx.TabIndex = 2;
+            this.ttbhangsx.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
-            // textBox5
+            // ttbthongso
             // 
-            this.textBox5.Location = new System.Drawing.Point(579, 122);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(165, 26);
-            this.textBox5.TabIndex = 2;
+            this.ttbthongso.Location = new System.Drawing.Point(629, 133);
+            this.ttbthongso.Name = "ttbthongso";
+            this.ttbthongso.Size = new System.Drawing.Size(165, 26);
+            this.ttbthongso.TabIndex = 2;
             // 
             // btSUA
             // 
             this.btSUA.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btSUA.Location = new System.Drawing.Point(431, 570);
+            this.btSUA.Location = new System.Drawing.Point(254, 447);
             this.btSUA.Name = "btSUA";
             this.btSUA.Size = new System.Drawing.Size(87, 27);
             this.btSUA.TabIndex = 3;
@@ -182,7 +184,7 @@
             // btXOA
             // 
             this.btXOA.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btXOA.Location = new System.Drawing.Point(555, 570);
+            this.btXOA.Location = new System.Drawing.Point(398, 447);
             this.btXOA.Name = "btXOA";
             this.btXOA.Size = new System.Drawing.Size(87, 27);
             this.btXOA.TabIndex = 3;
@@ -192,9 +194,9 @@
             // btTIMKIEM
             // 
             this.btTIMKIEM.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btTIMKIEM.Location = new System.Drawing.Point(695, 570);
+            this.btTIMKIEM.Location = new System.Drawing.Point(528, 447);
             this.btTIMKIEM.Name = "btTIMKIEM";
-            this.btTIMKIEM.Size = new System.Drawing.Size(87, 27);
+            this.btTIMKIEM.Size = new System.Drawing.Size(102, 27);
             this.btTIMKIEM.TabIndex = 3;
             this.btTIMKIEM.Text = "Tìm Kiếm";
             this.btTIMKIEM.UseVisualStyleBackColor = true;
@@ -202,29 +204,47 @@
             // btQUAYLAI
             // 
             this.btQUAYLAI.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btQUAYLAI.Location = new System.Drawing.Point(832, 570);
+            this.btQUAYLAI.Location = new System.Drawing.Point(695, 447);
             this.btQUAYLAI.Name = "btQUAYLAI";
-            this.btQUAYLAI.Size = new System.Drawing.Size(111, 27);
+            this.btQUAYLAI.Size = new System.Drawing.Size(100, 27);
             this.btQUAYLAI.TabIndex = 3;
             this.btQUAYLAI.Text = "Quay Lại";
             this.btQUAYLAI.UseVisualStyleBackColor = true;
+            // 
+            // lbsoluong
+            // 
+            this.lbsoluong.AutoSize = true;
+            this.lbsoluong.Location = new System.Drawing.Point(548, 181);
+            this.lbsoluong.Name = "lbsoluong";
+            this.lbsoluong.Size = new System.Drawing.Size(75, 19);
+            this.lbsoluong.TabIndex = 5;
+            this.lbsoluong.Text = "Số Lượng";
+            // 
+            // ttbsoluong
+            // 
+            this.ttbsoluong.Location = new System.Drawing.Point(629, 178);
+            this.ttbsoluong.Name = "ttbsoluong";
+            this.ttbsoluong.Size = new System.Drawing.Size(165, 26);
+            this.ttbsoluong.TabIndex = 6;
             // 
             // SanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1382, 703);
+            this.ClientSize = new System.Drawing.Size(907, 508);
+            this.Controls.Add(this.ttbsoluong);
+            this.Controls.Add(this.lbsoluong);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btQUAYLAI);
             this.Controls.Add(this.btTIMKIEM);
             this.Controls.Add(this.btXOA);
             this.Controls.Add(this.btSUA);
             this.Controls.Add(this.btTHEM);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.ttbthongso);
+            this.Controls.Add(this.ttbhangsx);
+            this.Controls.Add(this.ttbtensp);
+            this.Controls.Add(this.ttbmasp);
+            this.Controls.Add(this.dtptg);
             this.Controls.Add(this.lbTHONGSO);
             this.Controls.Add(this.lbTENSV);
             this.Controls.Add(this.lbHANGSX);
@@ -245,8 +265,8 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.DateTimePicker dtptg;
+        private System.Windows.Forms.TextBox ttbmasp;
         private System.Windows.Forms.Button btTHEM;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label lbSANPHAM;
@@ -255,12 +275,14 @@
         private System.Windows.Forms.Label lbMASP;
         private System.Windows.Forms.Label lbHANGSX;
         private System.Windows.Forms.Label lbTENSV;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox ttbtensp;
+        private System.Windows.Forms.TextBox ttbhangsx;
+        private System.Windows.Forms.TextBox ttbthongso;
         private System.Windows.Forms.Button btSUA;
         private System.Windows.Forms.Button btXOA;
         private System.Windows.Forms.Button btTIMKIEM;
         private System.Windows.Forms.Button btQUAYLAI;
+        private System.Windows.Forms.Label lbsoluong;
+        private System.Windows.Forms.TextBox ttbsoluong;
     }
 }

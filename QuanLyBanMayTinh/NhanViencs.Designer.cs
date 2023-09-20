@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.btTHEM = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpns = new System.Windows.Forms.DateTimePicker();
             this.lbGIOITINH = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dtgnv = new System.Windows.Forms.DataGridView();
             this.lbQLNV = new System.Windows.Forms.Label();
             this.lbMANV = new System.Windows.Forms.Label();
             this.lbTTLH = new System.Windows.Forms.Label();
@@ -39,38 +39,39 @@
             this.lbTENNV = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.ttbmanv = new System.Windows.Forms.TextBox();
+            this.ttbtennv = new System.Windows.Forms.TextBox();
+            this.ttbgt = new System.Windows.Forms.TextBox();
+            this.ttbcv = new System.Windows.Forms.TextBox();
+            this.ttbttlh = new System.Windows.Forms.TextBox();
             this.btSUA = new System.Windows.Forms.Button();
             this.btXOA = new System.Windows.Forms.Button();
             this.btTIMKIEM = new System.Windows.Forms.Button();
             this.btQUAYLAI = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgnv)).BeginInit();
             this.SuspendLayout();
             // 
             // btTHEM
             // 
             this.btTHEM.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btTHEM.Location = new System.Drawing.Point(209, 544);
-            this.btTHEM.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btTHEM.Location = new System.Drawing.Point(208, 602);
+            this.btTHEM.Margin = new System.Windows.Forms.Padding(4);
             this.btTHEM.Name = "btTHEM";
             this.btTHEM.Size = new System.Drawing.Size(128, 39);
             this.btTHEM.TabIndex = 0;
             this.btTHEM.Text = "Thêm ";
             this.btTHEM.UseVisualStyleBackColor = true;
+            this.btTHEM.Click += new System.EventHandler(this.Them_Click);
             // 
-            // dateTimePicker1
+            // dtpns
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(321, 185);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(185, 26);
-            this.dateTimePicker1.TabIndex = 1;
+            this.dtpns.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpns.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpns.Location = new System.Drawing.Point(321, 185);
+            this.dtpns.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpns.Name = "dtpns";
+            this.dtpns.Size = new System.Drawing.Size(185, 26);
+            this.dtpns.TabIndex = 1;
             // 
             // lbGIOITINH
             // 
@@ -83,16 +84,15 @@
             this.lbGIOITINH.TabIndex = 2;
             this.lbGIOITINH.Text = "Giới Tính";
             // 
-            // dataGridView1
+            // dtgnv
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(209, 260);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(805, 277);
-            this.dataGridView1.TabIndex = 3;
+            this.dtgnv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgnv.Location = new System.Drawing.Point(28, 214);
+            this.dtgnv.Margin = new System.Windows.Forms.Padding(4);
+            this.dtgnv.Name = "dtgnv";
+            this.dtgnv.Size = new System.Drawing.Size(1259, 380);
+            this.dtgnv.TabIndex = 3;
+            this.dtgnv.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dtgnv_DataBindingComplete);
             // 
             // lbQLNV
             // 
@@ -156,7 +156,7 @@
             this.label4.Location = new System.Drawing.Point(205, 193);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(0, 16);
+            this.label4.Size = new System.Drawing.Size(0, 17);
             this.label4.TabIndex = 2;
             // 
             // label2
@@ -170,51 +170,51 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Ngày Sinh";
             // 
-            // textBox1
+            // ttbmanv
             // 
-            this.textBox1.Location = new System.Drawing.Point(324, 97);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(183, 22);
-            this.textBox1.TabIndex = 4;
+            this.ttbmanv.Location = new System.Drawing.Point(324, 97);
+            this.ttbmanv.Margin = new System.Windows.Forms.Padding(4);
+            this.ttbmanv.Name = "ttbmanv";
+            this.ttbmanv.Size = new System.Drawing.Size(183, 22);
+            this.ttbmanv.TabIndex = 4;
             // 
-            // textBox2
+            // ttbtennv
             // 
-            this.textBox2.Location = new System.Drawing.Point(321, 139);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(185, 22);
-            this.textBox2.TabIndex = 4;
+            this.ttbtennv.Location = new System.Drawing.Point(321, 139);
+            this.ttbtennv.Margin = new System.Windows.Forms.Padding(4);
+            this.ttbtennv.Name = "ttbtennv";
+            this.ttbtennv.Size = new System.Drawing.Size(185, 22);
+            this.ttbtennv.TabIndex = 4;
             // 
-            // textBox3
+            // ttbgt
             // 
-            this.textBox3.Location = new System.Drawing.Point(825, 95);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(188, 22);
-            this.textBox3.TabIndex = 4;
+            this.ttbgt.Location = new System.Drawing.Point(825, 95);
+            this.ttbgt.Margin = new System.Windows.Forms.Padding(4);
+            this.ttbgt.Name = "ttbgt";
+            this.ttbgt.Size = new System.Drawing.Size(188, 22);
+            this.ttbgt.TabIndex = 4;
             // 
-            // textBox4
+            // ttbcv
             // 
-            this.textBox4.Location = new System.Drawing.Point(825, 139);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(188, 22);
-            this.textBox4.TabIndex = 4;
+            this.ttbcv.Location = new System.Drawing.Point(825, 139);
+            this.ttbcv.Margin = new System.Windows.Forms.Padding(4);
+            this.ttbcv.Name = "ttbcv";
+            this.ttbcv.Size = new System.Drawing.Size(188, 22);
+            this.ttbcv.TabIndex = 4;
             // 
-            // textBox5
+            // ttbttlh
             // 
-            this.textBox5.Location = new System.Drawing.Point(825, 182);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(188, 22);
-            this.textBox5.TabIndex = 4;
+            this.ttbttlh.Location = new System.Drawing.Point(825, 182);
+            this.ttbttlh.Margin = new System.Windows.Forms.Padding(4);
+            this.ttbttlh.Name = "ttbttlh";
+            this.ttbttlh.Size = new System.Drawing.Size(188, 22);
+            this.ttbttlh.TabIndex = 4;
             // 
             // btSUA
             // 
             this.btSUA.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btSUA.Location = new System.Drawing.Point(387, 544);
-            this.btSUA.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btSUA.Location = new System.Drawing.Point(386, 602);
+            this.btSUA.Margin = new System.Windows.Forms.Padding(4);
             this.btSUA.Name = "btSUA";
             this.btSUA.Size = new System.Drawing.Size(121, 39);
             this.btSUA.TabIndex = 0;
@@ -224,8 +224,8 @@
             // btXOA
             // 
             this.btXOA.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btXOA.Location = new System.Drawing.Point(548, 544);
-            this.btXOA.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btXOA.Location = new System.Drawing.Point(551, 602);
+            this.btXOA.Margin = new System.Windows.Forms.Padding(4);
             this.btXOA.Name = "btXOA";
             this.btXOA.Size = new System.Drawing.Size(113, 39);
             this.btXOA.TabIndex = 0;
@@ -235,8 +235,8 @@
             // btTIMKIEM
             // 
             this.btTIMKIEM.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btTIMKIEM.Location = new System.Drawing.Point(716, 544);
-            this.btTIMKIEM.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btTIMKIEM.Location = new System.Drawing.Point(717, 602);
+            this.btTIMKIEM.Margin = new System.Windows.Forms.Padding(4);
             this.btTIMKIEM.Name = "btTIMKIEM";
             this.btTIMKIEM.Size = new System.Drawing.Size(115, 39);
             this.btTIMKIEM.TabIndex = 0;
@@ -246,8 +246,8 @@
             // btQUAYLAI
             // 
             this.btQUAYLAI.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btQUAYLAI.Location = new System.Drawing.Point(893, 544);
-            this.btQUAYLAI.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btQUAYLAI.Location = new System.Drawing.Point(892, 602);
+            this.btQUAYLAI.Margin = new System.Windows.Forms.Padding(4);
             this.btQUAYLAI.Name = "btQUAYLAI";
             this.btQUAYLAI.Size = new System.Drawing.Size(121, 39);
             this.btQUAYLAI.TabIndex = 0;
@@ -259,12 +259,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1300, 654);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.ttbtennv);
+            this.Controls.Add(this.ttbttlh);
+            this.Controls.Add(this.ttbcv);
+            this.Controls.Add(this.ttbgt);
+            this.Controls.Add(this.ttbmanv);
+            this.Controls.Add(this.dtgnv);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lbQLNV);
             this.Controls.Add(this.lbCHUCVU);
@@ -273,7 +273,7 @@
             this.Controls.Add(this.lbTENNV);
             this.Controls.Add(this.lbMANV);
             this.Controls.Add(this.lbGIOITINH);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dtpns);
             this.Controls.Add(this.btQUAYLAI);
             this.Controls.Add(this.btTIMKIEM);
             this.Controls.Add(this.btXOA);
@@ -282,7 +282,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "NhanViencs";
             this.Text = "Quản Lý Nhân Viên";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgnv)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -291,9 +291,9 @@
         #endregion
 
         private System.Windows.Forms.Button btTHEM;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpns;
         private System.Windows.Forms.Label lbGIOITINH;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dtgnv;
         private System.Windows.Forms.Label lbQLNV;
         private System.Windows.Forms.Label lbMANV;
         private System.Windows.Forms.Label lbTTLH;
@@ -301,11 +301,11 @@
         private System.Windows.Forms.Label lbTENNV;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox ttbmanv;
+        private System.Windows.Forms.TextBox ttbtennv;
+        private System.Windows.Forms.TextBox ttbgt;
+        private System.Windows.Forms.TextBox ttbcv;
+        private System.Windows.Forms.TextBox ttbttlh;
         private System.Windows.Forms.Button btSUA;
         private System.Windows.Forms.Button btXOA;
         private System.Windows.Forms.Button btTIMKIEM;
