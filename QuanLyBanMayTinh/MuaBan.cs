@@ -111,6 +111,8 @@ namespace QuanLyBanMayTinh
             Masp = dgvDongMay.Rows[e.RowIndex].Cells[0].Value.ToString();
             Hangsx = dgvDongMay.Rows[e.RowIndex].Cells[2].Value.ToString();
             MaKh = dgvKhachHang.Rows[e.RowIndex].Cells[0].Value.ToString();
+            //làm đến đây thôi
+            
             
            
         }
