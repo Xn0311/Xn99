@@ -36,10 +36,15 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtTimKhach = new System.Windows.Forms.TextBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.nudSoLuong = new System.Windows.Forms.NumericUpDown();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnMua = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDongMay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhachHang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSoLuong)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -47,7 +52,7 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1382, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1382, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -62,6 +67,7 @@
             this.dgvDongMay.RowTemplate.Height = 24;
             this.dgvDongMay.Size = new System.Drawing.Size(894, 272);
             this.dgvDongMay.TabIndex = 3;
+            this.dgvDongMay.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDongMay_CellClick);
             // 
             // dgvKhachHang
             // 
@@ -111,12 +117,52 @@
             this.pictureBox3.TabIndex = 6;
             this.pictureBox3.TabStop = false;
             // 
+            // nudSoLuong
+            // 
+            this.nudSoLuong.Location = new System.Drawing.Point(67, 87);
+            this.nudSoLuong.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudSoLuong.Name = "nudSoLuong";
+            this.nudSoLuong.Size = new System.Drawing.Size(120, 27);
+            this.nudSoLuong.TabIndex = 7;
+            this.nudSoLuong.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.groupBox1.Controls.Add(this.btnMua);
+            this.groupBox1.Controls.Add(this.nudSoLuong);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(989, 89);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(348, 197);
+            this.groupBox1.TabIndex = 8;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Mua Hàng";
+            // 
+            // btnMua
+            // 
+            this.btnMua.Location = new System.Drawing.Point(193, 76);
+            this.btnMua.Name = "btnMua";
+            this.btnMua.Size = new System.Drawing.Size(95, 47);
+            this.btnMua.TabIndex = 8;
+            this.btnMua.Text = "Mua";
+            this.btnMua.UseVisualStyleBackColor = true;
+            // 
             // MuaBan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1382, 703);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtTimKhach);
@@ -132,6 +178,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhachHang)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSoLuong)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -146,5 +194,8 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txtTimKhach;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.NumericUpDown nudSoLuong;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnMua;
     }
 }

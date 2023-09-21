@@ -29,8 +29,8 @@ namespace QuanLyBanMayTinh
         SqlCommand cmd;
         SqlConnection con;
         SqlDataAdapter da;
-        public string chuoikh = "Select kh.TenKhachHang,kh.GioiTinh,kh.NgaySinh,kh.DiaChi,kh.SDT from KhachHang kh";
-        public string chuoidm = "select sp.TenSanPham,sp.HangSX,sp.ThongSo,sp.TGBaoHanh from SanPham sp";
+        public string chuoikh = "Select * from KhachHang kh";
+        public string chuoidm = "select * from SanPham sp";
         
         // show thông tin máy tính 
 
@@ -67,6 +67,7 @@ namespace QuanLyBanMayTinh
 
             showData(dgvDongMay,chuoidm);
             showData(dgvKhachHang,chuoikh);
+            
         }
 
         private void txtTimDongMay_Enter(object sender, EventArgs e)
@@ -96,5 +97,23 @@ namespace QuanLyBanMayTinh
 
 
         }
+
+        private void dgvDongMay_CellClick(object sender, DataGridViewCellEventArgs e)
+        {   
+            string Masp;
+            string MaHd;
+            string Hangsx;
+            int SoLuong = Convert.ToInt32(nudSoLuong.Value);
+            double Gia;
+            string MaKh;
+            DateTime GetNow = DateTime.Now;
+            MaHd = "1";
+            Masp = dgvDongMay.Rows[e.RowIndex].Cells[0].Value.ToString();
+            Hangsx = dgvDongMay.Rows[e.RowIndex].Cells[2].Value.ToString();
+            MaKh = dgvKhachHang.Rows[e.RowIndex].Cells[0].Value.ToString();
+            
+           
+        }
+        
     }
 }
