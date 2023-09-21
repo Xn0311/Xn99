@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 namespace QuanLyBanMayTinh
 {
     internal class Connect
-    {
-        public static string ConnectDTB = "server = DESKTOP-A78SARK ; database = BanMayTinh ;integrated security = true";
+    {   
+        public static string ConnectDTB = "server = DINO ; database = BanMayTinh ;integrated security = true";
      
     }
 }

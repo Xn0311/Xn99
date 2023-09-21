@@ -29,47 +29,24 @@ namespace QuanLyBanMayTinh
         SqlCommand cmd;
         SqlConnection con;
         SqlDataAdapter da;
-        public void Showcbb()
-        {
-            con = new SqlConnection(Connect.ConnectDTB);
-            con.Open();
-            cmd = new SqlCommand("select * from SanPham", con);
-            da = new SqlDataAdapter();
-            da.SelectCommand = cmd;
-            DataTable tb = new DataTable();
-            da.Fill(tb);
-            cbbHang.DataSource = tb;
-            cbbTensp.DisplayMember = "HangSX";
-            cbbHang.DisplayMember = "TenSanPham";
-            cbbTensp.ValueMember = "MaSanPham";
-            cbbHang.ValueMember = "MaSanPham";
-
-        }
+        public string chuoikh = "Select kh.TenKhachHang,kh.GioiTinh,kh.NgaySinh,kh.DiaChi,kh.SDT from KhachHang kh";
+        public string chuoidm = "select sp.TenSanPham,sp.HangSX,sp.ThongSo,sp.TGBaoHanh from SanPham sp";
+        
         // show thông tin máy tính 
-        public void showDataGV()
-        {
-            
-            con = new SqlConnection(Connect.ConnectDTB);// kết nối csdl cnnectDTB là chuỗi kết nối
-            con.Open();
-            cmd = new SqlCommand("select * from SanPham", con);
-            da = new SqlDataAdapter();
-            da.SelectCommand = cmd;
-            DataTable tb = new DataTable();
-            da.Fill(tb);
-            dgvDongMay.DataSource = tb;//dgvDong máy là đatagridview
 
-        }
         // show thông tin khách hàng
-        public void showKH()
+        public void showData(DataGridView dgv,string s)
         {
-            con = new SqlConnection(Connect.ConnectDTB);
+            con = new SqlConnection(Connect.ConnectDTB );
             con.Open();
-            cmd = new SqlCommand("Select kh.TenKhachHang,kh.GioiTinh,kh.NgaySinh,kh.DiaChi,kh.SDT from KhachHang kh", con);
+            cmd = new SqlCommand(s, con);
             da = new SqlDataAdapter();
             da.SelectCommand = cmd;
             DataTable tb = new DataTable();
             da.Fill(tb);
-            dgvKhachHang.DataSource = tb;
+            dgv.DataSource = tb;
+            dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void muaHàngToolStripMenuItem_Click(object sender, EventArgs e)
@@ -87,9 +64,37 @@ namespace QuanLyBanMayTinh
 
         private void MuaBan_Load(object sender, EventArgs e)
         {
-            Showcbb();
-            showDataGV();
-            showKH();
+
+            showData(dgvDongMay,chuoidm);
+            showData(dgvKhachHang,chuoikh);
+        }
+
+        private void txtTimDongMay_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtTimDongMay_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                string str = "select sp.TenSanPham,sp.HangSX,sp.ThongSo,sp.TGBaoHanh from SanPham sp where TenSanPham LIKE '%" + txtTimDongMay.Text + "%'";
+                showData(dgvDongMay, str);
+                dgvDongMay.Refresh();
+
+            }
+        }
+
+        private void txtTimKhach_KeyDown(object sender, KeyEventArgs e)
+        {   if (e.KeyCode == Keys.Enter)
+            {
+                string str = "select kh.TenKhachHang,kh.GioiTinh,kh.NgaySinh,kh.SDT from KhachHang kh  where TenKhachHang LIKE '%" + txtTimKhach.Text + "%'";
+                showData(dgvKhachHang, str);
+                dgvKhachHang.Refresh();
+
+            }
+
+
         }
     }
 }

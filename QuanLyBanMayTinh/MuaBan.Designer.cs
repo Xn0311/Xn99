@@ -28,140 +28,88 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MuaBan));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.menuStrip2 = new System.Windows.Forms.MenuStrip();
-            this.quảnLýToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.quảnLýNhânViênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.quảnLýKháchHàngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.muaHàngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.trợGiúpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnTimKiem = new System.Windows.Forms.Button();
-            this.cbbTensp = new System.Windows.Forms.ComboBox();
-            this.cbbHang = new System.Windows.Forms.ComboBox();
             this.dgvDongMay = new System.Windows.Forms.DataGridView();
             this.dgvKhachHang = new System.Windows.Forms.DataGridView();
-            this.menuStrip2.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.txtTimDongMay = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtTimKhach = new System.Windows.Forms.TextBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDongMay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhachHang)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Location = new System.Drawing.Point(0, 28);
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1382, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
-            // 
-            // menuStrip2
-            // 
-            this.menuStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.quảnLýToolStripMenuItem,
-            this.muaHàngToolStripMenuItem,
-            this.trợGiúpToolStripMenuItem});
-            this.menuStrip2.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(1382, 28);
-            this.menuStrip2.TabIndex = 1;
-            this.menuStrip2.Text = "menuStrip2";
-            // 
-            // quảnLýToolStripMenuItem
-            // 
-            this.quảnLýToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.quảnLýNhânViênToolStripMenuItem,
-            this.quảnLýKháchHàngToolStripMenuItem});
-            this.quảnLýToolStripMenuItem.Name = "quảnLýToolStripMenuItem";
-            this.quảnLýToolStripMenuItem.Size = new System.Drawing.Size(79, 24);
-            this.quảnLýToolStripMenuItem.Text = "Quản Lý ";
-            this.quảnLýToolStripMenuItem.Click += new System.EventHandler(this.quảnLýToolStripMenuItem_Click);
-            // 
-            // quảnLýNhânViênToolStripMenuItem
-            // 
-            this.quảnLýNhânViênToolStripMenuItem.Name = "quảnLýNhânViênToolStripMenuItem";
-            this.quảnLýNhânViênToolStripMenuItem.Size = new System.Drawing.Size(232, 26);
-            this.quảnLýNhânViênToolStripMenuItem.Text = "Quản Lý Nhân Viên";
-            this.quảnLýNhânViênToolStripMenuItem.Click += new System.EventHandler(this.quảnLýNhânViênToolStripMenuItem_Click);
-            // 
-            // quảnLýKháchHàngToolStripMenuItem
-            // 
-            this.quảnLýKháchHàngToolStripMenuItem.Name = "quảnLýKháchHàngToolStripMenuItem";
-            this.quảnLýKháchHàngToolStripMenuItem.Size = new System.Drawing.Size(232, 26);
-            this.quảnLýKháchHàngToolStripMenuItem.Text = "Quản Lý Khách Hàng ";
-            // 
-            // muaHàngToolStripMenuItem
-            // 
-            this.muaHàngToolStripMenuItem.Name = "muaHàngToolStripMenuItem";
-            this.muaHàngToolStripMenuItem.Size = new System.Drawing.Size(96, 24);
-            this.muaHàngToolStripMenuItem.Text = "Mua Hàng ";
-            this.muaHàngToolStripMenuItem.Click += new System.EventHandler(this.muaHàngToolStripMenuItem_Click);
-            // 
-            // trợGiúpToolStripMenuItem
-            // 
-            this.trợGiúpToolStripMenuItem.Name = "trợGiúpToolStripMenuItem";
-            this.trợGiúpToolStripMenuItem.Size = new System.Drawing.Size(79, 24);
-            this.trợGiúpToolStripMenuItem.Text = "Trợ Giúp";
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.btnTimKiem);
-            this.panel1.Controls.Add(this.cbbTensp);
-            this.panel1.Controls.Add(this.cbbHang);
-            this.panel1.Location = new System.Drawing.Point(45, 84);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(417, 70);
-            this.panel1.TabIndex = 2;
-            // 
-            // btnTimKiem
-            // 
-            this.btnTimKiem.Location = new System.Drawing.Point(289, 20);
-            this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(110, 23);
-            this.btnTimKiem.TabIndex = 1;
-            this.btnTimKiem.Text = "Tìm Kiếm ";
-            this.btnTimKiem.UseVisualStyleBackColor = true;
-            // 
-            // cbbTensp
-            // 
-            this.cbbTensp.FormattingEnabled = true;
-            this.cbbTensp.Location = new System.Drawing.Point(149, 20);
-            this.cbbTensp.Name = "cbbTensp";
-            this.cbbTensp.Size = new System.Drawing.Size(121, 24);
-            this.cbbTensp.TabIndex = 0;
-            // 
-            // cbbHang
-            // 
-            this.cbbHang.FormattingEnabled = true;
-            this.cbbHang.Location = new System.Drawing.Point(22, 20);
-            this.cbbHang.Name = "cbbHang";
-            this.cbbHang.Size = new System.Drawing.Size(121, 24);
-            this.cbbHang.TabIndex = 0;
             // 
             // dgvDongMay
             // 
             this.dgvDongMay.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvDongMay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDongMay.GridColor = System.Drawing.SystemColors.Control;
-            this.dgvDongMay.Location = new System.Drawing.Point(45, 196);
+            this.dgvDongMay.Location = new System.Drawing.Point(12, 79);
             this.dgvDongMay.Name = "dgvDongMay";
             this.dgvDongMay.RowHeadersWidth = 51;
             this.dgvDongMay.RowTemplate.Height = 24;
-            this.dgvDongMay.Size = new System.Drawing.Size(743, 186);
+            this.dgvDongMay.Size = new System.Drawing.Size(894, 272);
             this.dgvDongMay.TabIndex = 3;
             // 
             // dgvKhachHang
             // 
             this.dgvKhachHang.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvKhachHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvKhachHang.Location = new System.Drawing.Point(45, 412);
+            this.dgvKhachHang.Location = new System.Drawing.Point(432, 357);
             this.dgvKhachHang.Name = "dgvKhachHang";
             this.dgvKhachHang.RowHeadersWidth = 51;
             this.dgvKhachHang.RowTemplate.Height = 24;
-            this.dgvKhachHang.Size = new System.Drawing.Size(743, 182);
+            this.dgvKhachHang.Size = new System.Drawing.Size(938, 297);
             this.dgvKhachHang.TabIndex = 4;
+            // 
+            // txtTimDongMay
+            // 
+            this.txtTimDongMay.Location = new System.Drawing.Point(12, 49);
+            this.txtTimDongMay.Name = "txtTimDongMay";
+            this.txtTimDongMay.Size = new System.Drawing.Size(165, 22);
+            this.txtTimDongMay.TabIndex = 5;
+            this.txtTimDongMay.Enter += new System.EventHandler(this.txtTimDongMay_Enter);
+            this.txtTimDongMay.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTimDongMay_KeyDown);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(184, 49);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            // 
+            // txtTimKhach
+            // 
+            this.txtTimKhach.Location = new System.Drawing.Point(1182, 329);
+            this.txtTimKhach.Name = "txtTimKhach";
+            this.txtTimKhach.Size = new System.Drawing.Size(188, 22);
+            this.txtTimKhach.TabIndex = 5;
+            this.txtTimKhach.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTimKhach_KeyDown);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(1152, 327);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 6;
+            this.pictureBox3.TabStop = false;
             // 
             // MuaBan
             // 
@@ -169,20 +117,21 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1382, 703);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.txtTimKhach);
+            this.Controls.Add(this.txtTimDongMay);
             this.Controls.Add(this.dgvKhachHang);
             this.Controls.Add(this.dgvDongMay);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.menuStrip2);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MuaBan";
             this.Text = "Mua Hàng";
             this.Load += new System.EventHandler(this.MuaBan_Load);
-            this.menuStrip2.ResumeLayout(false);
-            this.menuStrip2.PerformLayout();
-            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDongMay)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhachHang)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -191,17 +140,11 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.MenuStrip menuStrip2;
-        private System.Windows.Forms.ToolStripMenuItem quảnLýToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem quảnLýNhânViênToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem muaHàngToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem trợGiúpToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem quảnLýKháchHàngToolStripMenuItem;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnTimKiem;
-        private System.Windows.Forms.ComboBox cbbTensp;
-        private System.Windows.Forms.ComboBox cbbHang;
         private System.Windows.Forms.DataGridView dgvDongMay;
         private System.Windows.Forms.DataGridView dgvKhachHang;
+        private System.Windows.Forms.TextBox txtTimDongMay;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox txtTimKhach;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }

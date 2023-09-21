@@ -66,6 +66,12 @@
     <Compile Include="KhachHang.Designer.cs">
       <DependentUpon>KhachHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="Logincs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logincs.Designer.cs">
+      <DependentUpon>Logincs.cs</DependentUpon>
+    </Compile>
     <Compile Include="MuaBan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +107,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="KhachHang.resx">
       <DependentUpon>KhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logincs.resx">
+      <DependentUpon>Logincs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MuaBan.resx">
       <DependentUpon>MuaBan.cs</DependentUpon>

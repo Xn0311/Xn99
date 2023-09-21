@@ -18,3 +18,21 @@ D:\Học Lập Trình\acb\QuanLyBanMayTinh\obj\Debug\QuanLyBanMayTinh.KHACHHANG.
 C:\Users\Admin\Source\Repos\QuanLyBanMayTinh\QuanLyBanMayTinh\bin\Debug\QuanLyBanMayTinh.exe.config
 C:\Users\Admin\Source\Repos\QuanLyBanMayTinh\QuanLyBanMayTinh\obj\Debug\QuanLyBanMayTinh.exe
 C:\Users\Admin\Source\Repos\QuanLyBanMayTinh\QuanLyBanMayTinh\obj\Debug\QuanLyBanMayTinh.pdb
+D:\Học Lập Trình\Loi\QuanLyBanMayTinh\bin\Debug\QuanLyBanMayTinh.exe.config
+D:\Học Lập Trình\Loi\QuanLyBanMayTinh\bin\Debug\QuanLyBanMayTinh.exe
+D:\Học Lập Trình\Loi\QuanLyBanMayTinh\bin\Debug\QuanLyBanMayTinh.pdb
+D:\Học Lập Trình\Loi\QuanLyBanMayTinh\obj\Debug\QuanLyBanMayTinh.csproj.AssemblyReference.cache
+D:\Học Lập Trình\Loi\QuanLyBanMayTinh\obj\Debug\QuanLyBanMayTinh.csproj.SuggestedBindingRedirects.cache
+D:\Học Lập Trình\Loi\QuanLyBanMayTinh\obj\Debug\QuanLyBanMayTinh.ChiTietHoaDon.resources
+D:\Học Lập Trình\Loi\QuanLyBanMayTinh\obj\Debug\QuanLyBanMayTinh.HoaDon.resources
+D:\Học Lập Trình\Loi\QuanLyBanMayTinh\obj\Debug\QuanLyBanMayTinh.KHACHHANG.resources
+D:\Học Lập Trình\Loi\QuanLyBanMayTinh\obj\Debug\QuanLyBanMayTinh.MuaBan.resources
+D:\Học Lập Trình\Loi\QuanLyBanMayTinh\obj\Debug\QuanLyBanMayTinh.NhanViencs.resources
+D:\Học Lập Trình\Loi\QuanLyBanMayTinh\obj\Debug\QuanLyBanMayTinh.SanPham.resources
+D:\Học Lập Trình\Loi\QuanLyBanMayTinh\obj\Debug\QuanLyBanMayTinh.TrangChu.resources
+D:\Học Lập Trình\Loi\QuanLyBanMayTinh\obj\Debug\QuanLyBanMayTinh.Properties.Resources.resources
+D:\Học Lập Trình\Loi\QuanLyBanMayTinh\obj\Debug\QuanLyBanMayTinh.csproj.GenerateResource.cache
+D:\Học Lập Trình\Loi\QuanLyBanMayTinh\obj\Debug\QuanLyBanMayTinh.csproj.CoreCompileInputs.cache
+D:\Học Lập Trình\Loi\QuanLyBanMayTinh\obj\Debug\QuanLyBanMayTinh.exe
+D:\Học Lập Trình\Loi\QuanLyBanMayTinh\obj\Debug\QuanLyBanMayTinh.pdb
+D:\Học Lập Trình\Loi\QuanLyBanMayTinh\obj\Debug\QuanLyBanMayTinh.Logincs.resources
