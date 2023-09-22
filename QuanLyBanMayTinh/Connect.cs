@@ -9,7 +9,7 @@ namespace QuanLyBanMayTinh
     internal class Connect
     {   // chuoi ket noio
 
-        public static string ConnectDTB = "server = DESKTOP-A78SARK ; database = BanMayTinh ;integrated security = true";
+        public static string ConnectDTB = "server = DINO ; database = BanMayTinh ;integrated security = true";
      
     }
 }

@@ -102,7 +102,7 @@ namespace QuanLyBanMayTinh
         string Masp;
         int MaHd = 1;
         string Hangsx;
-        int Gia;
+        string Gia;
         string MaKh;
         DateTime GetNow = DateTime.Now;
 
@@ -112,31 +112,27 @@ namespace QuanLyBanMayTinh
 
             Masp = dgvDongMay.Rows[e.RowIndex].Cells[0].Value.ToString();
             Hangsx = dgvDongMay.Rows[e.RowIndex].Cells[2].Value.ToString();
-           // Gia = dgvDongMay.Rows[e.RowIndex].Cells[5].Value.ToString();
+            Gia = dgvDongMay.Rows[e.RowIndex].Cells[5].Value.ToString();
             MaKh = dgvKhachHang.Rows[e.RowIndex].Cells[0].Value.ToString();
 
         }
         private void btnMua_Click(object sender, EventArgs e)
         {
             int SoLuong = Convert.ToInt32(nudSoLuong.Value);
-            
+            int Giaca = 0;
             SqlConnection con = new SqlConnection(Connect.ConnectDTB);
-            SqlCommand command = new SqlCommand("select Gia from SanPham ",con);
-            con.Open();
-            SqlDataReader reader = command.ExecuteReader();
-            if (reader.HasRows)
-                if (reader.HasRows)
+            if (int.TryParse(Gia, out Giaca))
             {
-                while (reader.Read())
-                {
-                    int Gia = reader.GetInt32(1);
-                }
+                // Giá trị chuỗi đã được chuyển đổi thành số thành công
+                // Bạn có thể sử dụng biến "number" để thực hiện các phép tính toán
+                int result = Giaca;
+                
             }
-            double TongTien = Gia * SoLuong;
 
-            reader.Close();
+            double TongTien = Giaca * SoLuong;
             string insertHoaDon = "insert into HoaDon values('" + Convert.ToString(MaHd) + "','" + MaKh + "','" + GetNow + "')";
             string insertChiTIetHoaDon = "insert into ChiTietHoaDon values('" + Convert.ToString(MaHd) + "','" + Masp + "','" + SoLuong + "','" + Gia + "','" + TongTien + "')";
+            con.Open();
             SqlCommand cmd = new SqlCommand(insertHoaDon, con);
             SqlCommand cmd2 = new SqlCommand(insertChiTIetHoaDon, con);
             int ret = cmd.ExecuteNonQuery();
