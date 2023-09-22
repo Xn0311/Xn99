@@ -52,7 +52,7 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1382, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1382, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -129,7 +129,7 @@
             this.nudSoLuong.Size = new System.Drawing.Size(120, 27);
             this.nudSoLuong.TabIndex = 7;
             this.nudSoLuong.Value = new decimal(new int[] {
-            10,
+            1,
             0,
             0,
             0});
@@ -155,6 +155,7 @@
             this.btnMua.TabIndex = 8;
             this.btnMua.Text = "Mua";
             this.btnMua.UseVisualStyleBackColor = true;
+            this.btnMua.Click += new System.EventHandler(this.btnMua_Click);
             // 
             // MuaBan
             // 

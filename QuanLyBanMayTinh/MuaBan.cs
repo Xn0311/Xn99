@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -31,13 +32,13 @@ namespace QuanLyBanMayTinh
         SqlDataAdapter da;
         public string chuoikh = "Select * from KhachHang kh";
         public string chuoidm = "select * from SanPham sp";
-        
+
         // show thông tin máy tính 
 
         // show thông tin khách hàng
-        public void showData(DataGridView dgv,string s)
+        public void showData(DataGridView dgv, string s)
         {
-            con = new SqlConnection(Connect.ConnectDTB );
+            con = new SqlConnection(Connect.ConnectDTB);
             con.Open();
             cmd = new SqlCommand(s, con);
             da = new SqlDataAdapter();
@@ -65,9 +66,9 @@ namespace QuanLyBanMayTinh
         private void MuaBan_Load(object sender, EventArgs e)
         {
 
-            showData(dgvDongMay,chuoidm);
-            showData(dgvKhachHang,chuoikh);
-            
+            showData(dgvDongMay, chuoidm);
+            showData(dgvKhachHang, chuoikh);
+
         }
 
         private void txtTimDongMay_Enter(object sender, EventArgs e)
@@ -87,7 +88,8 @@ namespace QuanLyBanMayTinh
         }
 
         private void txtTimKhach_KeyDown(object sender, KeyEventArgs e)
-        {   if (e.KeyCode == Keys.Enter)
+        {
+            if (e.KeyCode == Keys.Enter)
             {
                 string str = "select kh.TenKhachHang,kh.GioiTinh,kh.NgaySinh,kh.SDT from KhachHang kh  where TenKhachHang LIKE '%" + txtTimKhach.Text + "%'";
                 showData(dgvKhachHang, str);
@@ -97,25 +99,53 @@ namespace QuanLyBanMayTinh
 
 
         }
+        string Masp;
+        int MaHd = 1;
+        string Hangsx;
+        int Gia;
+        string MaKh;
+        DateTime GetNow = DateTime.Now;
+
 
         private void dgvDongMay_CellClick(object sender, DataGridViewCellEventArgs e)
-        {   
-            string Masp;
-            string MaHd;
-            string Hangsx;
-            int SoLuong = Convert.ToInt32(nudSoLuong.Value);
-            double Gia;
-            string MaKh;
-            DateTime GetNow = DateTime.Now;
-            MaHd = "1";
+        {
+
             Masp = dgvDongMay.Rows[e.RowIndex].Cells[0].Value.ToString();
             Hangsx = dgvDongMay.Rows[e.RowIndex].Cells[2].Value.ToString();
+           // Gia = dgvDongMay.Rows[e.RowIndex].Cells[5].Value.ToString();
             MaKh = dgvKhachHang.Rows[e.RowIndex].Cells[0].Value.ToString();
-            //làm đến đây thôi
-            
-            
-           
+
         }
-        
+        private void btnMua_Click(object sender, EventArgs e)
+        {
+            int SoLuong = Convert.ToInt32(nudSoLuong.Value);
+            
+            SqlConnection con = new SqlConnection(Connect.ConnectDTB);
+            SqlCommand command = new SqlCommand("select Gia from SanPham ",con);
+            con.Open();
+            SqlDataReader reader = command.ExecuteReader();
+            if (reader.HasRows)
+                if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    int Gia = reader.GetInt32(1);
+                }
+            }
+            double TongTien = Gia * SoLuong;
+
+            reader.Close();
+            string insertHoaDon = "insert into HoaDon values('" + Convert.ToString(MaHd) + "','" + MaKh + "','" + GetNow + "')";
+            string insertChiTIetHoaDon = "insert into ChiTietHoaDon values('" + Convert.ToString(MaHd) + "','" + Masp + "','" + SoLuong + "','" + Gia + "','" + TongTien + "')";
+            SqlCommand cmd = new SqlCommand(insertHoaDon, con);
+            SqlCommand cmd2 = new SqlCommand(insertChiTIetHoaDon, con);
+            int ret = cmd.ExecuteNonQuery();
+            int ret1 = cmd2.ExecuteNonQuery();
+            if (ret == 1 && ret1 == 1)
+                MessageBox.Show("Đã Thêm Vào Hóa Đơn");
+            con.Close();
+            MaHd += 1;
+        }
     }
 }
+
