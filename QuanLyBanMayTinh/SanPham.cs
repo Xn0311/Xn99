@@ -23,18 +23,19 @@ namespace QuanLyBanMayTinh
 
         }
 
-        public void ThemSanPham(string connectionString, TextBox MaSanPham, TextBox TenSanPham, TextBox HangSX, DateTimePicker TGBaoHanh, TextBox ThongSo, TextBox SoLuong)
+        public void ThemSanPham(string connectionString, TextBox MaSanPham, TextBox TenSanPham, TextBox HangSX, TextBox TGBaoHanh, TextBox ThongSo, TextBox SoLuong, TextBox GiaTien)
         {
-            string query = "Insert into SanPham (MaSanPham, TenSanPham, HangSX, TGBaoHanh, ThongSo, SoLuong) Values (@MaSanPham, @TenSanPham, @HangSX, @TGBaoHanh, @ThongSo, @SoLuong)";
+            string query = "Insert into SanPham (MaSanPham, TenSanPham, HangSX, TGBaoHanh, ThongSo, SoLuong, GiaTien) Values (@MaSanPham, @TenSanPham, @HangSX, @TGBaoHanh, @ThongSo, @SoLuong, @GiaTien)";
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@MaSanPham", ttbmasp.Text);
                 command.Parameters.AddWithValue("@TenSanPham", ttbtensp.Text);
                 command.Parameters.AddWithValue("@HangSX", ttbhangsx.Text);
-                command.Parameters.AddWithValue("@TGBaoHanh", dtptg.Value);
+                command.Parameters.AddWithValue("@TGBaoHanh", ttbtgbh.Text);
                 command.Parameters.AddWithValue("@ThongSo", ttbthongso.Text);
                 command.Parameters.AddWithValue("@SoLuong", ttbsoluong.Text);
+                command.Parameters.AddWithValue("@GiaTien", ttbgiatien.Text);
                 command.Connection.Open();
                 command.ExecuteNonQuery();
             }
@@ -43,7 +44,28 @@ namespace QuanLyBanMayTinh
         private void btTHEM_Click(object sender, EventArgs e)
         {
             string connectionString = @"Data Source=(local);Initial Catalog=BanMayTinh;Integrated Security=True";
-            ThemSanPham(connectionString, ttbmasp, ttbtensp, ttbhangsx, dtptg, ttbthongso, ttbsoluong);
+            ThemSanPham(connectionString, ttbmasp, ttbtensp, ttbhangsx, ttbtgbh, ttbthongso, ttbsoluong, ttbgiatien);
+        }
+
+        public void HienThiSanPham()
+        {
+            string connectionString = @"Data Source=(local);Initial Catalog=BanMayTinh;Integrated Security=True";
+            string query = "SELECT * FROM SanPham";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+                DataTable dataTable = new DataTable();
+                dataAdapter.Fill(dataTable);
+                // Gán dữ liệu từ DataTable vào DataGridView.
+                dgvsp.DataSource = dataTable;
+            }
+        }
+
+
+        private void SanPham_Load(object sender, EventArgs e)
+        {
+            HienThiSanPham();
         }
     }
 }

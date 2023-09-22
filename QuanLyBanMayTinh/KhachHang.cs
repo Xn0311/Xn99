@@ -40,5 +40,27 @@ namespace QuanLyBanMayTinh
             string connectionString = @"Data Source=(local);Initial Catalog=BanMayTinh;Integrated Security=True";
             ThemKhachHang(connectionString, ttbmakh, ttbtenkh, ttbgioitinh, dtpngaysinh, ttbdiachi, ttbsodt);
         }
+
+        public void HienThiKhachHang()
+        {
+            string connectionString = @"Data Source=(local);Initial Catalog=BanMayTinh;Integrated Security=True";
+            string query = "SELECT * FROM KhachHang";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+                DataTable dataTable = new DataTable();
+                dataAdapter.Fill(dataTable);
+                // Gán dữ liệu từ DataTable vào DataGridView.
+                dgvkh.DataSource = dataTable;
+            }
+        }
+
+        private void KHACHHANG_Load(object sender, EventArgs e)
+        {
+            HienThiKhachHang();
+        }
+
+
     }
 }

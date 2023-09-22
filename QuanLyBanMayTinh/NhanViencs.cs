@@ -15,8 +15,7 @@ namespace QuanLyBanMayTinh
     {
         public NhanViencs()
         {
-            InitializeComponent();           
-            dtgnv.DataBindingComplete += dtgnv_DataBindingComplete;      
+            InitializeComponent();            
     }
 
         private void label2_Click(object sender, EventArgs e)
@@ -46,7 +45,7 @@ namespace QuanLyBanMayTinh
             }
         }
 
-       /* public void HienThiDuLieu()
+        public void HienThiNhanVien()
         {
             string connectionString = @"Data Source=(local);Initial Catalog=BanMayTinh;Integrated Security=True";
             string query = "SELECT * FROM NhanVien";
@@ -57,18 +56,18 @@ namespace QuanLyBanMayTinh
                 DataTable dataTable = new DataTable();
                 dataAdapter.Fill(dataTable);
                 // Gán dữ liệu từ DataTable vào DataGridView.
-                dtgnv.DataSource = dataTable;
+                dgvnv.DataSource = dataTable;
             }
-        }*/
-        
-        private void lbQLNV_Click(object sender, EventArgs e)
-    {
+        }
 
-    }
-
-        private void dtgnv_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        private void NhanViencs_Load(object sender, EventArgs e)
         {
-            
+            HienThiNhanVien();
+        }
+
+        private void dgvnv_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

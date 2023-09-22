@@ -38,8 +38,8 @@
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.btnthoat = new System.Windows.Forms.Button();
             this.btnDangNhap = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lbmatkhau = new System.Windows.Forms.Label();
+            this.lbtaikhoan = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -47,47 +47,47 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(252, 170);
+            this.button1.Location = new System.Drawing.Point(277, 187);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 29);
+            this.button1.Size = new System.Drawing.Size(103, 32);
             this.button1.TabIndex = 0;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(221, 26);
+            this.textBox1.Location = new System.Drawing.Point(243, 29);
             this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(259, 27);
+            this.textBox1.Size = new System.Drawing.Size(285, 30);
             this.textBox1.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(129, 34);
+            this.label1.Location = new System.Drawing.Point(142, 37);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 20);
+            this.label1.Size = new System.Drawing.Size(93, 22);
             this.label1.TabIndex = 2;
             this.label1.Text = "Tài Khoản";
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(221, 86);
+            this.textBox2.Location = new System.Drawing.Point(243, 95);
             this.textBox2.Margin = new System.Windows.Forms.Padding(4);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(259, 27);
+            this.textBox2.Size = new System.Drawing.Size(285, 30);
             this.textBox2.TabIndex = 1;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(131, 86);
+            this.label3.Location = new System.Drawing.Point(144, 95);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(80, 20);
+            this.label3.Size = new System.Drawing.Size(87, 22);
             this.label3.TabIndex = 2;
             this.label3.Text = "Mật Khẩu";
             // 
@@ -98,11 +98,11 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Location = new System.Drawing.Point(71, 48);
+            this.groupBox1.Location = new System.Drawing.Point(78, 53);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(612, 238);
+            this.groupBox1.Size = new System.Drawing.Size(673, 262);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Đăng Nhập";
@@ -112,33 +112,33 @@
             this.groupBox2.Controls.Add(this.txtUsername);
             this.groupBox2.Controls.Add(this.btnthoat);
             this.groupBox2.Controls.Add(this.btnDangNhap);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.lbmatkhau);
+            this.groupBox2.Controls.Add(this.lbtaikhoan);
             this.groupBox2.Controls.Add(this.txtPassword);
-            this.groupBox2.Location = new System.Drawing.Point(71, 48);
+            this.groupBox2.Location = new System.Drawing.Point(78, 53);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(612, 238);
+            this.groupBox2.Size = new System.Drawing.Size(673, 262);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Đăng Nhập";
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(221, 50);
+            this.txtUsername.Location = new System.Drawing.Point(243, 55);
             this.txtUsername.Margin = new System.Windows.Forms.Padding(4);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(259, 27);
+            this.txtUsername.Size = new System.Drawing.Size(285, 30);
             this.txtUsername.TabIndex = 1;
             this.txtUsername.Text = "xn01";
             // 
             // btnthoat
             // 
-            this.btnthoat.Location = new System.Drawing.Point(221, 193);
+            this.btnthoat.Location = new System.Drawing.Point(243, 212);
             this.btnthoat.Margin = new System.Windows.Forms.Padding(4);
             this.btnthoat.Name = "btnthoat";
-            this.btnthoat.Size = new System.Drawing.Size(259, 29);
+            this.btnthoat.Size = new System.Drawing.Size(285, 32);
             this.btnthoat.TabIndex = 4;
             this.btnthoat.Text = "Thoát";
             this.btnthoat.UseVisualStyleBackColor = true;
@@ -146,54 +146,54 @@
             // 
             // btnDangNhap
             // 
-            this.btnDangNhap.Location = new System.Drawing.Point(221, 156);
+            this.btnDangNhap.Location = new System.Drawing.Point(243, 172);
             this.btnDangNhap.Margin = new System.Windows.Forms.Padding(4);
             this.btnDangNhap.Name = "btnDangNhap";
-            this.btnDangNhap.Size = new System.Drawing.Size(259, 29);
+            this.btnDangNhap.Size = new System.Drawing.Size(285, 32);
             this.btnDangNhap.TabIndex = 3;
             this.btnDangNhap.Tag = "1";
             this.btnDangNhap.Text = "Đăng Nhập";
             this.btnDangNhap.UseVisualStyleBackColor = true;
             this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
             // 
-            // label2
+            // lbmatkhau
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(131, 110);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(80, 20);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Mật Khẩu";
+            this.lbmatkhau.AutoSize = true;
+            this.lbmatkhau.Location = new System.Drawing.Point(144, 121);
+            this.lbmatkhau.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbmatkhau.Name = "lbmatkhau";
+            this.lbmatkhau.Size = new System.Drawing.Size(87, 22);
+            this.lbmatkhau.TabIndex = 2;
+            this.lbmatkhau.Text = "Mật Khẩu";
             // 
-            // label4
+            // lbtaikhoan
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(129, 58);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(84, 20);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Tài Khoản";
+            this.lbtaikhoan.AutoSize = true;
+            this.lbtaikhoan.Location = new System.Drawing.Point(144, 59);
+            this.lbtaikhoan.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbtaikhoan.Name = "lbtaikhoan";
+            this.lbtaikhoan.Size = new System.Drawing.Size(93, 22);
+            this.lbtaikhoan.TabIndex = 2;
+            this.lbtaikhoan.Text = "Tài Khoản";
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(221, 110);
+            this.txtPassword.Location = new System.Drawing.Point(243, 121);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(259, 27);
+            this.txtPassword.Size = new System.Drawing.Size(285, 30);
             this.txtPassword.TabIndex = 2;
             this.txtPassword.Text = "1";
             // 
             // Logincs
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(820, 356);
+            this.ClientSize = new System.Drawing.Size(902, 392);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Logincs";
             this.Text = "Đăng Nhập";
@@ -216,8 +216,8 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.Button btnDangNhap;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lbmatkhau;
+        private System.Windows.Forms.Label lbtaikhoan;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Button btnthoat;
     }
