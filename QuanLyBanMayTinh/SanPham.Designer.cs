@@ -84,12 +84,13 @@
             // 
             // dgvsp
             // 
+            this.dgvsp.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvsp.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvsp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvsp.Location = new System.Drawing.Point(15, 243);
+            this.dgvsp.Location = new System.Drawing.Point(152, 239);
             this.dgvsp.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dgvsp.Name = "dgvsp";
-            this.dgvsp.Size = new System.Drawing.Size(1376, 355);
+            this.dgvsp.Size = new System.Drawing.Size(1131, 361);
             this.dgvsp.TabIndex = 4;
             // 
             // lbSANPHAM
@@ -99,7 +100,7 @@
             this.lbSANPHAM.Location = new System.Drawing.Point(592, 22);
             this.lbSANPHAM.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbSANPHAM.Name = "lbSANPHAM";
-            this.lbSANPHAM.Size = new System.Drawing.Size(152, 39);
+            this.lbSANPHAM.Size = new System.Drawing.Size(148, 37);
             this.lbSANPHAM.TabIndex = 0;
             this.lbSANPHAM.Text = "Sản Phẩm";
             // 
@@ -189,6 +190,7 @@
             this.btSUA.TabIndex = 3;
             this.btSUA.Text = "Sửa";
             this.btSUA.UseVisualStyleBackColor = true;
+            this.btSUA.Click += new System.EventHandler(this.btnSuaSP_Click);
             // 
             // btXOA
             // 
@@ -296,6 +298,7 @@
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "SanPham";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sản phẩm";
             this.Load += new System.EventHandler(this.SanPham_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvsp)).EndInit();

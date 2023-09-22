@@ -67,5 +67,37 @@ namespace QuanLyBanMayTinh
         {
             HienThiSanPham();
         }
+
+        private string connectionString = "Data Source=DESKTOP-A78SARK;Initial Catalog=BanMayTinh;Integrated Security=True";
+
+        private void btnSuaSP_Click(object sender, EventArgs e)
+        {
+
+            string query = "UPDATE SanPham SET TenSanPham = @TenSanPham, HangSX = @HangSX, TGBaoHanh = @TGBaoHanh, ThongSo = @ThongSo, SoLuong = @SoLuong, GiaTien = @GiaTien WHERE MaSanPham = @MaSanPham";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@MaSanPham", ttbmasp.Text);
+                    command.Parameters.AddWithValue("@TenSanPham", ttbtensp.Text);
+                    command.Parameters.AddWithValue("@HangSX", ttbhangsx.Text);
+                    command.Parameters.AddWithValue("@TGBaoHanh", ttbtgbh.Text);
+                    command.Parameters.AddWithValue("@ThongSo", ttbthongso.Text);
+                    command.Parameters.AddWithValue("@SoLuong", ttbsoluong.Text);
+                    command.Parameters.AddWithValue("@GiaTien", ttbgiatien.Text);
+
+                    int result = command.ExecuteNonQuery();
+
+                    // Check Error
+                    if (result < 0)
+                        MessageBox.Show("Lỗi cập nhật dữ liệu!");
+                    else
+                        MessageBox.Show("Cập nhật dữ liệu thành công!");
+                }
+            }
+        }
     }
 }

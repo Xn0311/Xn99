@@ -208,6 +208,7 @@
             this.btnsua.TabIndex = 0;
             this.btnsua.Text = "Sửa";
             this.btnsua.UseVisualStyleBackColor = true;
+            this.btnsua.Click += new System.EventHandler(this.btnSuaHD_Click);
             // 
             // btnthem
             // 
@@ -227,7 +228,7 @@
             this.dgv1.Name = "dgv1";
             this.dgv1.RowHeadersWidth = 51;
             this.dgv1.RowTemplate.Height = 24;
-            this.dgv1.Size = new System.Drawing.Size(1158, 349);
+            this.dgv1.Size = new System.Drawing.Size(1085, 349);
             this.dgv1.TabIndex = 5;
             // 
             // HoaDon
@@ -257,6 +258,7 @@
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "HoaDon";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hóa đơn";
             this.Load += new System.EventHandler(this.HoaDon_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).EndInit();

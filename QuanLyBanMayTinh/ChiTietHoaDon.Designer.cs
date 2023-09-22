@@ -133,6 +133,7 @@
             // 
             // dgvct
             // 
+            this.dgvct.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvct.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvct.Location = new System.Drawing.Point(377, 12);
@@ -221,6 +222,7 @@
             this.btnsua.TabIndex = 0;
             this.btnsua.Text = "Sửa";
             this.btnsua.UseVisualStyleBackColor = true;
+            this.btnsua.Click += new System.EventHandler(this.btnSuaCT_Click);
             // 
             // btnthem
             // 
@@ -244,6 +246,7 @@
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ChiTietHoaDon";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ChiTietHoaDon";
             this.Load += new System.EventHandler(this.ChiTietHoaDon_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvct)).EndInit();

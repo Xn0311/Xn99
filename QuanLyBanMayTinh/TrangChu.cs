@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace QuanLyBanMayTinh
 {
@@ -68,6 +69,18 @@ namespace QuanLyBanMayTinh
         private void trợGiúpToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void trợGiúpToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            MessageBox.Show("Vui lòng liên hệ 'Liêu Xuân Nghĩa' để giải quyết tình huống mắc phải");
+             MessageBox.Show("Dưới đây là link fb của anh ta");
+                string url = "https://www.facebook.com/LieuXuanNghia";
+            DialogResult result = MessageBox.Show("Bạn có muốn mở URL này không?", "Xác nhận", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                Process.Start(url);
+            }
         }
     }
 }

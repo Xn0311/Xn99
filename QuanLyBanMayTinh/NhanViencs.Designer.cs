@@ -57,7 +57,7 @@
             // 
             this.btTHEM.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btTHEM.Location = new System.Drawing.Point(430, 672);
-            this.btTHEM.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btTHEM.Margin = new System.Windows.Forms.Padding(6);
             this.btTHEM.Name = "btTHEM";
             this.btTHEM.Size = new System.Drawing.Size(95, 39);
             this.btTHEM.TabIndex = 0;
@@ -71,7 +71,7 @@
             this.dtpns.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.dtpns.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpns.Location = new System.Drawing.Point(165, 140);
-            this.dtpns.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.dtpns.Margin = new System.Windows.Forms.Padding(6);
             this.dtpns.Name = "dtpns";
             this.dtpns.Size = new System.Drawing.Size(150, 30);
             this.dtpns.TabIndex = 1;
@@ -89,12 +89,13 @@
             // 
             // dgvnv
             // 
+            this.dgvnv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvnv.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvnv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvnv.Location = new System.Drawing.Point(53, 249);
-            this.dgvnv.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.dgvnv.Location = new System.Drawing.Point(202, 249);
+            this.dgvnv.Margin = new System.Windows.Forms.Padding(6);
             this.dgvnv.Name = "dgvnv";
-            this.dgvnv.Size = new System.Drawing.Size(1392, 411);
+            this.dgvnv.Size = new System.Drawing.Size(1071, 411);
             this.dgvnv.TabIndex = 3;
             this.dgvnv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvnv_CellContentClick);
             // 
@@ -105,7 +106,7 @@
             this.lbQLNV.Location = new System.Drawing.Point(617, 15);
             this.lbQLNV.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lbQLNV.Name = "lbQLNV";
-            this.lbQLNV.Size = new System.Drawing.Size(288, 39);
+            this.lbQLNV.Size = new System.Drawing.Size(279, 37);
             this.lbQLNV.TabIndex = 2;
             this.lbQLNV.Text = "Quản Lý Nhân Viên";
             // 
@@ -176,7 +177,7 @@
             // ttbmanv
             // 
             this.ttbmanv.Location = new System.Drawing.Point(165, 42);
-            this.ttbmanv.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.ttbmanv.Margin = new System.Windows.Forms.Padding(6);
             this.ttbmanv.Name = "ttbmanv";
             this.ttbmanv.Size = new System.Drawing.Size(250, 30);
             this.ttbmanv.TabIndex = 4;
@@ -184,7 +185,7 @@
             // ttbtennv
             // 
             this.ttbtennv.Location = new System.Drawing.Point(165, 93);
-            this.ttbtennv.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.ttbtennv.Margin = new System.Windows.Forms.Padding(6);
             this.ttbtennv.Name = "ttbtennv";
             this.ttbtennv.Size = new System.Drawing.Size(253, 30);
             this.ttbtennv.TabIndex = 4;
@@ -192,7 +193,7 @@
             // ttbgt
             // 
             this.ttbgt.Location = new System.Drawing.Point(844, 42);
-            this.ttbgt.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.ttbgt.Margin = new System.Windows.Forms.Padding(6);
             this.ttbgt.Name = "ttbgt";
             this.ttbgt.Size = new System.Drawing.Size(257, 30);
             this.ttbgt.TabIndex = 4;
@@ -200,7 +201,7 @@
             // ttbcv
             // 
             this.ttbcv.Location = new System.Drawing.Point(844, 91);
-            this.ttbcv.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.ttbcv.Margin = new System.Windows.Forms.Padding(6);
             this.ttbcv.Name = "ttbcv";
             this.ttbcv.Size = new System.Drawing.Size(257, 30);
             this.ttbcv.TabIndex = 4;
@@ -208,7 +209,7 @@
             // ttbttlh
             // 
             this.ttbttlh.Location = new System.Drawing.Point(844, 140);
-            this.ttbttlh.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.ttbttlh.Margin = new System.Windows.Forms.Padding(6);
             this.ttbttlh.Name = "ttbttlh";
             this.ttbttlh.Size = new System.Drawing.Size(257, 30);
             this.ttbttlh.TabIndex = 4;
@@ -217,18 +218,19 @@
             // 
             this.btSUA.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btSUA.Location = new System.Drawing.Point(559, 672);
-            this.btSUA.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btSUA.Margin = new System.Windows.Forms.Padding(6);
             this.btSUA.Name = "btSUA";
             this.btSUA.Size = new System.Drawing.Size(86, 39);
             this.btSUA.TabIndex = 0;
             this.btSUA.Text = "Sửa ";
             this.btSUA.UseVisualStyleBackColor = true;
+            this.btSUA.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btXOA
             // 
             this.btXOA.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btXOA.Location = new System.Drawing.Point(682, 672);
-            this.btXOA.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btXOA.Margin = new System.Windows.Forms.Padding(6);
             this.btXOA.Name = "btXOA";
             this.btXOA.Size = new System.Drawing.Size(92, 39);
             this.btXOA.TabIndex = 0;
@@ -239,7 +241,7 @@
             // 
             this.btTIMKIEM.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btTIMKIEM.Location = new System.Drawing.Point(817, 672);
-            this.btTIMKIEM.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btTIMKIEM.Margin = new System.Windows.Forms.Padding(6);
             this.btTIMKIEM.Name = "btTIMKIEM";
             this.btTIMKIEM.Size = new System.Drawing.Size(116, 39);
             this.btTIMKIEM.TabIndex = 0;
@@ -250,7 +252,7 @@
             // 
             this.btQUAYLAI.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btQUAYLAI.Location = new System.Drawing.Point(970, 672);
-            this.btQUAYLAI.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btQUAYLAI.Margin = new System.Windows.Forms.Padding(6);
             this.btQUAYLAI.Name = "btQUAYLAI";
             this.btQUAYLAI.Size = new System.Drawing.Size(117, 39);
             this.btQUAYLAI.TabIndex = 0;
@@ -275,6 +277,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1173, 183);
             this.panel1.TabIndex = 5;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // NhanViencs
             // 
@@ -293,6 +296,7 @@
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "NhanViencs";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản Lý Nhân Viên";
             this.Load += new System.EventHandler(this.NhanViencs_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvnv)).EndInit();

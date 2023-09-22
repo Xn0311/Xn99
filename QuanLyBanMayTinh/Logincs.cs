@@ -66,6 +66,11 @@ namespace QuanLyBanMayTinh
                 e.Cancel = true;
             }
         }
+
+        private void Logincs_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

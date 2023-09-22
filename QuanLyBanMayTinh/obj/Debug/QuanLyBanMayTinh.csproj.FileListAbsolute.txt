@@ -39,3 +39,16 @@ D:\Học Lập Trình\Loi\QuanLyBanMayTinh\obj\Debug\QuanLyBanMayTinh.Logincs.re
 C:\Users\Admin\Source\Repos\Xn99\QuanLyBanMayTinh\bin\Debug\QuanLyBanMayTinh.exe.config
 C:\Users\Admin\Source\Repos\Xn99\QuanLyBanMayTinh\obj\Debug\QuanLyBanMayTinh.exe
 C:\Users\Admin\Source\Repos\Xn99\QuanLyBanMayTinh\obj\Debug\QuanLyBanMayTinh.pdb
+C:\Users\Admin\Source\Repos\Xn99\QuanLyBanMayTinh\bin\Debug\QuanLyBanMayTinh.exe
+C:\Users\Admin\Source\Repos\Xn99\QuanLyBanMayTinh\bin\Debug\QuanLyBanMayTinh.pdb
+C:\Users\Admin\Source\Repos\Xn99\QuanLyBanMayTinh\obj\Debug\QuanLyBanMayTinh.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Source\Repos\Xn99\QuanLyBanMayTinh\obj\Debug\QuanLyBanMayTinh.ChiTietHoaDon.resources
+C:\Users\Admin\Source\Repos\Xn99\QuanLyBanMayTinh\obj\Debug\QuanLyBanMayTinh.HoaDon.resources
+C:\Users\Admin\Source\Repos\Xn99\QuanLyBanMayTinh\obj\Debug\QuanLyBanMayTinh.KHACHHANG.resources
+C:\Users\Admin\Source\Repos\Xn99\QuanLyBanMayTinh\obj\Debug\QuanLyBanMayTinh.Logincs.resources
+C:\Users\Admin\Source\Repos\Xn99\QuanLyBanMayTinh\obj\Debug\QuanLyBanMayTinh.MuaBan.resources
+C:\Users\Admin\Source\Repos\Xn99\QuanLyBanMayTinh\obj\Debug\QuanLyBanMayTinh.NhanViencs.resources
+C:\Users\Admin\Source\Repos\Xn99\QuanLyBanMayTinh\obj\Debug\QuanLyBanMayTinh.SanPham.resources
+C:\Users\Admin\Source\Repos\Xn99\QuanLyBanMayTinh\obj\Debug\QuanLyBanMayTinh.TrangChu.resources
+C:\Users\Admin\Source\Repos\Xn99\QuanLyBanMayTinh\obj\Debug\QuanLyBanMayTinh.Properties.Resources.resources
+C:\Users\Admin\Source\Repos\Xn99\QuanLyBanMayTinh\obj\Debug\QuanLyBanMayTinh.csproj.GenerateResource.Cache

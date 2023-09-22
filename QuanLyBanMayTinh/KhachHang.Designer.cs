@@ -56,7 +56,7 @@
             // 
             this.btTHEM.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btTHEM.Location = new System.Drawing.Point(15, 485);
-            this.btTHEM.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btTHEM.Margin = new System.Windows.Forms.Padding(6);
             this.btTHEM.Name = "btTHEM";
             this.btTHEM.Size = new System.Drawing.Size(95, 45);
             this.btTHEM.TabIndex = 0;
@@ -78,7 +78,7 @@
             // ttbmakh
             // 
             this.ttbmakh.Location = new System.Drawing.Point(195, 23);
-            this.ttbmakh.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.ttbmakh.Margin = new System.Windows.Forms.Padding(6);
             this.ttbmakh.Multiline = true;
             this.ttbmakh.Name = "ttbmakh";
             this.ttbmakh.Size = new System.Drawing.Size(262, 44);
@@ -86,10 +86,11 @@
             // 
             // dgvkh
             // 
+            this.dgvkh.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvkh.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvkh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvkh.Location = new System.Drawing.Point(499, 60);
-            this.dgvkh.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.dgvkh.Margin = new System.Windows.Forms.Padding(6);
             this.dgvkh.Name = "dgvkh";
             this.dgvkh.Size = new System.Drawing.Size(998, 527);
             this.dgvkh.TabIndex = 3;
@@ -99,7 +100,7 @@
             this.dtpngaysinh.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.dtpngaysinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpngaysinh.Location = new System.Drawing.Point(195, 224);
-            this.dtpngaysinh.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.dtpngaysinh.Margin = new System.Windows.Forms.Padding(6);
             this.dtpngaysinh.Name = "dtpngaysinh";
             this.dtpngaysinh.Size = new System.Drawing.Size(262, 30);
             this.dtpngaysinh.TabIndex = 4;
@@ -166,14 +167,14 @@
             this.lbKHACHHANG.Location = new System.Drawing.Point(732, 15);
             this.lbKHACHHANG.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lbKHACHHANG.Name = "lbKHACHHANG";
-            this.lbKHACHHANG.Size = new System.Drawing.Size(186, 39);
+            this.lbKHACHHANG.Size = new System.Drawing.Size(180, 37);
             this.lbKHACHHANG.TabIndex = 1;
             this.lbKHACHHANG.Text = "Khách Hàng";
             // 
             // ttbtenkh
             // 
             this.ttbtenkh.Location = new System.Drawing.Point(195, 92);
-            this.ttbtenkh.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.ttbtenkh.Margin = new System.Windows.Forms.Padding(6);
             this.ttbtenkh.Multiline = true;
             this.ttbtenkh.Name = "ttbtenkh";
             this.ttbtenkh.Size = new System.Drawing.Size(262, 44);
@@ -182,7 +183,7 @@
             // ttbgioitinh
             // 
             this.ttbgioitinh.Location = new System.Drawing.Point(195, 160);
-            this.ttbgioitinh.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.ttbgioitinh.Margin = new System.Windows.Forms.Padding(6);
             this.ttbgioitinh.Multiline = true;
             this.ttbgioitinh.Name = "ttbgioitinh";
             this.ttbgioitinh.Size = new System.Drawing.Size(262, 40);
@@ -191,7 +192,7 @@
             // ttbdiachi
             // 
             this.ttbdiachi.Location = new System.Drawing.Point(195, 277);
-            this.ttbdiachi.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.ttbdiachi.Margin = new System.Windows.Forms.Padding(6);
             this.ttbdiachi.Multiline = true;
             this.ttbdiachi.Name = "ttbdiachi";
             this.ttbdiachi.Size = new System.Drawing.Size(262, 42);
@@ -200,7 +201,7 @@
             // ttbsodt
             // 
             this.ttbsodt.Location = new System.Drawing.Point(197, 342);
-            this.ttbsodt.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.ttbsodt.Margin = new System.Windows.Forms.Padding(6);
             this.ttbsodt.Multiline = true;
             this.ttbsodt.Name = "ttbsodt";
             this.ttbsodt.Size = new System.Drawing.Size(260, 42);
@@ -210,18 +211,19 @@
             // 
             this.btSUA.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btSUA.Location = new System.Drawing.Point(199, 485);
-            this.btSUA.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btSUA.Margin = new System.Windows.Forms.Padding(6);
             this.btSUA.Name = "btSUA";
             this.btSUA.Size = new System.Drawing.Size(90, 45);
             this.btSUA.TabIndex = 0;
             this.btSUA.Text = "Sửa ";
             this.btSUA.UseVisualStyleBackColor = true;
+            this.btSUA.Click += new System.EventHandler(this.btnSuaKH_Click);
             // 
             // btXOA
             // 
             this.btXOA.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btXOA.Location = new System.Drawing.Point(380, 485);
-            this.btXOA.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btXOA.Margin = new System.Windows.Forms.Padding(6);
             this.btXOA.Name = "btXOA";
             this.btXOA.Size = new System.Drawing.Size(107, 45);
             this.btXOA.TabIndex = 0;
@@ -232,7 +234,7 @@
             // 
             this.btTIMKIEM.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btTIMKIEM.Location = new System.Drawing.Point(100, 542);
-            this.btTIMKIEM.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btTIMKIEM.Margin = new System.Windows.Forms.Padding(6);
             this.btTIMKIEM.Name = "btTIMKIEM";
             this.btTIMKIEM.Size = new System.Drawing.Size(110, 45);
             this.btTIMKIEM.TabIndex = 0;
@@ -243,7 +245,7 @@
             // 
             this.btQUAYLAI.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btQUAYLAI.Location = new System.Drawing.Point(281, 542);
-            this.btQUAYLAI.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btQUAYLAI.Margin = new System.Windows.Forms.Padding(6);
             this.btQUAYLAI.Name = "btQUAYLAI";
             this.btQUAYLAI.Size = new System.Drawing.Size(100, 45);
             this.btQUAYLAI.TabIndex = 0;
@@ -266,7 +268,7 @@
             this.panel1.Controls.Add(this.ttbmakh);
             this.panel1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.panel1.Location = new System.Drawing.Point(4, 64);
-            this.panel1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panel1.Margin = new System.Windows.Forms.Padding(6);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(483, 409);
             this.panel1.TabIndex = 5;
@@ -285,8 +287,9 @@
             this.Controls.Add(this.btSUA);
             this.Controls.Add(this.btTHEM);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "KHACHHANG";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "KHACHHANG";
             ((System.ComponentModel.ISupportInitialize)(this.dgvkh)).EndInit();
             this.panel1.ResumeLayout(false);

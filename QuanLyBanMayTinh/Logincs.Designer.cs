@@ -115,6 +115,7 @@
             this.groupBox2.Controls.Add(this.lbmatkhau);
             this.groupBox2.Controls.Add(this.lbtaikhoan);
             this.groupBox2.Controls.Add(this.txtPassword);
+            this.groupBox2.ForeColor = System.Drawing.SystemColors.ControlText;
             this.groupBox2.Location = new System.Drawing.Point(78, 53);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
@@ -126,6 +127,8 @@
             // 
             // txtUsername
             // 
+            this.txtUsername.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.txtUsername.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.txtUsername.Location = new System.Drawing.Point(243, 55);
             this.txtUsername.Margin = new System.Windows.Forms.Padding(4);
             this.txtUsername.Name = "txtUsername";
@@ -135,17 +138,19 @@
             // 
             // btnthoat
             // 
+            this.btnthoat.BackColor = System.Drawing.Color.Linen;
             this.btnthoat.Location = new System.Drawing.Point(243, 212);
             this.btnthoat.Margin = new System.Windows.Forms.Padding(4);
             this.btnthoat.Name = "btnthoat";
             this.btnthoat.Size = new System.Drawing.Size(285, 32);
             this.btnthoat.TabIndex = 4;
             this.btnthoat.Text = "Thoát";
-            this.btnthoat.UseVisualStyleBackColor = true;
+            this.btnthoat.UseVisualStyleBackColor = false;
             this.btnthoat.Click += new System.EventHandler(this.btnthoat_Click);
             // 
             // btnDangNhap
             // 
+            this.btnDangNhap.BackColor = System.Drawing.Color.Linen;
             this.btnDangNhap.Location = new System.Drawing.Point(243, 172);
             this.btnDangNhap.Margin = new System.Windows.Forms.Padding(4);
             this.btnDangNhap.Name = "btnDangNhap";
@@ -153,12 +158,13 @@
             this.btnDangNhap.TabIndex = 3;
             this.btnDangNhap.Tag = "1";
             this.btnDangNhap.Text = "Đăng Nhập";
-            this.btnDangNhap.UseVisualStyleBackColor = true;
+            this.btnDangNhap.UseVisualStyleBackColor = false;
             this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
             // 
             // lbmatkhau
             // 
             this.lbmatkhau.AutoSize = true;
+            this.lbmatkhau.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.lbmatkhau.Location = new System.Drawing.Point(144, 121);
             this.lbmatkhau.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbmatkhau.Name = "lbmatkhau";
@@ -169,6 +175,7 @@
             // lbtaikhoan
             // 
             this.lbtaikhoan.AutoSize = true;
+            this.lbtaikhoan.ForeColor = System.Drawing.SystemColors.Highlight;
             this.lbtaikhoan.Location = new System.Drawing.Point(144, 59);
             this.lbtaikhoan.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbtaikhoan.Name = "lbtaikhoan";
@@ -178,6 +185,8 @@
             // 
             // txtPassword
             // 
+            this.txtPassword.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.txtPassword.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.txtPassword.Location = new System.Drawing.Point(243, 121);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtPassword.Name = "txtPassword";
@@ -190,13 +199,17 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Tan;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(902, 392);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Logincs";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng Nhập";
+            this.Load += new System.EventHandler(this.Logincs_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
