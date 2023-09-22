@@ -36,3 +36,6 @@ D:\Học Lập Trình\Loi\QuanLyBanMayTinh\obj\Debug\QuanLyBanMayTinh.csproj.Cor
 D:\Học Lập Trình\Loi\QuanLyBanMayTinh\obj\Debug\QuanLyBanMayTinh.exe
 D:\Học Lập Trình\Loi\QuanLyBanMayTinh\obj\Debug\QuanLyBanMayTinh.pdb
 D:\Học Lập Trình\Loi\QuanLyBanMayTinh\obj\Debug\QuanLyBanMayTinh.Logincs.resources
+C:\Users\Admin\Source\Repos\Xn99\QuanLyBanMayTinh\bin\Debug\QuanLyBanMayTinh.exe.config
+C:\Users\Admin\Source\Repos\Xn99\QuanLyBanMayTinh\obj\Debug\QuanLyBanMayTinh.exe
+C:\Users\Admin\Source\Repos\Xn99\QuanLyBanMayTinh\obj\Debug\QuanLyBanMayTinh.pdb
