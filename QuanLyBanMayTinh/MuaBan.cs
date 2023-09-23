@@ -100,7 +100,7 @@ namespace QuanLyBanMayTinh
 
         }
         string Masp;
-        int MaHd = 1;
+        int MaHd = 5;
         string Hangsx;
         string Gia;
         string MaKh;

@@ -70,3 +70,4 @@ D:\Học Lập Trình\LOL\QuanLyBanMayTinh\obj\Debug\QuanLyBanMayTinh.csproj.Gen
 D:\Học Lập Trình\LOL\QuanLyBanMayTinh\obj\Debug\QuanLyBanMayTinh.csproj.CoreCompileInputs.cache
 D:\Học Lập Trình\LOL\QuanLyBanMayTinh\obj\Debug\QuanLyBanMayTinh.exe
 D:\Học Lập Trình\LOL\QuanLyBanMayTinh\obj\Debug\QuanLyBanMayTinh.pdb
+D:\Học Lập Trình\LOL\QuanLyBanMayTinh\obj\Debug\QuanLyBanMayTinh.HoaDonLXN.resources
