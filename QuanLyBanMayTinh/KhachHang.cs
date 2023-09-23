@@ -24,36 +24,49 @@ namespace QuanLyBanMayTinh
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@MaKhachHang", ttbmakh.Text);
-                command.Parameters.AddWithValue("@TenKhachHang", ttbtenkh.Text);
-                command.Parameters.AddWithValue("@GioiTinh", ttbgioitinh.Text);
+                command.Parameters.AddWithValue("@MaKhachHang", txtMaKhachHang.Text);
+                command.Parameters.AddWithValue("@TenKhachHang", txtTenKH.Text);
+                command.Parameters.AddWithValue("@GioiTinh", txtGioiTinh.Text);
                 command.Parameters.AddWithValue("@NgaySinh", dtpngaysinh.Value);
-                command.Parameters.AddWithValue("@DiaChi", ttbdiachi.Text);
-                command.Parameters.AddWithValue("@SDT", ttbsodt.Text);
+                command.Parameters.AddWithValue("@DiaChi", txtDiaChi.Text);
+                command.Parameters.AddWithValue("@SDT", txtSdt.Text);
                 command.Connection.Open();
+
                 command.ExecuteNonQuery();
+                int result = command.ExecuteNonQuery();
+
+                // Check Error
+                if (result < 0)
+                    MessageBox.Show("Lỗi cập nhật dữ liệu!");
+                else
+                    MessageBox.Show("Cập nhật dữ liệu thành công!");
+
+                HienThiKhachHang();
             }
         }
 
         private void btTHEM_Click(object sender, EventArgs e)
         {
-            string connectionString = @"Data Source=(local);Initial Catalog=BanMayTinh;Integrated Security=True";
-            ThemKhachHang(connectionString, ttbmakh, ttbtenkh, ttbgioitinh, dtpngaysinh, ttbdiachi, ttbsodt);
+            
+            ThemKhachHang(Connect.ConnectDTB, txtMaKhachHang, txtTenKH, txtGioiTinh, dtpngaysinh, txtDiaChi, txtSdt);
         }
 
         public void HienThiKhachHang()
         {
-            string connectionString = @"Data Source=(local);Initial Catalog=BanMayTinh;Integrated Security=True";
+            
             string query = "SELECT * FROM KhachHang";
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
+                SqlConnection connection = new SqlConnection(Connect.ConnectDTB);
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+                connection.Open();
                 DataTable dataTable = new DataTable();
                 dataAdapter.Fill(dataTable);
                 // Gán dữ liệu từ DataTable vào DataGridView.
                 dgvkh.DataSource = dataTable;
-            }
+                dgvkh.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                dgvkh.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                connection.Close();
+            
         }
 
         private void KHACHHANG_Load(object sender, EventArgs e)
@@ -61,28 +74,28 @@ namespace QuanLyBanMayTinh
             HienThiKhachHang();
         }
 
-        private string connectionString = "Data Source=DESKTOP-A78SARK;Initial Catalog=BanMayTinh;Integrated Security=True";
+        
 
         private void btnSuaKH_Click(object sender, EventArgs e)
         {
 
             string query = "UPDATE KhachHang SET TenKhachHang = @TenKhachHang, GioiTinh = @GioiTinh, NgaySinh = @NgaySinh, DiaChi = @DiaChi, SDT = @SDT WHERE MaKhachHang = @MaKhachHang";
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(Connect.ConnectDTB))
             {
                 connection.Open();
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("@MaKhachHang", ttbmakh.Text);
-                    command.Parameters.AddWithValue("@TenKhachHang", ttbtenkh.Text);
-                    command.Parameters.AddWithValue("@GioiTinh", ttbgioitinh.Text);
+                    command.Parameters.AddWithValue("@MaKhachHang", txtMaKhachHang.Text);
+                    command.Parameters.AddWithValue("@TenKhachHang", txtTenKH.Text);
+                    command.Parameters.AddWithValue("@GioiTinh", txtGioiTinh.Text);
                     command.Parameters.AddWithValue("@NgaySinh", dtpngaysinh.Value);                  
-                    command.Parameters.AddWithValue("@DiaChi", ttbdiachi.Text);
-                    command.Parameters.AddWithValue("@SDT", ttbsodt.Text);
+                    command.Parameters.AddWithValue("@DiaChi", txtDiaChi.Text);
+                    command.Parameters.AddWithValue("@SDT", txtSdt.Text);
 
                     int result = command.ExecuteNonQuery();
-
+                    HienThiKhachHang();
                     // Check Error
                     if (result < 0)
                         MessageBox.Show("Lỗi cập nhật dữ liệu!");

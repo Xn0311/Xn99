@@ -30,7 +30,7 @@
         {
             this.btTHEM = new System.Windows.Forms.Button();
             this.lbMAKH = new System.Windows.Forms.Label();
-            this.ttbmakh = new System.Windows.Forms.TextBox();
+            this.txtMaKhachHang = new System.Windows.Forms.TextBox();
             this.dgvkh = new System.Windows.Forms.DataGridView();
             this.dtpngaysinh = new System.Windows.Forms.DateTimePicker();
             this.lbSDT = new System.Windows.Forms.Label();
@@ -39,10 +39,10 @@
             this.lbGIOITINH = new System.Windows.Forms.Label();
             this.lbNGAYSINH = new System.Windows.Forms.Label();
             this.lbKHACHHANG = new System.Windows.Forms.Label();
-            this.ttbtenkh = new System.Windows.Forms.TextBox();
-            this.ttbgioitinh = new System.Windows.Forms.TextBox();
-            this.ttbdiachi = new System.Windows.Forms.TextBox();
-            this.ttbsodt = new System.Windows.Forms.TextBox();
+            this.txtTenKH = new System.Windows.Forms.TextBox();
+            this.txtGioiTinh = new System.Windows.Forms.TextBox();
+            this.txtDiaChi = new System.Windows.Forms.TextBox();
+            this.txtSdt = new System.Windows.Forms.TextBox();
             this.btSUA = new System.Windows.Forms.Button();
             this.btXOA = new System.Windows.Forms.Button();
             this.btTIMKIEM = new System.Windows.Forms.Button();
@@ -75,14 +75,14 @@
             this.lbMAKH.TabIndex = 1;
             this.lbMAKH.Text = "Mã Khách Hàng ";
             // 
-            // ttbmakh
+            // txtMaKhachHang
             // 
-            this.ttbmakh.Location = new System.Drawing.Point(195, 23);
-            this.ttbmakh.Margin = new System.Windows.Forms.Padding(6);
-            this.ttbmakh.Multiline = true;
-            this.ttbmakh.Name = "ttbmakh";
-            this.ttbmakh.Size = new System.Drawing.Size(262, 44);
-            this.ttbmakh.TabIndex = 2;
+            this.txtMaKhachHang.Location = new System.Drawing.Point(195, 23);
+            this.txtMaKhachHang.Margin = new System.Windows.Forms.Padding(6);
+            this.txtMaKhachHang.Multiline = true;
+            this.txtMaKhachHang.Name = "txtMaKhachHang";
+            this.txtMaKhachHang.Size = new System.Drawing.Size(262, 44);
+            this.txtMaKhachHang.TabIndex = 2;
             // 
             // dgvkh
             // 
@@ -92,6 +92,7 @@
             this.dgvkh.Location = new System.Drawing.Point(499, 60);
             this.dgvkh.Margin = new System.Windows.Forms.Padding(6);
             this.dgvkh.Name = "dgvkh";
+            this.dgvkh.RowHeadersWidth = 51;
             this.dgvkh.Size = new System.Drawing.Size(998, 527);
             this.dgvkh.TabIndex = 3;
             // 
@@ -171,41 +172,41 @@
             this.lbKHACHHANG.TabIndex = 1;
             this.lbKHACHHANG.Text = "Khách Hàng";
             // 
-            // ttbtenkh
+            // txtTenKH
             // 
-            this.ttbtenkh.Location = new System.Drawing.Point(195, 92);
-            this.ttbtenkh.Margin = new System.Windows.Forms.Padding(6);
-            this.ttbtenkh.Multiline = true;
-            this.ttbtenkh.Name = "ttbtenkh";
-            this.ttbtenkh.Size = new System.Drawing.Size(262, 44);
-            this.ttbtenkh.TabIndex = 2;
+            this.txtTenKH.Location = new System.Drawing.Point(195, 92);
+            this.txtTenKH.Margin = new System.Windows.Forms.Padding(6);
+            this.txtTenKH.Multiline = true;
+            this.txtTenKH.Name = "txtTenKH";
+            this.txtTenKH.Size = new System.Drawing.Size(262, 44);
+            this.txtTenKH.TabIndex = 2;
             // 
-            // ttbgioitinh
+            // txtGioiTinh
             // 
-            this.ttbgioitinh.Location = new System.Drawing.Point(195, 160);
-            this.ttbgioitinh.Margin = new System.Windows.Forms.Padding(6);
-            this.ttbgioitinh.Multiline = true;
-            this.ttbgioitinh.Name = "ttbgioitinh";
-            this.ttbgioitinh.Size = new System.Drawing.Size(262, 40);
-            this.ttbgioitinh.TabIndex = 2;
+            this.txtGioiTinh.Location = new System.Drawing.Point(195, 160);
+            this.txtGioiTinh.Margin = new System.Windows.Forms.Padding(6);
+            this.txtGioiTinh.Multiline = true;
+            this.txtGioiTinh.Name = "txtGioiTinh";
+            this.txtGioiTinh.Size = new System.Drawing.Size(262, 40);
+            this.txtGioiTinh.TabIndex = 2;
             // 
-            // ttbdiachi
+            // txtDiaChi
             // 
-            this.ttbdiachi.Location = new System.Drawing.Point(195, 277);
-            this.ttbdiachi.Margin = new System.Windows.Forms.Padding(6);
-            this.ttbdiachi.Multiline = true;
-            this.ttbdiachi.Name = "ttbdiachi";
-            this.ttbdiachi.Size = new System.Drawing.Size(262, 42);
-            this.ttbdiachi.TabIndex = 2;
+            this.txtDiaChi.Location = new System.Drawing.Point(195, 277);
+            this.txtDiaChi.Margin = new System.Windows.Forms.Padding(6);
+            this.txtDiaChi.Multiline = true;
+            this.txtDiaChi.Name = "txtDiaChi";
+            this.txtDiaChi.Size = new System.Drawing.Size(262, 42);
+            this.txtDiaChi.TabIndex = 2;
             // 
-            // ttbsodt
+            // txtSdt
             // 
-            this.ttbsodt.Location = new System.Drawing.Point(197, 342);
-            this.ttbsodt.Margin = new System.Windows.Forms.Padding(6);
-            this.ttbsodt.Multiline = true;
-            this.ttbsodt.Name = "ttbsodt";
-            this.ttbsodt.Size = new System.Drawing.Size(260, 42);
-            this.ttbsodt.TabIndex = 2;
+            this.txtSdt.Location = new System.Drawing.Point(197, 342);
+            this.txtSdt.Margin = new System.Windows.Forms.Padding(6);
+            this.txtSdt.Multiline = true;
+            this.txtSdt.Name = "txtSdt";
+            this.txtSdt.Size = new System.Drawing.Size(260, 42);
+            this.txtSdt.TabIndex = 2;
             // 
             // btSUA
             // 
@@ -256,16 +257,16 @@
             // 
             this.panel1.Controls.Add(this.lbMAKH);
             this.panel1.Controls.Add(this.dtpngaysinh);
-            this.panel1.Controls.Add(this.ttbsodt);
+            this.panel1.Controls.Add(this.txtSdt);
             this.panel1.Controls.Add(this.lbTENKH);
-            this.panel1.Controls.Add(this.ttbdiachi);
+            this.panel1.Controls.Add(this.txtDiaChi);
             this.panel1.Controls.Add(this.lbGIOITINH);
             this.panel1.Controls.Add(this.lbNGAYSINH);
             this.panel1.Controls.Add(this.lbDIACHI);
-            this.panel1.Controls.Add(this.ttbgioitinh);
+            this.panel1.Controls.Add(this.txtGioiTinh);
             this.panel1.Controls.Add(this.lbSDT);
-            this.panel1.Controls.Add(this.ttbtenkh);
-            this.panel1.Controls.Add(this.ttbmakh);
+            this.panel1.Controls.Add(this.txtTenKH);
+            this.panel1.Controls.Add(this.txtMaKhachHang);
             this.panel1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.panel1.Location = new System.Drawing.Point(4, 64);
             this.panel1.Margin = new System.Windows.Forms.Padding(6);
@@ -291,6 +292,7 @@
             this.Name = "KHACHHANG";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "KHACHHANG";
+            this.Load += new System.EventHandler(this.KHACHHANG_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvkh)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -303,7 +305,7 @@
 
         private System.Windows.Forms.Button btTHEM;
         private System.Windows.Forms.Label lbMAKH;
-        private System.Windows.Forms.TextBox ttbmakh;
+        private System.Windows.Forms.TextBox txtMaKhachHang;
         private System.Windows.Forms.DataGridView dgvkh;
         private System.Windows.Forms.DateTimePicker dtpngaysinh;
         private System.Windows.Forms.Label lbSDT;
@@ -312,10 +314,10 @@
         private System.Windows.Forms.Label lbGIOITINH;
         private System.Windows.Forms.Label lbNGAYSINH;
         private System.Windows.Forms.Label lbKHACHHANG;
-        private System.Windows.Forms.TextBox ttbtenkh;
-        private System.Windows.Forms.TextBox ttbgioitinh;
-        private System.Windows.Forms.TextBox ttbdiachi;
-        private System.Windows.Forms.TextBox ttbsodt;
+        private System.Windows.Forms.TextBox txtTenKH;
+        private System.Windows.Forms.TextBox txtGioiTinh;
+        private System.Windows.Forms.TextBox txtDiaChi;
+        private System.Windows.Forms.TextBox txtSdt;
         private System.Windows.Forms.Button btSUA;
         private System.Windows.Forms.Button btXOA;
         private System.Windows.Forms.Button btTIMKIEM;
