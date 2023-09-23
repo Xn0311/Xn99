@@ -79,7 +79,7 @@
             // 
             this.lbGIOITINH.AutoSize = true;
             this.lbGIOITINH.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbGIOITINH.Location = new System.Drawing.Point(753, 45);
+            this.lbGIOITINH.Location = new System.Drawing.Point(506, 50);
             this.lbGIOITINH.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lbGIOITINH.Name = "lbGIOITINH";
             this.lbGIOITINH.Size = new System.Drawing.Size(88, 22);
@@ -124,7 +124,7 @@
             // 
             this.lbTTLH.AutoSize = true;
             this.lbTTLH.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbTTLH.Location = new System.Drawing.Point(683, 140);
+            this.lbTTLH.Location = new System.Drawing.Point(506, 140);
             this.lbTTLH.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lbTTLH.Name = "lbTTLH";
             this.lbTTLH.Size = new System.Drawing.Size(158, 22);
@@ -135,7 +135,7 @@
             // 
             this.lbCHUCVU.AutoSize = true;
             this.lbCHUCVU.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbCHUCVU.Location = new System.Drawing.Point(753, 94);
+            this.lbCHUCVU.Location = new System.Drawing.Point(506, 91);
             this.lbCHUCVU.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lbCHUCVU.Name = "lbCHUCVU";
             this.lbCHUCVU.Size = new System.Drawing.Size(79, 22);
@@ -166,7 +166,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label2.Location = new System.Drawing.Point(62, 143);
+            this.label2.Location = new System.Drawing.Point(26, 143);
             this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(91, 22);
@@ -186,12 +186,12 @@
             this.txtTenNhanVien.Location = new System.Drawing.Point(165, 93);
             this.txtTenNhanVien.Margin = new System.Windows.Forms.Padding(6);
             this.txtTenNhanVien.Name = "txtTenNhanVien";
-            this.txtTenNhanVien.Size = new System.Drawing.Size(253, 30);
+            this.txtTenNhanVien.Size = new System.Drawing.Size(250, 30);
             this.txtTenNhanVien.TabIndex = 4;
             // 
             // txtGioiTinh
             // 
-            this.txtGioiTinh.Location = new System.Drawing.Point(844, 42);
+            this.txtGioiTinh.Location = new System.Drawing.Point(672, 42);
             this.txtGioiTinh.Margin = new System.Windows.Forms.Padding(6);
             this.txtGioiTinh.Name = "txtGioiTinh";
             this.txtGioiTinh.Size = new System.Drawing.Size(257, 30);
@@ -199,7 +199,7 @@
             // 
             // txtChucVu
             // 
-            this.txtChucVu.Location = new System.Drawing.Point(844, 91);
+            this.txtChucVu.Location = new System.Drawing.Point(672, 84);
             this.txtChucVu.Margin = new System.Windows.Forms.Padding(6);
             this.txtChucVu.Name = "txtChucVu";
             this.txtChucVu.Size = new System.Drawing.Size(257, 30);
@@ -207,7 +207,7 @@
             // 
             // txtTTLH
             // 
-            this.txtTTLH.Location = new System.Drawing.Point(844, 140);
+            this.txtTTLH.Location = new System.Drawing.Point(672, 132);
             this.txtTTLH.Margin = new System.Windows.Forms.Padding(6);
             this.txtTTLH.Name = "txtTTLH";
             this.txtTTLH.Size = new System.Drawing.Size(257, 30);
@@ -235,6 +235,7 @@
             this.btXOA.TabIndex = 0;
             this.btXOA.Text = "Xóa";
             this.btXOA.UseVisualStyleBackColor = true;
+            this.btXOA.Click += new System.EventHandler(this.btXOA_Click);
             // 
             // btTIMKIEM
             // 
@@ -246,6 +247,7 @@
             this.btTIMKIEM.TabIndex = 0;
             this.btTIMKIEM.Text = "Tìm Kiếm";
             this.btTIMKIEM.UseVisualStyleBackColor = true;
+            this.btTIMKIEM.Click += new System.EventHandler(this.btTIMKIEM_Click);
             // 
             // panel1
             // 

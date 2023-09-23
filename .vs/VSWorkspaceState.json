@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\QuanLyBanMayTinh",
+    "\\QuanLyBanMayTinh\\bin"
   ],
+  "SelectedNode": "\\QuanLyBanMayTinh\\Connect.cs",
   "PreviewInSolutionExplorer": false
 }

@@ -15,7 +15,7 @@ namespace QuanLyBanMayTinh
     {
         public NhanViencs()
         {
-            InitializeComponent();            
+            InitializeComponent();
         }
 
 
@@ -38,11 +38,12 @@ namespace QuanLyBanMayTinh
 
         private void NhanViencs_Load(object sender, EventArgs e)
         {
-        load_data();
+            load_data();
         }
 
         private void btTHEM_Click(object sender, EventArgs e)
-        {   string Manv = txtMaNv.Text;
+        {
+            string Manv = txtMaNv.Text;
             string Ten = txtTenNhanVien.Text;
             DateTime date = dtpNgaySinh.Value;
             string gt = txtGioiTinh.Text;
@@ -51,8 +52,8 @@ namespace QuanLyBanMayTinh
             try
             {
                 SqlConnection con = new SqlConnection(Connect.ConnectDTB);
-                
-                SqlCommand cmd = new SqlCommand("insert into Nhanvien values('" +Manv  + "',N'" + Ten + "','" + date + "',N'" + gt + "',N'" + chucvu + "','"+ tt +"')", con);
+
+                SqlCommand cmd = new SqlCommand("insert into Nhanvien values('" + Manv + "',N'" + Ten + "','" + date + "',N'" + gt + "',N'" + chucvu + "','" + tt + "')", con);
                 con.Open();
                 int ret = cmd.ExecuteNonQuery();
                 if (ret == 1)
@@ -79,7 +80,7 @@ namespace QuanLyBanMayTinh
                 string tt = txtTTLH.Text;
 
                 SqlConnection con = new SqlConnection(Connect.ConnectDTB);
-                SqlCommand cmd = new SqlCommand("update NhanVien set Ten = N'" + Ten + "',NamSinh = '" + date + "',DiaChi ='" + txtDiaChi.Text + "',SDT='" + txtSDT.Text + "'where MaNv='" + txtMaNv.Text + "'", con);
+                SqlCommand cmd = new SqlCommand("update NhanVien set TenNV = N'" + Ten + "',NgaySinh = '" + date + "',GioiTinh = N'" + gt + "',ChucVu = N'" + chucvu + "',ThongTinLienHe = N'" + tt + "'where MaNV='" + Manv + "'", con);
                 con.Open();
                 int ret = cmd.ExecuteNonQuery();
                 if (ret == 1)
@@ -92,6 +93,39 @@ namespace QuanLyBanMayTinh
                 MessageBox.Show("Bạn Chưa nhập thông tin");
             }
         }
+
+        private void btXOA_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                SqlConnection con = new SqlConnection(Connect.ConnectDTB);
+                SqlCommand cmd = new SqlCommand("delete from NhanVien where MaNV ='" + txtMaNv.Text + "'", con);
+                con.Open();
+                int ret = cmd.ExecuteNonQuery();
+                if (ret == 1)
+                    MessageBox.Show(" Xóa Thành Công");
+
+                con.Close();
+                load_data();
+
+            }
+            catch
+            {
+                MessageBox.Show("Bạn chưa nhập thông tin");
+            }
+        }
+
+        private void btTIMKIEM_Click(object sender, EventArgs e)
+        {
+            SqlConnection con = new SqlConnection(Connect.ConnectDTB);
+            SqlDataAdapter da = new SqlDataAdapter("select * from NhanVien where TenNV LIKE '%" + txtTenNhanVien.Text + "%'", con);
+            DataTable dt = new DataTable();
+            con.Open();
+            da.Fill(dt);
+            dgvnv.DataSource = dt;
+
+            con.Close();
+        }
     }
-    
 }
