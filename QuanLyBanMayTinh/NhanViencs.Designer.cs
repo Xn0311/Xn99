@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.btTHEM = new System.Windows.Forms.Button();
-            this.dtpns = new System.Windows.Forms.DateTimePicker();
+            this.dtpNgaySinh = new System.Windows.Forms.DateTimePicker();
             this.lbGIOITINH = new System.Windows.Forms.Label();
             this.dgvnv = new System.Windows.Forms.DataGridView();
             this.lbQLNV = new System.Windows.Forms.Label();
@@ -39,15 +39,14 @@
             this.lbTENNV = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.ttbmanv = new System.Windows.Forms.TextBox();
-            this.ttbtennv = new System.Windows.Forms.TextBox();
-            this.ttbgt = new System.Windows.Forms.TextBox();
-            this.ttbcv = new System.Windows.Forms.TextBox();
-            this.ttbttlh = new System.Windows.Forms.TextBox();
+            this.txtMaNv = new System.Windows.Forms.TextBox();
+            this.txtTenNhanVien = new System.Windows.Forms.TextBox();
+            this.txtGioiTinh = new System.Windows.Forms.TextBox();
+            this.txtChucVu = new System.Windows.Forms.TextBox();
+            this.txtTTLH = new System.Windows.Forms.TextBox();
             this.btSUA = new System.Windows.Forms.Button();
             this.btXOA = new System.Windows.Forms.Button();
             this.btTIMKIEM = new System.Windows.Forms.Button();
-            this.btQUAYLAI = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvnv)).BeginInit();
             this.panel1.SuspendLayout();
@@ -63,18 +62,18 @@
             this.btTHEM.TabIndex = 0;
             this.btTHEM.Text = "Thêm ";
             this.btTHEM.UseVisualStyleBackColor = true;
-            this.btTHEM.Click += new System.EventHandler(this.Them_Click);
+            this.btTHEM.Click += new System.EventHandler(this.btTHEM_Click);
             // 
-            // dtpns
+            // dtpNgaySinh
             // 
-            this.dtpns.CalendarFont = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.dtpns.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.dtpns.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpns.Location = new System.Drawing.Point(165, 140);
-            this.dtpns.Margin = new System.Windows.Forms.Padding(6);
-            this.dtpns.Name = "dtpns";
-            this.dtpns.Size = new System.Drawing.Size(150, 30);
-            this.dtpns.TabIndex = 1;
+            this.dtpNgaySinh.CalendarFont = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.dtpNgaySinh.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.dtpNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpNgaySinh.Location = new System.Drawing.Point(165, 140);
+            this.dtpNgaySinh.Margin = new System.Windows.Forms.Padding(6);
+            this.dtpNgaySinh.Name = "dtpNgaySinh";
+            this.dtpNgaySinh.Size = new System.Drawing.Size(150, 30);
+            this.dtpNgaySinh.TabIndex = 1;
             // 
             // lbGIOITINH
             // 
@@ -95,9 +94,9 @@
             this.dgvnv.Location = new System.Drawing.Point(202, 249);
             this.dgvnv.Margin = new System.Windows.Forms.Padding(6);
             this.dgvnv.Name = "dgvnv";
+            this.dgvnv.RowHeadersWidth = 51;
             this.dgvnv.Size = new System.Drawing.Size(1071, 411);
             this.dgvnv.TabIndex = 3;
-            this.dgvnv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvnv_CellContentClick);
             // 
             // lbQLNV
             // 
@@ -174,45 +173,45 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Ngày Sinh";
             // 
-            // ttbmanv
+            // txtMaNv
             // 
-            this.ttbmanv.Location = new System.Drawing.Point(165, 42);
-            this.ttbmanv.Margin = new System.Windows.Forms.Padding(6);
-            this.ttbmanv.Name = "ttbmanv";
-            this.ttbmanv.Size = new System.Drawing.Size(250, 30);
-            this.ttbmanv.TabIndex = 4;
+            this.txtMaNv.Location = new System.Drawing.Point(165, 42);
+            this.txtMaNv.Margin = new System.Windows.Forms.Padding(6);
+            this.txtMaNv.Name = "txtMaNv";
+            this.txtMaNv.Size = new System.Drawing.Size(250, 30);
+            this.txtMaNv.TabIndex = 4;
             // 
-            // ttbtennv
+            // txtTenNhanVien
             // 
-            this.ttbtennv.Location = new System.Drawing.Point(165, 93);
-            this.ttbtennv.Margin = new System.Windows.Forms.Padding(6);
-            this.ttbtennv.Name = "ttbtennv";
-            this.ttbtennv.Size = new System.Drawing.Size(253, 30);
-            this.ttbtennv.TabIndex = 4;
+            this.txtTenNhanVien.Location = new System.Drawing.Point(165, 93);
+            this.txtTenNhanVien.Margin = new System.Windows.Forms.Padding(6);
+            this.txtTenNhanVien.Name = "txtTenNhanVien";
+            this.txtTenNhanVien.Size = new System.Drawing.Size(253, 30);
+            this.txtTenNhanVien.TabIndex = 4;
             // 
-            // ttbgt
+            // txtGioiTinh
             // 
-            this.ttbgt.Location = new System.Drawing.Point(844, 42);
-            this.ttbgt.Margin = new System.Windows.Forms.Padding(6);
-            this.ttbgt.Name = "ttbgt";
-            this.ttbgt.Size = new System.Drawing.Size(257, 30);
-            this.ttbgt.TabIndex = 4;
+            this.txtGioiTinh.Location = new System.Drawing.Point(844, 42);
+            this.txtGioiTinh.Margin = new System.Windows.Forms.Padding(6);
+            this.txtGioiTinh.Name = "txtGioiTinh";
+            this.txtGioiTinh.Size = new System.Drawing.Size(257, 30);
+            this.txtGioiTinh.TabIndex = 4;
             // 
-            // ttbcv
+            // txtChucVu
             // 
-            this.ttbcv.Location = new System.Drawing.Point(844, 91);
-            this.ttbcv.Margin = new System.Windows.Forms.Padding(6);
-            this.ttbcv.Name = "ttbcv";
-            this.ttbcv.Size = new System.Drawing.Size(257, 30);
-            this.ttbcv.TabIndex = 4;
+            this.txtChucVu.Location = new System.Drawing.Point(844, 91);
+            this.txtChucVu.Margin = new System.Windows.Forms.Padding(6);
+            this.txtChucVu.Name = "txtChucVu";
+            this.txtChucVu.Size = new System.Drawing.Size(257, 30);
+            this.txtChucVu.TabIndex = 4;
             // 
-            // ttbttlh
+            // txtTTLH
             // 
-            this.ttbttlh.Location = new System.Drawing.Point(844, 140);
-            this.ttbttlh.Margin = new System.Windows.Forms.Padding(6);
-            this.ttbttlh.Name = "ttbttlh";
-            this.ttbttlh.Size = new System.Drawing.Size(257, 30);
-            this.ttbttlh.TabIndex = 4;
+            this.txtTTLH.Location = new System.Drawing.Point(844, 140);
+            this.txtTTLH.Margin = new System.Windows.Forms.Padding(6);
+            this.txtTTLH.Name = "txtTTLH";
+            this.txtTTLH.Size = new System.Drawing.Size(257, 30);
+            this.txtTTLH.TabIndex = 4;
             // 
             // btSUA
             // 
@@ -224,7 +223,7 @@
             this.btSUA.TabIndex = 0;
             this.btSUA.Text = "Sửa ";
             this.btSUA.UseVisualStyleBackColor = true;
-            this.btSUA.Click += new System.EventHandler(this.btnSua_Click);
+            this.btSUA.Click += new System.EventHandler(this.btSUA_Click);
             // 
             // btXOA
             // 
@@ -248,36 +247,24 @@
             this.btTIMKIEM.Text = "Tìm Kiếm";
             this.btTIMKIEM.UseVisualStyleBackColor = true;
             // 
-            // btQUAYLAI
-            // 
-            this.btQUAYLAI.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btQUAYLAI.Location = new System.Drawing.Point(970, 672);
-            this.btQUAYLAI.Margin = new System.Windows.Forms.Padding(6);
-            this.btQUAYLAI.Name = "btQUAYLAI";
-            this.btQUAYLAI.Size = new System.Drawing.Size(117, 39);
-            this.btQUAYLAI.TabIndex = 0;
-            this.btQUAYLAI.Text = "Quay Lại";
-            this.btQUAYLAI.UseVisualStyleBackColor = true;
-            // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.ttbtennv);
-            this.panel1.Controls.Add(this.ttbttlh);
-            this.panel1.Controls.Add(this.ttbcv);
-            this.panel1.Controls.Add(this.ttbgt);
-            this.panel1.Controls.Add(this.ttbmanv);
+            this.panel1.Controls.Add(this.txtTenNhanVien);
+            this.panel1.Controls.Add(this.txtTTLH);
+            this.panel1.Controls.Add(this.txtChucVu);
+            this.panel1.Controls.Add(this.txtGioiTinh);
+            this.panel1.Controls.Add(this.txtMaNv);
             this.panel1.Controls.Add(this.lbCHUCVU);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.lbTTLH);
             this.panel1.Controls.Add(this.lbTENNV);
             this.panel1.Controls.Add(this.lbMANV);
             this.panel1.Controls.Add(this.lbGIOITINH);
-            this.panel1.Controls.Add(this.dtpns);
+            this.panel1.Controls.Add(this.dtpNgaySinh);
             this.panel1.Location = new System.Drawing.Point(172, 57);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1173, 183);
             this.panel1.TabIndex = 5;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // NhanViencs
             // 
@@ -288,7 +275,6 @@
             this.Controls.Add(this.dgvnv);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lbQLNV);
-            this.Controls.Add(this.btQUAYLAI);
             this.Controls.Add(this.btTIMKIEM);
             this.Controls.Add(this.btXOA);
             this.Controls.Add(this.btSUA);
@@ -310,7 +296,7 @@
         #endregion
 
         private System.Windows.Forms.Button btTHEM;
-        private System.Windows.Forms.DateTimePicker dtpns;
+        private System.Windows.Forms.DateTimePicker dtpNgaySinh;
         private System.Windows.Forms.Label lbGIOITINH;
         private System.Windows.Forms.DataGridView dgvnv;
         private System.Windows.Forms.Label lbQLNV;
@@ -320,15 +306,14 @@
         private System.Windows.Forms.Label lbTENNV;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox ttbmanv;
-        private System.Windows.Forms.TextBox ttbtennv;
-        private System.Windows.Forms.TextBox ttbgt;
-        private System.Windows.Forms.TextBox ttbcv;
-        private System.Windows.Forms.TextBox ttbttlh;
+        private System.Windows.Forms.TextBox txtMaNv;
+        private System.Windows.Forms.TextBox txtTenNhanVien;
+        private System.Windows.Forms.TextBox txtGioiTinh;
+        private System.Windows.Forms.TextBox txtChucVu;
+        private System.Windows.Forms.TextBox txtTTLH;
         private System.Windows.Forms.Button btSUA;
         private System.Windows.Forms.Button btXOA;
         private System.Windows.Forms.Button btTIMKIEM;
-        private System.Windows.Forms.Button btQUAYLAI;
         private System.Windows.Forms.Panel panel1;
     }
 }

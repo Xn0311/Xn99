@@ -16,90 +16,82 @@ namespace QuanLyBanMayTinh
         public NhanViencs()
         {
             InitializeComponent();            
-    }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
         }
 
-        private void Them_Click(object sender, EventArgs e)
-        {
-            string connectionString = @"Data Source=(local);Initial Catalog=BanMayTinh;Integrated Security=True";
-            ThemDuLieu(connectionString, ttbmanv, ttbtennv, dtpns, ttbgt, ttbcv, ttbttlh);
-        }
-        public void ThemDuLieu(string connectionString, TextBox MaNV, TextBox TenNV, DateTimePicker NgaySinh, TextBox GioiTinh, TextBox ChucVu, TextBox ThongTinLienHe)
-        {
-            string query = "Insert into NhanVien (MaNV, TenNV, NgaySinh, GioiTinh, ChucVu, ThongTinLienHe) Values (@MaNV, @TenNV, @NgaySinh, @GioiTinh, @ChucVu, @ThongTinLienHe)";
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@MaNV", ttbmanv.Text);
-                command.Parameters.AddWithValue("@TenNV", ttbtennv.Text);
-                command.Parameters.AddWithValue("@NgaySinh", dtpns.Value);
-                command.Parameters.AddWithValue("@GioiTinh", ttbgt.Text);
-                command.Parameters.AddWithValue("@ChucVu", ttbcv.Text);
-                command.Parameters.AddWithValue("@ThongTinLienHe", ttbttlh.Text);
-                command.Connection.Open();
-                command.ExecuteNonQuery();
-            }
-        }
 
-        public void HienThiNhanVien()
-        {
-            
-            string query = "SELECT * FROM NhanVien";
 
-            using (SqlConnection connection = new SqlConnection(Connect.ConnectDTB))
-            {
-                SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
-                DataTable dataTable = new DataTable();
-                dataAdapter.Fill(dataTable);
-                // Gán dữ liệu từ DataTable vào DataGridView.
-                dgvnv.DataSource = dataTable;
-            }
+
+
+
+        void load_data()
+        {
+            SqlConnection con = new SqlConnection(Connect.ConnectDTB);
+            SqlDataAdapter da = new SqlDataAdapter("select * from NhanVien", con);
+            DataTable dt = new DataTable();
+            con.Open();
+            da.Fill(dt);
+            dgvnv.DataSource = dt;
+            dgvnv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dgvnv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            con.Close();
         }
 
         private void NhanViencs_Load(object sender, EventArgs e)
         {
-            HienThiNhanVien();
+        load_data();
         }
 
-        private void dgvnv_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-        private void btnSua_Click(object sender, EventArgs e)
-        {
-                   
-        string query = "UPDATE NhanVien SET TenNV = @TenNV, NgaySinh = @NgaySinh, GioiTinh = @GioiTinh, ChucVu = @ChucVu, ThongTinLienHe = @ThongTinLienHe WHERE MaNV = @MaNV";
-
-            using (SqlConnection connection = new SqlConnection(Connect.ConnectDTB))
+        private void btTHEM_Click(object sender, EventArgs e)
+        {   string Manv = txtMaNv.Text;
+            string Ten = txtTenNhanVien.Text;
+            DateTime date = dtpNgaySinh.Value;
+            string gt = txtGioiTinh.Text;
+            string chucvu = txtChucVu.Text;
+            string tt = txtTTLH.Text;
+            try
             {
-                connection.Open();
+                SqlConnection con = new SqlConnection(Connect.ConnectDTB);
+                
+                SqlCommand cmd = new SqlCommand("insert into Nhanvien values('" +Manv  + "',N'" + Ten + "','" + date + "',N'" + gt + "',N'" + chucvu + "','"+ tt +"')", con);
+                con.Open();
+                int ret = cmd.ExecuteNonQuery();
+                if (ret == 1)
+                    MessageBox.Show("Thêm Thành Công");
+                con.Close();
+                load_data();
 
-                using (SqlCommand command = new SqlCommand(query, connection))
-                {
-                    command.Parameters.AddWithValue("@MaNV", ttbmanv.Text);
-                    command.Parameters.AddWithValue("@TenNV", ttbtennv.Text);
-                    command.Parameters.AddWithValue("@NgaySinh", dtpns.Value);
-                    command.Parameters.AddWithValue("@GioiTinh", ttbgt.Text);
-                    command.Parameters.AddWithValue("@ChucVu", ttbcv.Text);
-                    command.Parameters.AddWithValue("@ThongTinLienHe", ttbttlh.Text);
-
-                    int result = command.ExecuteNonQuery();
-
-                    // Check Error
-                    if (result < 0)
-                        MessageBox.Show("Lỗi cập nhật dữ liệu!");
-                    else
-                        MessageBox.Show("Cập nhật dữ liệu thành công!");
-                }
+            }
+            catch
+            {
+                MessageBox.Show("Bạn chưa nhập thông tin");
             }
         }
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
 
+        private void btSUA_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string Manv = txtMaNv.Text;
+                string Ten = txtTenNhanVien.Text;
+                DateTime date = dtpNgaySinh.Value;
+                string gt = txtGioiTinh.Text;
+                string chucvu = txtChucVu.Text;
+                string tt = txtTTLH.Text;
+
+                SqlConnection con = new SqlConnection(Connect.ConnectDTB);
+                SqlCommand cmd = new SqlCommand("update NhanVien set Ten = N'" + Ten + "',NamSinh = '" + date + "',DiaChi ='" + txtDiaChi.Text + "',SDT='" + txtSDT.Text + "'where MaNv='" + txtMaNv.Text + "'", con);
+                con.Open();
+                int ret = cmd.ExecuteNonQuery();
+                if (ret == 1)
+                    MessageBox.Show("Cập Nhật Thành Công");
+                con.Close();
+                load_data();
+            }
+            catch
+            {
+                MessageBox.Show("Bạn Chưa nhập thông tin");
+            }
         }
     }
+    
 }
