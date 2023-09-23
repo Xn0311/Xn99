@@ -47,10 +47,10 @@ namespace QuanLyBanMayTinh
 
         public void HienThiNhanVien()
         {
-            string connectionString = @"Data Source=(local);Initial Catalog=BanMayTinh;Integrated Security=True";
+            
             string query = "SELECT * FROM NhanVien";
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(Connect.ConnectDTB))
             {
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
                 DataTable dataTable = new DataTable();
@@ -69,14 +69,12 @@ namespace QuanLyBanMayTinh
         {
 
         }
-        private string connectionString = "Data Source=DESKTOP-A78SARK;Initial Catalog=BanMayTinh;Integrated Security=True";
-
         private void btnSua_Click(object sender, EventArgs e)
         {
                    
         string query = "UPDATE NhanVien SET TenNV = @TenNV, NgaySinh = @NgaySinh, GioiTinh = @GioiTinh, ChucVu = @ChucVu, ThongTinLienHe = @ThongTinLienHe WHERE MaNV = @MaNV";
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(Connect.ConnectDTB))
             {
                 connection.Open();
 

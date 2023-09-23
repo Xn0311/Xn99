@@ -21,7 +21,7 @@ namespace QuanLyBanMayTinh
         public void ThemChiTietHoaDon(string connectionString, TextBox MaHoaDon, TextBox MaSanPham, TextBox SoLuong, TextBox Gia, TextBox TongTien)
         {
             string query = "Insert into ChiTietHoaDon (MaHoaDon, MaSanPham, SoLuong, Gia, TongTien) Values (@MaHoaDon, @MaSanPham, @SoLuong, @Gia, @TongTien)";
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(Connect.ConnectDTB))
             {
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@MaHoaDon", ttbmahd.Text);
@@ -36,18 +36,18 @@ namespace QuanLyBanMayTinh
 
         private void them_Click(object sender, EventArgs e)
         {
-            string connectionString = @"Data Source=(local);Initial Catalog=BanMayTinh;Integrated Security=True";
-            ThemChiTietHoaDon(connectionString, ttbmahd, ttbmasp, ttbsoluong, ttbgia, ttbtongtien);
+           
+            ThemChiTietHoaDon(Connect.ConnectDTB, ttbmahd, ttbmasp, ttbsoluong, ttbgia, ttbtongtien);
         }
 
         public void HienThiChiTietHoaDon()
         {
-            string connectionString = @"Data Source=(local);Initial Catalog=BanMayTinh;Integrated Security=True";
+            
             string query = "SELECT * FROM ChiTietHoaDon";
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(Connect.ConnectDTB))
             {
-                SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(query, Connect.ConnectDTB);
                 DataTable dataTable = new DataTable();
                 dataAdapter.Fill(dataTable);
                 // Gán dữ liệu từ DataTable vào DataGridView.
@@ -60,14 +60,13 @@ namespace QuanLyBanMayTinh
             HienThiChiTietHoaDon();
         }
 
-        private string connectionString = "Data Source=DESKTOP-A78SARK;Initial Catalog=BanMayTinh;Integrated Security=True";
 
         private void btnSuaCT_Click(object sender, EventArgs e)
         {
 
             string query = "UPDATE ChiTietHoaDon SET SoLuong = @SoLuong, Gia = @Gia, TongTien = @TongTien WHERE MaHoaDon = @MaHoaDon, MaSanPham = @MaSanPham";
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(Connect.ConnectDTB))
             {
                 connection.Open();
 

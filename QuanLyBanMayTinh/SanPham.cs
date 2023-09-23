@@ -43,16 +43,16 @@ namespace QuanLyBanMayTinh
 
         private void btTHEM_Click(object sender, EventArgs e)
         {
-            string connectionString = @"Data Source=(local);Initial Catalog=BanMayTinh;Integrated Security=True";
-            ThemSanPham(connectionString, ttbmasp, ttbtensp, ttbhangsx, ttbtgbh, ttbthongso, ttbsoluong, ttbgiatien);
+          
+            ThemSanPham(Connect.ConnectDTB, ttbmasp, ttbtensp, ttbhangsx, ttbtgbh, ttbthongso, ttbsoluong, ttbgiatien);
         }
 
         public void HienThiSanPham()
         {
-            string connectionString = @"Data Source=(local);Initial Catalog=BanMayTinh;Integrated Security=True";
+        
             string query = "SELECT * FROM SanPham";
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(Connect.ConnectDTB))
             {
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
                 DataTable dataTable = new DataTable();
@@ -68,14 +68,14 @@ namespace QuanLyBanMayTinh
             HienThiSanPham();
         }
 
-        private string connectionString = "Data Source=DESKTOP-A78SARK;Initial Catalog=BanMayTinh;Integrated Security=True";
+    
 
         private void btnSuaSP_Click(object sender, EventArgs e)
         {
 
             string query = "UPDATE SanPham SET TenSanPham = @TenSanPham, HangSX = @HangSX, TGBaoHanh = @TGBaoHanh, ThongSo = @ThongSo, SoLuong = @SoLuong, GiaTien = @GiaTien WHERE MaSanPham = @MaSanPham";
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(Connect.ConnectDTB))
             {
                 connection.Open();
 

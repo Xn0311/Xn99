@@ -31,7 +31,7 @@ namespace QuanLyBanMayTinh
         public void ThemHoaDon(string connectionString, TextBox MaHoaDon, TextBox MaKhachHang, TextBox MaNV, DateTimePicker NgayDat, DateTimePicker NgayNhan, TextBox NoiNhan)
         {
             string query = "Insert into HoaDon (MaHoaDon, MaKhachHang, MaNV, NgayDat, NgayNhan, NoiNhan) Values (@MaHoaDon, @MaKhachHang, @MaNV, @NgayDat, @NgayNhan, @NoiNhan)";
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(Connect.ConnectDTB))
             {
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@MaHoaDon", ttbmahd.Text);
@@ -47,18 +47,18 @@ namespace QuanLyBanMayTinh
 
         private void btnthem_Click(object sender, EventArgs e)
         {
-            string connectionString = @"Data Source=(local);Initial Catalog=BanMayTinh;Integrated Security=True";
-            ThemHoaDon(connectionString, ttbmahd, ttbmakh, ttbmanv, dtpngaydat, dtpngaynhan, ttbnoinhan);
+            SqlConnection con = new SqlConnection(Connect.ConnectDTB);
+            ThemHoaDon(Connect.ConnectDTB, ttbmahd, ttbmakh, ttbmanv, dtpngaydat, dtpngaynhan, ttbnoinhan);
         }
 
         public void HienThiHoaDon()
         {
-            string connectionString = @"Data Source=(local);Initial Catalog=BanMayTinh;Integrated Security=True";
+            SqlConnection con = new SqlConnection(Connect.ConnectDTB);
             string query = "SELECT * FROM HoaDon";
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(Connect.ConnectDTB))
             {
-                SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(query, con);
                 DataTable dataTable = new DataTable();
                 dataAdapter.Fill(dataTable);
                 // Gán dữ liệu từ DataTable vào DataGridView.
@@ -71,14 +71,14 @@ namespace QuanLyBanMayTinh
             HienThiHoaDon();
         }
 
-        private string connectionString = "Data Source=DESKTOP-A78SARK;Initial Catalog=BanMayTinh;Integrated Security=True";
+       
 
         private void btnSuaHD_Click(object sender, EventArgs e)
         {
 
             string query = "UPDATE HoaDon SET MaKhachHang = @MaKhachHang, MaNV = @MaNV, NgayDat = @NgayDat, NgayNhan = @NgayNhan, NoiNhan = @NoiNhan WHERE MaHoaDon = @MaHoaDon";
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(Connect.ConnectDTB))
             {
                 connection.Open();
 
