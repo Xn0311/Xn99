@@ -46,7 +46,6 @@
             this.btSUA = new System.Windows.Forms.Button();
             this.btXOA = new System.Windows.Forms.Button();
             this.btTIMKIEM = new System.Windows.Forms.Button();
-            this.btQUAYLAI = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvkh)).BeginInit();
             this.panel1.SuspendLayout();
@@ -55,7 +54,7 @@
             // btTHEM
             // 
             this.btTHEM.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btTHEM.Location = new System.Drawing.Point(15, 485);
+            this.btTHEM.Location = new System.Drawing.Point(4, 498);
             this.btTHEM.Margin = new System.Windows.Forms.Padding(6);
             this.btTHEM.Name = "btTHEM";
             this.btTHEM.Size = new System.Drawing.Size(95, 45);
@@ -211,7 +210,7 @@
             // btSUA
             // 
             this.btSUA.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btSUA.Location = new System.Drawing.Point(199, 485);
+            this.btSUA.Location = new System.Drawing.Point(119, 498);
             this.btSUA.Margin = new System.Windows.Forms.Padding(6);
             this.btSUA.Name = "btSUA";
             this.btSUA.Size = new System.Drawing.Size(90, 45);
@@ -223,35 +222,26 @@
             // btXOA
             // 
             this.btXOA.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btXOA.Location = new System.Drawing.Point(380, 485);
+            this.btXOA.Location = new System.Drawing.Point(240, 498);
             this.btXOA.Margin = new System.Windows.Forms.Padding(6);
             this.btXOA.Name = "btXOA";
             this.btXOA.Size = new System.Drawing.Size(107, 45);
             this.btXOA.TabIndex = 0;
             this.btXOA.Text = "Xóa";
             this.btXOA.UseVisualStyleBackColor = true;
+            this.btXOA.Click += new System.EventHandler(this.btXOA_Click);
             // 
             // btTIMKIEM
             // 
             this.btTIMKIEM.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btTIMKIEM.Location = new System.Drawing.Point(100, 542);
+            this.btTIMKIEM.Location = new System.Drawing.Point(377, 498);
             this.btTIMKIEM.Margin = new System.Windows.Forms.Padding(6);
             this.btTIMKIEM.Name = "btTIMKIEM";
             this.btTIMKIEM.Size = new System.Drawing.Size(110, 45);
             this.btTIMKIEM.TabIndex = 0;
             this.btTIMKIEM.Text = "Tìm Kiếm";
             this.btTIMKIEM.UseVisualStyleBackColor = true;
-            // 
-            // btQUAYLAI
-            // 
-            this.btQUAYLAI.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btQUAYLAI.Location = new System.Drawing.Point(281, 542);
-            this.btQUAYLAI.Margin = new System.Windows.Forms.Padding(6);
-            this.btQUAYLAI.Name = "btQUAYLAI";
-            this.btQUAYLAI.Size = new System.Drawing.Size(100, 45);
-            this.btQUAYLAI.TabIndex = 0;
-            this.btQUAYLAI.Text = "Quay Lại";
-            this.btQUAYLAI.UseVisualStyleBackColor = true;
+            this.btTIMKIEM.Click += new System.EventHandler(this.btTIMKIEM_Click);
             // 
             // panel1
             // 
@@ -282,7 +272,6 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgvkh);
             this.Controls.Add(this.lbKHACHHANG);
-            this.Controls.Add(this.btQUAYLAI);
             this.Controls.Add(this.btTIMKIEM);
             this.Controls.Add(this.btXOA);
             this.Controls.Add(this.btSUA);
@@ -321,7 +310,6 @@
         private System.Windows.Forms.Button btSUA;
         private System.Windows.Forms.Button btXOA;
         private System.Windows.Forms.Button btTIMKIEM;
-        private System.Windows.Forms.Button btQUAYLAI;
         private System.Windows.Forms.Panel panel1;
     }
 }

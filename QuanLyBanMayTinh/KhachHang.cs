@@ -104,5 +104,39 @@ namespace QuanLyBanMayTinh
                 }
             }
         }
+
+        private void btXOA_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SqlConnection con = new SqlConnection(Connect.ConnectDTB);
+                SqlCommand cmd = new SqlCommand("delete from KhachHang where MaKhachHang ='" + txtMaKhachHang.Text + "'", con);
+                con.Open();
+                int ret = cmd.ExecuteNonQuery();
+                if (ret == 1)
+                    MessageBox.Show(" Xóa Thành Công");
+
+                con.Close();
+                HienThiKhachHang();
+
+            }
+            catch
+            {
+                MessageBox.Show("Bạn chưa nhập thông tin");
+            }
+        }
+
+        private void btTIMKIEM_Click(object sender, EventArgs e)
+        {
+            SqlConnection con = new SqlConnection(Connect.ConnectDTB);
+            SqlDataAdapter da = new SqlDataAdapter("select * from KhachHang where TenKhachHang LIKE '%" + txtTenKH.Text + "%'", con);
+            DataTable dt = new DataTable();
+            con.Open();
+            da.Fill(dt);
+            dgvkh.DataSource = dt;
+            dgvkh.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dgvkh.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            con.Close();
+        }
     }
 }
