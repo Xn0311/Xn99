@@ -79,6 +79,7 @@
             this.dgvKhachHang.RowTemplate.Height = 24;
             this.dgvKhachHang.Size = new System.Drawing.Size(938, 297);
             this.dgvKhachHang.TabIndex = 4;
+            this.dgvKhachHang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKhachHang_CellClick);
             // 
             // txtTimDongMay
             // 
@@ -86,7 +87,6 @@
             this.txtTimDongMay.Name = "txtTimDongMay";
             this.txtTimDongMay.Size = new System.Drawing.Size(165, 22);
             this.txtTimDongMay.TabIndex = 5;
-            this.txtTimDongMay.Enter += new System.EventHandler(this.txtTimDongMay_Enter);
             this.txtTimDongMay.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTimDongMay_KeyDown);
             // 
             // pictureBox1

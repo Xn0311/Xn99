@@ -17,6 +17,7 @@ namespace QuanLyBanMayTinh
         public MuaBan()
         {
             InitializeComponent();
+           
         }
 
         private void quảnLýNhânViênToolStripMenuItem_Click(object sender, EventArgs e)
@@ -65,22 +66,17 @@ namespace QuanLyBanMayTinh
 
         private void MuaBan_Load(object sender, EventArgs e)
         {
-
             showData(dgvDongMay, chuoidm);
             showData(dgvKhachHang, chuoikh);
 
         }
 
-        private void txtTimDongMay_Enter(object sender, EventArgs e)
-        {
-
-        }
 
         private void txtTimDongMay_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                string str = "select sp.TenSanPham,sp.HangSX,sp.ThongSo,sp.TGBaoHanh from SanPham sp where TenSanPham LIKE '%" + txtTimDongMay.Text + "%'";
+                string str = "select sp.MaSanPham, sp.TenSanPham,sp.HangSX,sp.TGBaoHanh,sp.ThongSo,sp.SoLuong,sp.GiaTien from SanPham sp where TenSanPham LIKE '%" + txtTimDongMay.Text + "%'";
                 showData(dgvDongMay, str);
                 dgvDongMay.Refresh();
 
@@ -91,13 +87,11 @@ namespace QuanLyBanMayTinh
         {
             if (e.KeyCode == Keys.Enter)
             {
-                string str = "select kh.TenKhachHang,kh.GioiTinh,kh.NgaySinh,kh.SDT from KhachHang kh  where TenKhachHang LIKE '%" + txtTimKhach.Text + "%'";
+                string str = "select kh.MaKhachHang, kh.TenKhachHang,kh.GioiTinh,kh.NgaySinh,kh.DiaChi,kh.SDT from KhachHang kh  where TenKhachHang LIKE '%" + txtTimKhach.Text + "%'";
                 showData(dgvKhachHang, str);
                 dgvKhachHang.Refresh();
 
             }
-
-
         }
         string Masp;
         int MaHd = 5;
@@ -109,11 +103,16 @@ namespace QuanLyBanMayTinh
 
         private void dgvDongMay_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            string tensp;
+       
             Masp = dgvDongMay.Rows[e.RowIndex].Cells[0].Value.ToString();
+            string Tensp = dgvDongMay.Rows[e.RowIndex].Cells[1].Value.ToString();
             Hangsx = dgvDongMay.Rows[e.RowIndex].Cells[2].Value.ToString();
-            Gia = dgvDongMay.Rows[e.RowIndex].Cells[5].Value.ToString();
-            MaKh = dgvKhachHang.Rows[e.RowIndex].Cells[0].Value.ToString();
+            string a = dgvDongMay.Rows[e.RowIndex].Cells[3].Value.ToString();
+            string b = dgvDongMay.Rows[e.RowIndex].Cells[4].Value.ToString();
+            Gia = dgvDongMay.Rows[e.RowIndex].Cells[6].Value.ToString();
+
+
 
         }
         private void btnMua_Click(object sender, EventArgs e)
@@ -123,10 +122,7 @@ namespace QuanLyBanMayTinh
             SqlConnection con = new SqlConnection(Connect.ConnectDTB);
             if (int.TryParse(Gia, out Giaca))
             {
-                // Giá trị chuỗi đã được chuyển đổi thành số thành công
-                // Bạn có thể sử dụng biến "number" để thực hiện các phép tính toán
-                int result = Giaca;
-                
+                int result = Giaca;   
             }
 
             double TongTien = Giaca * SoLuong;
@@ -141,6 +137,11 @@ namespace QuanLyBanMayTinh
                 MessageBox.Show("Đã Thêm Vào Hóa Đơn");
             con.Close();
             MaHd += 1;
+        }
+
+        private void dgvKhachHang_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            MaKh = dgvKhachHang.Rows[e.RowIndex].Cells[0].Value.ToString();
         }
     }
 }
