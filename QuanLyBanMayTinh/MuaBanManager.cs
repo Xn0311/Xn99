@@ -22,6 +22,7 @@ namespace QuanLyBanMayTinh
 
         #endregion
         #region Initialize
+        public MuaBanManager() { }
         public MuaBanManager(DataGridView dgv,DataGridView dgv2) 
         {    this.dgv1 = dgv;
              this.dgv2 = dgv2;

@@ -17,9 +17,9 @@ namespace QuanLyBanMayTinh
         public MuaBan()
         {
             InitializeComponent();
-           
-        }
 
+        }
+        MuaBanManager mb = new MuaBanManager();
         private void quảnLýNhânViênToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -31,26 +31,8 @@ namespace QuanLyBanMayTinh
         SqlCommand cmd;
         SqlConnection con;
         SqlDataAdapter da;
-        public string chuoikh = "Select * from KhachHang kh";
-        public string chuoidm = "select * from SanPham sp";
-
-        // show thông tin máy tính 
-
-        // show thông tin khách hàng
-        public void showData(DataGridView dgv, string s)
-        {
-            con = new SqlConnection(Connect.ConnectDTB);
-            con.Open();
-            cmd = new SqlCommand(s, con);
-            da = new SqlDataAdapter();
-            da.SelectCommand = cmd;
-            DataTable tb = new DataTable();
-            da.Fill(tb);
-            dgv.DataSource = tb;
-            dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-        }
-
+        public string QueryKhachHang = "Select * from KhachHang kh";
+        public string QuerySanPham = "select * from SanPham sp";
         private void muaHàngToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -58,27 +40,21 @@ namespace QuanLyBanMayTinh
             mb.ShowDialog();
             this.Show();
         }
-
-        private void quảnLýToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void MuaBan_Load(object sender, EventArgs e)
         {
-            showData(dgvDongMay, chuoidm);
-            showData(dgvKhachHang, chuoikh);
+
+            mb.showData(dgvSanPham, QuerySanPham);
+
+            mb.showData(dgvKhachHang, QueryKhachHang);
 
         }
-
-
         private void txtTimDongMay_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
                 string str = "select sp.MaSanPham, sp.TenSanPham,sp.HangSX,sp.TGBaoHanh,sp.ThongSo,sp.SoLuong,sp.GiaTien from SanPham sp where TenSanPham LIKE '%" + txtTimDongMay.Text + "%'";
-                showData(dgvDongMay, str);
-                dgvDongMay.Refresh();
+                mb.showData(dgvSanPham, str);
+                dgvSanPham.Refresh();
 
             }
         }
@@ -88,7 +64,7 @@ namespace QuanLyBanMayTinh
             if (e.KeyCode == Keys.Enter)
             {
                 string str = "select kh.MaKhachHang, kh.TenKhachHang,kh.GioiTinh,kh.NgaySinh,kh.DiaChi,kh.SDT from KhachHang kh  where TenKhachHang LIKE '%" + txtTimKhach.Text + "%'";
-                showData(dgvKhachHang, str);
+                mb.showData(dgvKhachHang, str);
                 dgvKhachHang.Refresh();
 
             }
@@ -104,13 +80,13 @@ namespace QuanLyBanMayTinh
         private void dgvDongMay_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             string tensp;
-       
-            Masp = dgvDongMay.Rows[e.RowIndex].Cells[0].Value.ToString();
-            string Tensp = dgvDongMay.Rows[e.RowIndex].Cells[1].Value.ToString();
-            Hangsx = dgvDongMay.Rows[e.RowIndex].Cells[2].Value.ToString();
-            string a = dgvDongMay.Rows[e.RowIndex].Cells[3].Value.ToString();
-            string b = dgvDongMay.Rows[e.RowIndex].Cells[4].Value.ToString();
-            Gia = dgvDongMay.Rows[e.RowIndex].Cells[6].Value.ToString();
+
+            Masp = dgvSanPham.Rows[e.RowIndex].Cells[0].Value.ToString();
+            string Tensp = dgvSanPham.Rows[e.RowIndex].Cells[1].Value.ToString();
+            Hangsx = dgvSanPham.Rows[e.RowIndex].Cells[2].Value.ToString();
+            string a = dgvSanPham.Rows[e.RowIndex].Cells[3].Value.ToString();
+            string b = dgvSanPham.Rows[e.RowIndex].Cells[4].Value.ToString();
+            Gia = dgvSanPham.Rows[e.RowIndex].Cells[6].Value.ToString();
 
 
 
@@ -122,9 +98,30 @@ namespace QuanLyBanMayTinh
             SqlConnection con = new SqlConnection(Connect.ConnectDTB);
             if (int.TryParse(Gia, out Giaca))
             {
-                int result = Giaca;   
-            }
+                int result = Giaca;
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            }
             double TongTien = Giaca * SoLuong;
             string insertHoaDon = "insert into HoaDon values('" + Convert.ToString(MaHd) + "','" + MaKh + "','" + GetNow + "')";
             string insertChiTIetHoaDon = "insert into ChiTietHoaDon values('" + Convert.ToString(MaHd) + "','" + Masp + "','" + SoLuong + "','" + Gia + "','" + TongTien + "')";
@@ -143,6 +140,7 @@ namespace QuanLyBanMayTinh
         {
             MaKh = dgvKhachHang.Rows[e.RowIndex].Cells[0].Value.ToString();
         }
+
     }
 }
 

@@ -29,8 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MuaBan));
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.dgvDongMay = new System.Windows.Forms.DataGridView();
+            this.dgvSanPham = new System.Windows.Forms.DataGridView();
             this.dgvKhachHang = new System.Windows.Forms.DataGridView();
             this.txtTimDongMay = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -39,7 +38,7 @@
             this.nudSoLuong = new System.Windows.Forms.NumericUpDown();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnMua = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDongMay)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSanPham)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhachHang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -47,27 +46,18 @@
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // menuStrip1
+            // dgvSanPham
             // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1382, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // dgvDongMay
-            // 
-            this.dgvDongMay.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dgvDongMay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDongMay.GridColor = System.Drawing.SystemColors.Control;
-            this.dgvDongMay.Location = new System.Drawing.Point(12, 79);
-            this.dgvDongMay.Name = "dgvDongMay";
-            this.dgvDongMay.RowHeadersWidth = 51;
-            this.dgvDongMay.RowTemplate.Height = 24;
-            this.dgvDongMay.Size = new System.Drawing.Size(894, 272);
-            this.dgvDongMay.TabIndex = 3;
-            this.dgvDongMay.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDongMay_CellClick);
+            this.dgvSanPham.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgvSanPham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSanPham.GridColor = System.Drawing.SystemColors.Control;
+            this.dgvSanPham.Location = new System.Drawing.Point(12, 79);
+            this.dgvSanPham.Name = "dgvSanPham";
+            this.dgvSanPham.RowHeadersWidth = 51;
+            this.dgvSanPham.RowTemplate.Height = 24;
+            this.dgvSanPham.Size = new System.Drawing.Size(894, 272);
+            this.dgvSanPham.TabIndex = 3;
+            this.dgvSanPham.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDongMay_CellClick);
             // 
             // dgvKhachHang
             // 
@@ -169,14 +159,12 @@
             this.Controls.Add(this.txtTimKhach);
             this.Controls.Add(this.txtTimDongMay);
             this.Controls.Add(this.dgvKhachHang);
-            this.Controls.Add(this.dgvDongMay);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
+            this.Controls.Add(this.dgvSanPham);
             this.Name = "MuaBan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mua Hàng";
             this.Load += new System.EventHandler(this.MuaBan_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDongMay)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSanPham)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhachHang)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -188,9 +176,7 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.DataGridView dgvDongMay;
+        private System.Windows.Forms.DataGridView dgvSanPham;
         private System.Windows.Forms.DataGridView dgvKhachHang;
         private System.Windows.Forms.TextBox txtTimDongMay;
         private System.Windows.Forms.PictureBox pictureBox1;
