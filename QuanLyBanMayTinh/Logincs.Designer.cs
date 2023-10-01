@@ -122,7 +122,6 @@
             this.lbtaikhoan.TabIndex = 2;
             this.lbtaikhoan.Text = "Tài Khoản";
             this.lbtaikhoan.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbtaikhoan.Click += new System.EventHandler(this.lbtaikhoan_Click);
             // 
             // txtPassword
             // 
@@ -153,7 +152,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng Nhập";
             this.TransparencyKey = System.Drawing.Color.WhiteSmoke;
-            this.Load += new System.EventHandler(this.Logincs_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);

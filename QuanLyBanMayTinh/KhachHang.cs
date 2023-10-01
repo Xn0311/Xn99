@@ -93,9 +93,9 @@ namespace QuanLyBanMayTinh
 
         private void button1_Click(object sender, EventArgs e)
         {
-            TrangChu c = new TrangChu();
-            c.Show();
+            TrangChu tc = new TrangChu();
             this.Hide();
+            tc.ShowDialog();
         }
 
         private void dgvkh_CellContentClick(object sender, DataGridViewCellEventArgs e)

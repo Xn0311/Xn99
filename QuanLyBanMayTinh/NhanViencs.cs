@@ -124,9 +124,9 @@ namespace QuanLyBanMayTinh
 
         private void button1_Click(object sender, EventArgs e)
         {
+            TrangChu tc = new TrangChu();
             this.Hide();
-            TrangChu c = new TrangChu();
-            c.Show();         
+            tc.ShowDialog();
         }
     }
 }

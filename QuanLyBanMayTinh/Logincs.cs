@@ -64,16 +64,6 @@ namespace QuanLyBanMayTinh
                 e.Cancel = true;
             }
         }
-
-        private void Logincs_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbtaikhoan_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
 

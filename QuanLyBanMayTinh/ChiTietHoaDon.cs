@@ -94,9 +94,9 @@ namespace QuanLyBanMayTinh
 
         private void btnquaylai_Click(object sender, EventArgs e)
         {
-            TrangChu c = new TrangChu();
-            c.Show();
+            TrangChu tc = new TrangChu();
             this.Hide();
+            tc.ShowDialog();
         }
 
         private void dgvct_CellContentClick(object sender, DataGridViewCellEventArgs e)
