@@ -97,7 +97,7 @@
             this.dgvkh.RowHeadersWidth = 51;
             this.dgvkh.Size = new System.Drawing.Size(998, 527);
             this.dgvkh.TabIndex = 3;
-            this.dgvkh.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvkh_CellContentClick);
+            this.dgvkh.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvkh_CellClick);
             // 
             // dtpngaysinh
             // 

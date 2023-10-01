@@ -100,7 +100,7 @@
             this.dgvnv.RowHeadersWidth = 51;
             this.dgvnv.Size = new System.Drawing.Size(1071, 411);
             this.dgvnv.TabIndex = 3;
-            this.dgvnv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvnv_CellContentClick);
+            this.dgvnv.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvnv_CellClick);
             // 
             // lbQLNV
             // 

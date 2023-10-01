@@ -88,18 +88,6 @@ namespace QuanLyBanMayTinh
             tc.ShowDialog();
         }
 
-        private void dgvsp_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int t = dgvsp.CurrentCell.RowIndex;
-            ttbmasp.Text = dgvsp.Rows[t].Cells[0].Value.ToString();
-            ttbtensp.Text = dgvsp.Rows[t].Cells[1].Value.ToString();
-            ttbhangsx.Text = dgvsp.Rows[t].Cells[2].Value.ToString();
-            ttbtgbh.Text = dgvsp.Rows[t].Cells[3].Value.ToString();
-            ttbthongso.Text = dgvsp.Rows[t].Cells[4].Value.ToString();
-            ttbsoluong.Text = dgvsp.Rows[t].Cells[5].Value.ToString();
-            ttbgiatien.Text = dgvsp.Rows[t].Cells[6].Value.ToString();
-        }
-
         private void btXOA_Click(object sender, EventArgs e)
         {
             conn.Open();
@@ -112,6 +100,23 @@ namespace QuanLyBanMayTinh
                 MessageBox.Show("Xóa dữ liệu thành công!");
             conn.Close();
             HienThiSanPham();
+        }
+
+        private void dgvsp_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            if (e.RowIndex >= 0) 
+            {
+                DataGridViewRow row = dgvsp.Rows[e.RowIndex]; 
+                ttbmasp.Text = row.Cells[0].Value.ToString();
+                ttbtensp.Text = row.Cells[1].Value.ToString();
+                ttbhangsx.Text = row.Cells[2].Value.ToString();
+                ttbtgbh.Text = row.Cells[3].Value.ToString();
+                ttbthongso.Text = row.Cells[4].Value.ToString();
+                ttbsoluong.Text = row.Cells[5].Value.ToString();
+                ttbgiatien.Text = row.Cells[6].Value.ToString();
+            }
+            
         }
     }
 }

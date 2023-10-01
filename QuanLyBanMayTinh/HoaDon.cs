@@ -78,34 +78,25 @@ namespace QuanLyBanMayTinh
             HienThiHoaDon();
         }
 
-        private void dgv1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int t = dgv1.CurrentCell.RowIndex;
-            ttbmahd.Text = dgv1.Rows[t].Cells[0].Value.ToString();
-            ttbmakh.Text = dgv1.Rows[t].Cells[1].Value.ToString();
-            ttbmanv.Text = dgv1.Rows[t].Cells[2].Value.ToString();
-            dtpngaydat.Text = dgv1.Rows[t].Cells[3].Value.ToString();
-            dtpngaynhan.Text = dgv1.Rows[t].Cells[4].Value.ToString();
-            ttbnoinhan.Text = dgv1.Rows[t].Cells[5].Value.ToString();         
-        }
-
-        private void btntimkiem_Click(object sender, EventArgs e)
-        {
-            conn.Open();
-            string query = "select * from HoaDon where MaHoaDon = '" + txttk.Text + "'";
-            SqlCommand cmd = new SqlCommand(query, conn);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            conn.Close();
-            dgv1.DataSource = dt;
-        }
-
         private void btnquaylai_Click(object sender, EventArgs e)
         {
             TrangChu tc = new TrangChu();
             this.Hide();
             tc.ShowDialog();
+        }
+
+        private void dgv1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dgv1.Rows[e.RowIndex];
+                ttbmahd.Text = row.Cells[0].Value.ToString();
+                ttbmakh.Text = row.Cells[1].Value.ToString();
+                ttbmanv.Text = row.Cells[2].Value.ToString();
+                dtpngaydat.Text = row.Cells[3].Value.ToString();
+                dtpngaynhan.Text = row.Cells[4].Value.ToString();
+                ttbnoinhan.Text = row.Cells[5].Value.ToString();
+            }
         }
     }
 }

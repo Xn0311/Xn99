@@ -98,15 +98,18 @@ namespace QuanLyBanMayTinh
             tc.ShowDialog();
         }
 
-        private void dgvkh_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvkh_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int t = dgvkh.CurrentCell.RowIndex;
-            txtMaKhachHang.Text = dgvkh.Rows[t].Cells[0].Value.ToString();
-            txtTenKH.Text = dgvkh.Rows[t].Cells[1].Value.ToString();
-            txtGioiTinh.Text = dgvkh.Rows[t].Cells[2].Value.ToString();
-            dtpngaysinh.Text = dgvkh.Rows[t].Cells[3].Value.ToString();
-            txtDiaChi.Text = dgvkh.Rows[t].Cells[4].Value.ToString();
-            txtSdt.Text = dgvkh.Rows[t].Cells[5].Value.ToString();
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dgvkh.Rows[e.RowIndex];
+                txtMaKhachHang.Text = row.Cells[0].Value.ToString();
+                txtTenKH.Text = row.Cells[1].Value.ToString();
+                txtGioiTinh.Text = row.Cells[2].Value.ToString();
+                dtpngaysinh.Text = row.Cells[3].Value.ToString();
+                txtDiaChi.Text = row.Cells[4].Value.ToString();
+                txtSdt.Text = row.Cells[5].Value.ToString();
+            }
         }
     }
 }

@@ -94,7 +94,7 @@
             this.dgvsp.Name = "dgvsp";
             this.dgvsp.Size = new System.Drawing.Size(1131, 361);
             this.dgvsp.TabIndex = 4;
-            this.dgvsp.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvsp_CellContentClick);
+            this.dgvsp.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvsp_CellClick);
             // 
             // lbSANPHAM
             // 

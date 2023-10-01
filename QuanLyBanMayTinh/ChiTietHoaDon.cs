@@ -99,14 +99,17 @@ namespace QuanLyBanMayTinh
             tc.ShowDialog();
         }
 
-        private void dgvct_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvct_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int t = dgvct.CurrentCell.RowIndex;
-            ttbmahd.Text = dgvct.Rows[t].Cells[0].Value.ToString();
-            ttbmasp.Text = dgvct.Rows[t].Cells[1].Value.ToString();
-            ttbsoluong.Text = dgvct.Rows[t].Cells[2].Value.ToString();
-            ttbgia.Text = dgvct.Rows[t].Cells[3].Value.ToString();
-            ttbtongtien.Text = dgvct.Rows[t].Cells[4].Value.ToString();
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dgvct.Rows[e.RowIndex];
+                ttbmahd.Text = row.Cells[0].Value.ToString();
+                ttbmasp.Text = row.Cells[1].Value.ToString();
+                ttbsoluong.Text = row.Cells[2].Value.ToString();
+                ttbgia.Text = row.Cells[3].Value.ToString();
+                ttbtongtien.Text = row.Cells[4].Value.ToString();           
+            }
         }
     }
 }

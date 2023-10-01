@@ -191,7 +191,6 @@
             this.btntimkiem.TabIndex = 0;
             this.btntimkiem.Text = "Tìm kiếm";
             this.btntimkiem.UseVisualStyleBackColor = true;
-            this.btntimkiem.Click += new System.EventHandler(this.btntimkiem_Click);
             // 
             // btnxoa
             // 
@@ -234,7 +233,7 @@
             this.dgv1.RowTemplate.Height = 24;
             this.dgv1.Size = new System.Drawing.Size(1113, 374);
             this.dgv1.TabIndex = 5;
-            this.dgv1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv1_CellContentClick);
+            this.dgv1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv1_CellClick);
             // 
             // txttk
             // 

@@ -111,22 +111,25 @@ namespace QuanLyBanMayTinh
            
         }
 
-        private void dgvnv_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int t = dgvnv.CurrentCell.RowIndex;
-            txtMaNv.Text = dgvnv.Rows[t].Cells[0].Value.ToString();
-            txtTenNhanVien.Text = dgvnv.Rows[t].Cells[1].Value.ToString();
-            dtpNgaySinh.Text = dgvnv.Rows[t].Cells[2].Value.ToString();
-            txtGioiTinh.Text = dgvnv.Rows[t].Cells[3].Value.ToString();
-            txtChucVu.Text = dgvnv.Rows[t].Cells[4].Value.ToString();
-            txtTTLH.Text = dgvnv.Rows[t].Cells[5].Value.ToString();
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             TrangChu tc = new TrangChu();
             this.Hide();
             tc.ShowDialog();
+        }
+
+        private void dgvnv_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dgvnv.Rows[e.RowIndex];
+                txtMaNv.Text = row.Cells[0].Value.ToString();
+                txtTenNhanVien.Text = row.Cells[1].Value.ToString();
+                dtpNgaySinh.Text = row.Cells[2].Value.ToString();
+                txtGioiTinh.Text = row.Cells[3].Value.ToString();
+                txtChucVu.Text = row.Cells[4].Value.ToString();
+                txtTTLH.Text = row.Cells[5].Value.ToString();
+            }
         }
     }
 }
