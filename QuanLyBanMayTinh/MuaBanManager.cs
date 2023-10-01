@@ -13,20 +13,18 @@ namespace QuanLyBanMayTinh
     internal class MuaBanManager
     {
         #region Properties
-        private DataGridView dgv;  
-        private DataGridView dgv2;
-        public DataGridView dgv1 { get => dgv1; set => dgv1 = value; }
-        public DataGridView Dgv2 { get => dgv2; set => dgv2 = value; }
-
+       // private DataGridView dgv;  
+      //  private DataGridView dgv2;
+        //public DataGridView dgv1 { get => dgv; set => dgv = value; }      
+        //public DataGridView Dgv2 { get => dgv2; set => dgv2 = value; }
        
-
         #endregion
         #region Initialize
-        public MuaBanManager() { }
-        public MuaBanManager(DataGridView dgv,DataGridView dgv2) 
-        {    this.dgv1 = dgv;
-             this.dgv2 = dgv2;
-        }
+      //  public MuaBanManager() { }
+       // public MuaBanManager(DataGridView dgv,DataGridView dgv2) 
+       // {    this.dgv1 = dgv;
+       //      this.dgv2 = dgv2;
+       // }
         #endregion
         #region Methods
         public void showData(DataGridView dgv, string s)

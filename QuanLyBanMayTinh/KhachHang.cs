@@ -17,126 +17,96 @@ namespace QuanLyBanMayTinh
         {
             InitializeComponent();
         }
-
-        public void ThemKhachHang(string connectionString, TextBox MaKhachHang, TextBox TenKhachHang, TextBox GioiTinh, DateTimePicker NgaySinh, TextBox DiaChi, TextBox SDT)
-        {
-            string query = "Insert into KhachHang (MaKhachHang, TenKhachHang, GioiTinh, NgaySinh, DiaChi, SDT) Values (@MaKhachHang, @TenKhachHang, @GioiTinh, @NgaySinh, @DiaChi, @SDT)";
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@MaKhachHang", txtMaKhachHang.Text);
-                command.Parameters.AddWithValue("@TenKhachHang", txtTenKH.Text);
-                command.Parameters.AddWithValue("@GioiTinh", txtGioiTinh.Text);
-                command.Parameters.AddWithValue("@NgaySinh", dtpngaysinh.Value);
-                command.Parameters.AddWithValue("@DiaChi", txtDiaChi.Text);
-                command.Parameters.AddWithValue("@SDT", txtSdt.Text);
-                command.Connection.Open();
-
-                command.ExecuteNonQuery();
-                int result = command.ExecuteNonQuery();
-
-                // Check Error
-                if (result < 0)
-                    MessageBox.Show("Lỗi cập nhật dữ liệu!");
-                else
-                    MessageBox.Show("Cập nhật dữ liệu thành công!");
-
-                HienThiKhachHang();
-            }
-        }
+        SqlConnection conn = new SqlConnection(Connect.ConnectDTB);
 
         private void btTHEM_Click(object sender, EventArgs e)
         {
-            
-            ThemKhachHang(Connect.ConnectDTB, txtMaKhachHang, txtTenKH, txtGioiTinh, dtpngaysinh, txtDiaChi, txtSdt);
+
+            conn.Open();
+            string query = "Insert into KhachHang values ('" + txtMaKhachHang.Text + "', N'" + txtTenKH.Text + "', N'" + txtGioiTinh.Text + "', '" + dtpngaysinh.Value.ToString("yyyy-MM-dd") + "', N'" + txtDiaChi.Text + "', '" + txtSdt.Text + "')";
+            SqlCommand cmd = new SqlCommand(query, conn);
+            int result = cmd.ExecuteNonQuery();
+            if (result < 0)
+                MessageBox.Show("Lỗi thêm dữ liệu!");
+            else
+                MessageBox.Show("Thêm dữ liệu thành công!");
+            conn.Close();
+            HienThiKhachHang();
         }
 
         public void HienThiKhachHang()
         {
-            
+            conn.Open();
             string query = "SELECT * FROM KhachHang";
-
-                SqlConnection connection = new SqlConnection(Connect.ConnectDTB);
-                SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
-                connection.Open();
-                DataTable dataTable = new DataTable();
-                dataAdapter.Fill(dataTable);
-                // Gán dữ liệu từ DataTable vào DataGridView.
-                dgvkh.DataSource = dataTable;
-                dgvkh.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-                dgvkh.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                connection.Close();
-            
+            SqlCommand cmd = new SqlCommand(query, conn);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            conn.Close();
+            dgvkh.DataSource = dt;
         }
 
         private void KHACHHANG_Load(object sender, EventArgs e)
         {
             HienThiKhachHang();
-        }
-
-        
+        }       
 
         private void btnSuaKH_Click(object sender, EventArgs e)
         {
-
-            string query = "UPDATE KhachHang SET TenKhachHang = @TenKhachHang, GioiTinh = @GioiTinh, NgaySinh = @NgaySinh, DiaChi = @DiaChi, SDT = @SDT WHERE MaKhachHang = @MaKhachHang";
-
-            using (SqlConnection connection = new SqlConnection(Connect.ConnectDTB))
-            {
-                connection.Open();
-
-                using (SqlCommand command = new SqlCommand(query, connection))
-                {
-                    command.Parameters.AddWithValue("@MaKhachHang", txtMaKhachHang.Text);
-                    command.Parameters.AddWithValue("@TenKhachHang", txtTenKH.Text);
-                    command.Parameters.AddWithValue("@GioiTinh", txtGioiTinh.Text);
-                    command.Parameters.AddWithValue("@NgaySinh", dtpngaysinh.Value);                  
-                    command.Parameters.AddWithValue("@DiaChi", txtDiaChi.Text);
-                    command.Parameters.AddWithValue("@SDT", txtSdt.Text);
-
-                    int result = command.ExecuteNonQuery();
-                    HienThiKhachHang();
-                    // Check Error
-                    if (result < 0)
-                        MessageBox.Show("Lỗi cập nhật dữ liệu!");
-                    else
-                        MessageBox.Show("Cập nhật dữ liệu thành công!");
-                }
-            }
+            conn.Open();
+            string query = "update KhachHang set MaKhachHang ='" + txtMaKhachHang.Text + "' , TenKhachHang = N'" + txtTenKH.Text + "' , GioiTinh= N'" + txtGioiTinh.Text + "', NgaySinh = '" + dtpngaysinh.Value.ToString("yyyy-MM-dd") + "', DiaChi = N'" + txtDiaChi.Text + "', SDT = '" + txtSdt.Text + "' where MaKhachHang =  '" + txtMaKhachHang.Text + "'";
+            SqlCommand cmd = new SqlCommand(query, conn);
+            int result = cmd.ExecuteNonQuery();
+            if (result < 0)
+                MessageBox.Show("Lỗi cập nhật dữ liệu!");
+            else
+                MessageBox.Show("Cập nhật dữ liệu thành công!");
+            conn.Close();
+            HienThiKhachHang();
         }
 
         private void btXOA_Click(object sender, EventArgs e)
         {
-            try
-            {
-                SqlConnection con = new SqlConnection(Connect.ConnectDTB);
-                SqlCommand cmd = new SqlCommand("delete from KhachHang where MaKhachHang ='" + txtMaKhachHang.Text + "'", con);
-                con.Open();
-                int ret = cmd.ExecuteNonQuery();
-                if (ret == 1)
-                    MessageBox.Show(" Xóa Thành Công");
-
-                con.Close();
-                HienThiKhachHang();
-
-            }
-            catch
-            {
-                MessageBox.Show("Bạn chưa nhập thông tin");
-            }
+            conn.Open();
+            string query = "delete KhachHang where MaKhachHang= '" + txtMaKhachHang.Text + "'";
+            SqlCommand cmd = new SqlCommand(query, conn);
+            int result = cmd.ExecuteNonQuery();
+            if (result < 0)
+                MessageBox.Show("Lỗi cập nhật dữ liệu!");
+            else
+                MessageBox.Show("Xóa dữ liệu thành công!");
+            conn.Close();
+            HienThiKhachHang();
         }
 
         private void btTIMKIEM_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(Connect.ConnectDTB);
-            SqlDataAdapter da = new SqlDataAdapter("select * from KhachHang where TenKhachHang LIKE '%" + txtTenKH.Text + "%'", con);
+            conn.Open();
+            string query = "select * from KhachHang where MaKhachHang = '" + txttk.Text + "'";
+            SqlCommand cmd = new SqlCommand(query, conn);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
-            con.Open();
             da.Fill(dt);
+            conn.Close();
             dgvkh.DataSource = dt;
-            dgvkh.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            dgvkh.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            con.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            TrangChu c = new TrangChu();
+            c.Show();
+            this.Hide();
+        }
+
+        private void dgvkh_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int t = dgvkh.CurrentCell.RowIndex;
+            txtMaKhachHang.Text = dgvkh.Rows[t].Cells[0].Value.ToString();
+            txtTenKH.Text = dgvkh.Rows[t].Cells[1].Value.ToString();
+            txtGioiTinh.Text = dgvkh.Rows[t].Cells[2].Value.ToString();
+            dtpngaysinh.Text = dgvkh.Rows[t].Cells[3].Value.ToString();
+            txtDiaChi.Text = dgvkh.Rows[t].Cells[4].Value.ToString();
+            txtSdt.Text = dgvkh.Rows[t].Cells[5].Value.ToString();
         }
     }
 }

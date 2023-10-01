@@ -47,6 +47,8 @@
             this.btnsua = new System.Windows.Forms.Button();
             this.btnthem = new System.Windows.Forms.Button();
             this.dgv1 = new System.Windows.Forms.DataGridView();
+            this.txttk = new System.Windows.Forms.TextBox();
+            this.lbtk = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,7 +62,6 @@
             this.ldhd.Size = new System.Drawing.Size(301, 37);
             this.ldhd.TabIndex = 0;
             this.ldhd.Text = "Hóa Đơn Thanh Toán";
-            this.ldhd.Click += new System.EventHandler(this.label1_Click);
             // 
             // lbmahd
             // 
@@ -83,7 +84,6 @@
             this.lbmakh.Size = new System.Drawing.Size(137, 22);
             this.lbmakh.TabIndex = 0;
             this.lbmakh.Text = "Mã Khách Hàng";
-            this.lbmakh.Click += new System.EventHandler(this.label3_Click);
             // 
             // lbmanv
             // 
@@ -175,36 +175,39 @@
             // 
             // btnquaylai
             // 
-            this.btnquaylai.Location = new System.Drawing.Point(900, 569);
+            this.btnquaylai.Location = new System.Drawing.Point(847, 579);
             this.btnquaylai.Name = "btnquaylai";
-            this.btnquaylai.Size = new System.Drawing.Size(91, 31);
+            this.btnquaylai.Size = new System.Drawing.Size(98, 41);
             this.btnquaylai.TabIndex = 0;
             this.btnquaylai.Text = "Quay lại";
             this.btnquaylai.UseVisualStyleBackColor = true;
+            this.btnquaylai.Click += new System.EventHandler(this.btnquaylai_Click);
             // 
             // btntimkiem
             // 
-            this.btntimkiem.Location = new System.Drawing.Point(759, 569);
+            this.btntimkiem.Location = new System.Drawing.Point(702, 579);
             this.btntimkiem.Name = "btntimkiem";
-            this.btntimkiem.Size = new System.Drawing.Size(93, 31);
+            this.btntimkiem.Size = new System.Drawing.Size(102, 41);
             this.btntimkiem.TabIndex = 0;
             this.btntimkiem.Text = "Tìm kiếm";
             this.btntimkiem.UseVisualStyleBackColor = true;
+            this.btntimkiem.Click += new System.EventHandler(this.btntimkiem_Click);
             // 
             // btnxoa
             // 
-            this.btnxoa.Location = new System.Drawing.Point(642, 569);
+            this.btnxoa.Location = new System.Drawing.Point(586, 579);
             this.btnxoa.Name = "btnxoa";
-            this.btnxoa.Size = new System.Drawing.Size(74, 31);
+            this.btnxoa.Size = new System.Drawing.Size(78, 41);
             this.btnxoa.TabIndex = 0;
             this.btnxoa.Text = "Xóa";
             this.btnxoa.UseVisualStyleBackColor = true;
+            this.btnxoa.Click += new System.EventHandler(this.btnxoa_Click);
             // 
             // btnsua
             // 
-            this.btnsua.Location = new System.Drawing.Point(525, 569);
+            this.btnsua.Location = new System.Drawing.Point(469, 579);
             this.btnsua.Name = "btnsua";
-            this.btnsua.Size = new System.Drawing.Size(74, 31);
+            this.btnsua.Size = new System.Drawing.Size(78, 41);
             this.btnsua.TabIndex = 0;
             this.btnsua.Text = "Sửa";
             this.btnsua.UseVisualStyleBackColor = true;
@@ -212,30 +215,50 @@
             // 
             // btnthem
             // 
-            this.btnthem.Location = new System.Drawing.Point(407, 569);
+            this.btnthem.Location = new System.Drawing.Point(346, 579);
             this.btnthem.Name = "btnthem";
-            this.btnthem.Size = new System.Drawing.Size(68, 31);
+            this.btnthem.Size = new System.Drawing.Size(74, 41);
             this.btnthem.TabIndex = 0;
             this.btnthem.Text = "Thêm";
             this.btnthem.UseVisualStyleBackColor = true;
-            this.btnthem.Click += new System.EventHandler(this.btnthem_Click);
+            this.btnthem.Click += new System.EventHandler(this.btnthem_Click_1);
             // 
             // dgv1
             // 
+            this.dgv1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv1.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgv1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv1.Location = new System.Drawing.Point(119, 189);
             this.dgv1.Name = "dgv1";
             this.dgv1.RowHeadersWidth = 51;
             this.dgv1.RowTemplate.Height = 24;
-            this.dgv1.Size = new System.Drawing.Size(1085, 349);
+            this.dgv1.Size = new System.Drawing.Size(1113, 374);
             this.dgv1.TabIndex = 5;
+            this.dgv1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv1_CellContentClick);
+            // 
+            // txttk
+            // 
+            this.txttk.Location = new System.Drawing.Point(1076, 94);
+            this.txttk.Name = "txttk";
+            this.txttk.Size = new System.Drawing.Size(156, 30);
+            this.txttk.TabIndex = 6;
+            // 
+            // lbtk
+            // 
+            this.lbtk.AutoSize = true;
+            this.lbtk.Location = new System.Drawing.Point(980, 98);
+            this.lbtk.Name = "lbtk";
+            this.lbtk.Size = new System.Drawing.Size(90, 22);
+            this.lbtk.TabIndex = 7;
+            this.lbtk.Text = "Tìm Kiếm";
             // 
             // HoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1382, 632);
+            this.Controls.Add(this.lbtk);
+            this.Controls.Add(this.txttk);
             this.Controls.Add(this.btnthem);
             this.Controls.Add(this.btnsua);
             this.Controls.Add(this.btnxoa);
@@ -288,5 +311,7 @@
         private System.Windows.Forms.Button btnsua;
         private System.Windows.Forms.Button btnthem;
         private System.Windows.Forms.DataGridView dgv1;
+        private System.Windows.Forms.TextBox txttk;
+        private System.Windows.Forms.Label lbtk;
     }
 }

@@ -46,10 +46,8 @@ namespace QuanLyBanMayTinh
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@Usename", username);
                 command.Parameters.AddWithValue("@Pass", password);
-
                 connection.Open();
                 int count = (int)command.ExecuteScalar();
-
                 return count > 0;
             }
         }

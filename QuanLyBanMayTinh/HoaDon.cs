@@ -17,90 +17,95 @@ namespace QuanLyBanMayTinh
         {
             InitializeComponent();
         }
+        SqlConnection conn = new SqlConnection(Connect.ConnectDTB);
 
-        private void label1_Click(object sender, EventArgs e)
+        private void btnthem_Click_1(object sender, EventArgs e)
         {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        public void ThemHoaDon(string connectionString, TextBox MaHoaDon, TextBox MaKhachHang, TextBox MaNV, DateTimePicker NgayDat, DateTimePicker NgayNhan, TextBox NoiNhan)
-        {
-            string query = "Insert into HoaDon (MaHoaDon, MaKhachHang, MaNV, NgayDat, NgayNhan, NoiNhan) Values (@MaHoaDon, @MaKhachHang, @MaNV, @NgayDat, @NgayNhan, @NoiNhan)";
-            using (SqlConnection connection = new SqlConnection(Connect.ConnectDTB))
-            {
-                SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@MaHoaDon", ttbmahd.Text);
-                command.Parameters.AddWithValue("@MaKhachHang", ttbmakh.Text);
-                command.Parameters.AddWithValue("@MaNV", ttbmanv.Text);
-                command.Parameters.AddWithValue("@NgayDat", dtpngaydat.Value);
-                command.Parameters.AddWithValue("@NgayNhan", dtpngaynhan.Value);
-                command.Parameters.AddWithValue("@NoiNhan", ttbnoinhan.Text);
-                command.Connection.Open();
-                command.ExecuteNonQuery();
-            }
-        }
-
-        private void btnthem_Click(object sender, EventArgs e)
-        {
-            SqlConnection con = new SqlConnection(Connect.ConnectDTB);
-            ThemHoaDon(Connect.ConnectDTB, ttbmahd, ttbmakh, ttbmanv, dtpngaydat, dtpngaynhan, ttbnoinhan);
+            conn.Open();
+            string query = "Insert into HoaDon values ('" + ttbmahd.Text + "', N'" + ttbmakh.Text + "', N'" + ttbmanv.Text + "', N'" + dtpngaydat.Value.ToString("yyyy-MM-dd") + "', N'" + dtpngaynhan.Value.ToString("yyyy-MM-dd") + "', '" + ttbnoinhan.Text + "')";
+            SqlCommand cmd = new SqlCommand(query, conn);
+            int result = cmd.ExecuteNonQuery();
+            if (result < 0)
+                MessageBox.Show("Lỗi thêm dữ liệu!");
+            else
+                MessageBox.Show("Thêm dữ liệu thành công!");
+            conn.Close();
+            HienThiHoaDon();
         }
 
         public void HienThiHoaDon()
         {
-            SqlConnection con = new SqlConnection(Connect.ConnectDTB);
+            conn.Open();
             string query = "SELECT * FROM HoaDon";
-
-            using (SqlConnection connection = new SqlConnection(Connect.ConnectDTB))
-            {
-                SqlDataAdapter dataAdapter = new SqlDataAdapter(query, con);
-                DataTable dataTable = new DataTable();
-                dataAdapter.Fill(dataTable);
-                // Gán dữ liệu từ DataTable vào DataGridView.
-                dgv1.DataSource = dataTable;
-            }
+            SqlCommand cmd = new SqlCommand(query, conn);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            conn.Close();
+            dgv1.DataSource = dt;
         }
 
         private void HoaDon_Load(object sender, EventArgs e)
         {
             HienThiHoaDon();
-        }
-
-       
+        }  
 
         private void btnSuaHD_Click(object sender, EventArgs e)
         {
-
-            string query = "UPDATE HoaDon SET MaKhachHang = @MaKhachHang, MaNV = @MaNV, NgayDat = @NgayDat, NgayNhan = @NgayNhan, NoiNhan = @NoiNhan WHERE MaHoaDon = @MaHoaDon";
-
-            using (SqlConnection connection = new SqlConnection(Connect.ConnectDTB))
-            {
-                connection.Open();
-
-                using (SqlCommand command = new SqlCommand(query, connection))
-                {
-                    command.Parameters.AddWithValue("@MaHoaDon", ttbmahd.Text);
-                    command.Parameters.AddWithValue("@MaKhachHang", ttbmakh.Text);
-                    command.Parameters.AddWithValue("@MaNV", ttbmanv.Text);
-                    command.Parameters.AddWithValue("@NgayDat", dtpngaydat.Value);
-                    command.Parameters.AddWithValue("@NgayNhan", dtpngaynhan.Value);
-                    command.Parameters.AddWithValue("@NoiNhan", ttbnoinhan.Text);
-
-                    int result = command.ExecuteNonQuery();
-
-                    // Check Error
-                    if (result < 0)
-                        MessageBox.Show("Lỗi cập nhật dữ liệu!");
-                    else
-                        MessageBox.Show("Cập nhật dữ liệu thành công!");
-                }
-            }
+            conn.Open();
+            string query = "update HoaDon set MaHoaDon ='" + ttbmahd.Text + "' , MaKhachHang = N'" + ttbmakh.Text + "' , MaNV= N'" + ttbmanv.Text + "', NgayDat = '" + dtpngaydat.Value.ToString("yyyy-MM-dd") + "', NgayNhan = N'" + dtpngaynhan.Value.ToString("yyyy-MM-dd") + "', NoiNhan = '" + ttbnoinhan.Text + "' where MaHoaDon =  '" + ttbmahd.Text + "'";
+            SqlCommand cmd = new SqlCommand(query, conn);
+            int result = cmd.ExecuteNonQuery();
+            if (result < 0)
+                MessageBox.Show("Lỗi cập nhật dữ liệu!");
+            else
+                MessageBox.Show("Cập nhật dữ liệu thành công!");
+            conn.Close();
+            HienThiHoaDon();
         }
 
+        private void btnxoa_Click(object sender, EventArgs e)
+        {
+            conn.Open();
+            string query = "delete HoaDon where MaHoaDon= '" + ttbmahd.Text + "'";
+            SqlCommand cmd = new SqlCommand(query, conn);
+            int result = cmd.ExecuteNonQuery();
+            if (result < 0)
+                MessageBox.Show("Lỗi cập nhật dữ liệu!");
+            else
+                MessageBox.Show("Xóa dữ liệu thành công!");
+            conn.Close();
+            HienThiHoaDon();
+        }
+
+        private void dgv1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int t = dgv1.CurrentCell.RowIndex;
+            ttbmahd.Text = dgv1.Rows[t].Cells[0].Value.ToString();
+            ttbmakh.Text = dgv1.Rows[t].Cells[1].Value.ToString();
+            ttbmanv.Text = dgv1.Rows[t].Cells[2].Value.ToString();
+            dtpngaydat.Text = dgv1.Rows[t].Cells[3].Value.ToString();
+            dtpngaynhan.Text = dgv1.Rows[t].Cells[4].Value.ToString();
+            ttbnoinhan.Text = dgv1.Rows[t].Cells[5].Value.ToString();         
+        }
+
+        private void btntimkiem_Click(object sender, EventArgs e)
+        {
+            conn.Open();
+            string query = "select * from HoaDon where MaHoaDon = '" + txttk.Text + "'";
+            SqlCommand cmd = new SqlCommand(query, conn);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            conn.Close();
+            dgv1.DataSource = dt;
+        }
+
+        private void btnquaylai_Click(object sender, EventArgs e)
+        {
+            TrangChu c = new TrangChu();
+            c.Show();
+            this.Hide();
+        }
     }
 }

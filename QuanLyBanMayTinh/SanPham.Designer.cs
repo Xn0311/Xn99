@@ -50,6 +50,8 @@
             this.lbgiatien = new System.Windows.Forms.Label();
             this.ttbgiatien = new System.Windows.Forms.TextBox();
             this.ttbtgbh = new System.Windows.Forms.TextBox();
+            this.lbtk = new System.Windows.Forms.Label();
+            this.ttbtk = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvsp)).BeginInit();
             this.SuspendLayout();
             // 
@@ -92,6 +94,7 @@
             this.dgvsp.Name = "dgvsp";
             this.dgvsp.Size = new System.Drawing.Size(1131, 361);
             this.dgvsp.TabIndex = 4;
+            this.dgvsp.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvsp_CellContentClick);
             // 
             // lbSANPHAM
             // 
@@ -202,6 +205,7 @@
             this.btXOA.TabIndex = 3;
             this.btXOA.Text = "Xóa";
             this.btXOA.UseVisualStyleBackColor = true;
+            this.btXOA.Click += new System.EventHandler(this.btXOA_Click);
             // 
             // btTIMKIEM
             // 
@@ -213,6 +217,7 @@
             this.btTIMKIEM.TabIndex = 3;
             this.btTIMKIEM.Text = "Tìm Kiếm";
             this.btTIMKIEM.UseVisualStyleBackColor = true;
+            this.btTIMKIEM.Click += new System.EventHandler(this.btTIMKIEM_Click);
             // 
             // btQUAYLAI
             // 
@@ -224,6 +229,7 @@
             this.btQUAYLAI.TabIndex = 3;
             this.btQUAYLAI.Text = "Quay Lại";
             this.btQUAYLAI.UseVisualStyleBackColor = true;
+            this.btQUAYLAI.Click += new System.EventHandler(this.btQUAYLAI_Click);
             // 
             // lbsoluong
             // 
@@ -246,7 +252,7 @@
             // lbgiatien
             // 
             this.lbgiatien.AutoSize = true;
-            this.lbgiatien.Location = new System.Drawing.Point(906, 201);
+            this.lbgiatien.Location = new System.Drawing.Point(806, 196);
             this.lbgiatien.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbgiatien.Name = "lbgiatien";
             this.lbgiatien.Size = new System.Drawing.Size(79, 22);
@@ -255,10 +261,10 @@
             // 
             // ttbgiatien
             // 
-            this.ttbgiatien.Location = new System.Drawing.Point(993, 198);
+            this.ttbgiatien.Location = new System.Drawing.Point(893, 193);
             this.ttbgiatien.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ttbgiatien.Name = "ttbgiatien";
-            this.ttbgiatien.Size = new System.Drawing.Size(191, 30);
+            this.ttbgiatien.Size = new System.Drawing.Size(148, 30);
             this.ttbgiatien.TabIndex = 8;
             // 
             // ttbtgbh
@@ -268,11 +274,29 @@
             this.ttbtgbh.Size = new System.Drawing.Size(133, 30);
             this.ttbtgbh.TabIndex = 9;
             // 
+            // lbtk
+            // 
+            this.lbtk.AutoSize = true;
+            this.lbtk.Location = new System.Drawing.Point(1056, 196);
+            this.lbtk.Name = "lbtk";
+            this.lbtk.Size = new System.Drawing.Size(90, 22);
+            this.lbtk.TabIndex = 10;
+            this.lbtk.Text = "Tìm Kiếm";
+            // 
+            // ttbtk
+            // 
+            this.ttbtk.Location = new System.Drawing.Point(1152, 193);
+            this.ttbtk.Name = "ttbtk";
+            this.ttbtk.Size = new System.Drawing.Size(131, 30);
+            this.ttbtk.TabIndex = 11;
+            // 
             // SanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1406, 651);
+            this.Controls.Add(this.ttbtk);
+            this.Controls.Add(this.lbtk);
             this.Controls.Add(this.ttbtgbh);
             this.Controls.Add(this.ttbgiatien);
             this.Controls.Add(this.lbgiatien);
@@ -331,5 +355,7 @@
         private System.Windows.Forms.Label lbgiatien;
         private System.Windows.Forms.TextBox ttbgiatien;
         private System.Windows.Forms.TextBox ttbtgbh;
+        private System.Windows.Forms.Label lbtk;
+        private System.Windows.Forms.TextBox ttbtk;
     }
 }

@@ -18,41 +18,32 @@ namespace QuanLyBanMayTinh
             InitializeComponent();
         }
 
-        public void ThemChiTietHoaDon(string connectionString, TextBox MaHoaDon, TextBox MaSanPham, TextBox SoLuong, TextBox Gia, TextBox TongTien)
-        {
-            string query = "Insert into ChiTietHoaDon (MaHoaDon, MaSanPham, SoLuong, Gia, TongTien) Values (@MaHoaDon, @MaSanPham, @SoLuong, @Gia, @TongTien)";
-            using (SqlConnection connection = new SqlConnection(Connect.ConnectDTB))
-            {
-                SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@MaHoaDon", ttbmahd.Text);
-                command.Parameters.AddWithValue("@MaSanPham", ttbmasp.Text);
-                command.Parameters.AddWithValue("@SoLuong", ttbsoluong.Text);
-                command.Parameters.AddWithValue("@Gia", ttbgia.Text);
-                command.Parameters.AddWithValue("@TongTien", ttbtongtien.Text);
-                command.Connection.Open();
-                command.ExecuteNonQuery();
-            }
-        }
+        SqlConnection conn = new SqlConnection(Connect.ConnectDTB);
 
         private void them_Click(object sender, EventArgs e)
         {
-           
-            ThemChiTietHoaDon(Connect.ConnectDTB, ttbmahd, ttbmasp, ttbsoluong, ttbgia, ttbtongtien);
+            conn.Open();
+            string query = "Insert into ChiTietHoaDon values ('" + ttbmahd.Text + "', '" + ttbmasp.Text + "', '" + ttbsoluong.Text + "', '" + ttbgia.Text + "')";
+            SqlCommand cmd = new SqlCommand(query, conn);
+            int result = cmd.ExecuteNonQuery();
+            if (result < 0)
+                MessageBox.Show("Lỗi thêm dữ liệu!");
+            else
+                MessageBox.Show("Thêm dữ liệu thành công!");
+            conn.Close();
+            HienThiChiTietHoaDon();
         }
 
         public void HienThiChiTietHoaDon()
         {
-            
-            string query = "SELECT * FROM ChiTietHoaDon";
-
-            using (SqlConnection connection = new SqlConnection(Connect.ConnectDTB))
-            {
-                SqlDataAdapter dataAdapter = new SqlDataAdapter(query, Connect.ConnectDTB);
-                DataTable dataTable = new DataTable();
-                dataAdapter.Fill(dataTable);
-                // Gán dữ liệu từ DataTable vào DataGridView.
-                dgvct.DataSource = dataTable;
-            }
+            conn.Open();
+            string query = "SELECT MaHoaDon, MaSanPham, SoLuong, Gia, SoLuong * Gia AS TongTien FROM ChiTietHoaDon";
+            SqlCommand cmd = new SqlCommand(query, conn);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            conn.Close();
+            dgvct.DataSource = dt;
         }
 
         private void ChiTietHoaDon_Load(object sender, EventArgs e)
@@ -63,31 +54,59 @@ namespace QuanLyBanMayTinh
 
         private void btnSuaCT_Click(object sender, EventArgs e)
         {
-
-            string query = "UPDATE ChiTietHoaDon SET SoLuong = @SoLuong, Gia = @Gia, TongTien = @TongTien WHERE MaHoaDon = @MaHoaDon, MaSanPham = @MaSanPham";
-
-            using (SqlConnection connection = new SqlConnection(Connect.ConnectDTB))
-            {
-                connection.Open();
-
-                using (SqlCommand command = new SqlCommand(query, connection))
-                {
-                    command.Parameters.AddWithValue("@MaHoaDon", ttbmahd.Text);
-                    command.Parameters.AddWithValue("@MaSanPham", ttbmasp.Text);
-                    command.Parameters.AddWithValue("@SoLuong", ttbsoluong.Text);
-                    command.Parameters.AddWithValue("@Gia", ttbgia.Text);
-                    command.Parameters.AddWithValue("@TongTien", ttbtongtien.Text);
-
-                    int result = command.ExecuteNonQuery();
-
-                    // Check Error
-                    if (result < 0)
-                        MessageBox.Show("Lỗi cập nhật dữ liệu!");
-                    else
-                        MessageBox.Show("Cập nhật dữ liệu thành công!");
-                }
-            }
+            conn.Open();
+            string query = "update ChiTietHoaDon set MaHoaDon ='" + ttbmahd.Text + "' , MaSanPham = '" + ttbmasp.Text + "' , SoLuong= '" + ttbsoluong.Text + "', Gia = '" + ttbgia.Text +  "' where MaHoaDon =  '" + ttbmahd.Text + "'";
+            SqlCommand cmd = new SqlCommand(query, conn);
+            int result = cmd.ExecuteNonQuery();
+            if (result < 0)
+                MessageBox.Show("Lỗi cập nhật dữ liệu!");
+            else
+                MessageBox.Show("Cập nhật dữ liệu thành công!");
+            conn.Close();
+            HienThiChiTietHoaDon();
         }
 
+        private void btnxoa_Click(object sender, EventArgs e)
+        {
+            conn.Open();
+            string query = "delete ChiTietHoaDon where MaHoaDon= '" + ttbmahd.Text + "'";
+            SqlCommand cmd = new SqlCommand(query, conn);
+            int result = cmd.ExecuteNonQuery();
+            if (result < 0)
+                MessageBox.Show("Lỗi cập nhật dữ liệu!");
+            else
+                MessageBox.Show("Xóa dữ liệu thành công!");
+            conn.Close();
+            HienThiChiTietHoaDon();
+        }
+
+        private void btntimkiem_Click(object sender, EventArgs e)
+        {
+            conn.Open();
+            string query = "Select MaHoaDon, MaSanPham, SoLuong, Gia, SoLuong * Gia AS TongTien FROM ChiTietHoaDon where MaHoaDon = '" + txttk.Text + "'";
+            SqlCommand cmd = new SqlCommand(query, conn);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            conn.Close();
+            dgvct.DataSource = dt;
+        }
+
+        private void btnquaylai_Click(object sender, EventArgs e)
+        {
+            TrangChu c = new TrangChu();
+            c.Show();
+            this.Hide();
+        }
+
+        private void dgvct_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int t = dgvct.CurrentCell.RowIndex;
+            ttbmahd.Text = dgvct.Rows[t].Cells[0].Value.ToString();
+            ttbmasp.Text = dgvct.Rows[t].Cells[1].Value.ToString();
+            ttbsoluong.Text = dgvct.Rows[t].Cells[2].Value.ToString();
+            ttbgia.Text = dgvct.Rows[t].Cells[3].Value.ToString();
+            ttbtongtien.Text = dgvct.Rows[t].Cells[4].Value.ToString();
+        }
     }
 }

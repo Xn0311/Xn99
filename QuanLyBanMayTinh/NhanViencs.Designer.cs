@@ -48,13 +48,16 @@
             this.btXOA = new System.Windows.Forms.Button();
             this.btTIMKIEM = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.ttbtk = new System.Windows.Forms.TextBox();
+            this.lbtk = new System.Windows.Forms.Label();
+            this.btnql = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvnv)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btTHEM
             // 
-            this.btTHEM.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btTHEM.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btTHEM.Location = new System.Drawing.Point(430, 672);
             this.btTHEM.Margin = new System.Windows.Forms.Padding(6);
             this.btTHEM.Name = "btTHEM";
@@ -79,7 +82,7 @@
             // 
             this.lbGIOITINH.AutoSize = true;
             this.lbGIOITINH.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbGIOITINH.Location = new System.Drawing.Point(506, 50);
+            this.lbGIOITINH.Location = new System.Drawing.Point(506, 45);
             this.lbGIOITINH.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lbGIOITINH.Name = "lbGIOITINH";
             this.lbGIOITINH.Size = new System.Drawing.Size(88, 22);
@@ -97,6 +100,7 @@
             this.dgvnv.RowHeadersWidth = 51;
             this.dgvnv.Size = new System.Drawing.Size(1071, 411);
             this.dgvnv.TabIndex = 3;
+            this.dgvnv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvnv_CellContentClick);
             // 
             // lbQLNV
             // 
@@ -124,7 +128,7 @@
             // 
             this.lbTTLH.AutoSize = true;
             this.lbTTLH.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbTTLH.Location = new System.Drawing.Point(506, 140);
+            this.lbTTLH.Location = new System.Drawing.Point(436, 143);
             this.lbTTLH.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lbTTLH.Name = "lbTTLH";
             this.lbTTLH.Size = new System.Drawing.Size(158, 22);
@@ -135,7 +139,7 @@
             // 
             this.lbCHUCVU.AutoSize = true;
             this.lbCHUCVU.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbCHUCVU.Location = new System.Drawing.Point(506, 91);
+            this.lbCHUCVU.Location = new System.Drawing.Point(515, 94);
             this.lbCHUCVU.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lbCHUCVU.Name = "lbCHUCVU";
             this.lbCHUCVU.Size = new System.Drawing.Size(79, 22);
@@ -191,7 +195,7 @@
             // 
             // txtGioiTinh
             // 
-            this.txtGioiTinh.Location = new System.Drawing.Point(672, 42);
+            this.txtGioiTinh.Location = new System.Drawing.Point(606, 42);
             this.txtGioiTinh.Margin = new System.Windows.Forms.Padding(6);
             this.txtGioiTinh.Name = "txtGioiTinh";
             this.txtGioiTinh.Size = new System.Drawing.Size(257, 30);
@@ -199,7 +203,7 @@
             // 
             // txtChucVu
             // 
-            this.txtChucVu.Location = new System.Drawing.Point(672, 84);
+            this.txtChucVu.Location = new System.Drawing.Point(606, 90);
             this.txtChucVu.Margin = new System.Windows.Forms.Padding(6);
             this.txtChucVu.Name = "txtChucVu";
             this.txtChucVu.Size = new System.Drawing.Size(257, 30);
@@ -207,7 +211,7 @@
             // 
             // txtTTLH
             // 
-            this.txtTTLH.Location = new System.Drawing.Point(672, 132);
+            this.txtTTLH.Location = new System.Drawing.Point(606, 140);
             this.txtTTLH.Margin = new System.Windows.Forms.Padding(6);
             this.txtTTLH.Name = "txtTTLH";
             this.txtTTLH.Size = new System.Drawing.Size(257, 30);
@@ -215,7 +219,7 @@
             // 
             // btSUA
             // 
-            this.btSUA.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btSUA.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btSUA.Location = new System.Drawing.Point(559, 672);
             this.btSUA.Margin = new System.Windows.Forms.Padding(6);
             this.btSUA.Name = "btSUA";
@@ -227,7 +231,7 @@
             // 
             // btXOA
             // 
-            this.btXOA.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btXOA.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btXOA.Location = new System.Drawing.Point(682, 672);
             this.btXOA.Margin = new System.Windows.Forms.Padding(6);
             this.btXOA.Name = "btXOA";
@@ -239,7 +243,7 @@
             // 
             // btTIMKIEM
             // 
-            this.btTIMKIEM.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btTIMKIEM.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btTIMKIEM.Location = new System.Drawing.Point(817, 672);
             this.btTIMKIEM.Margin = new System.Windows.Forms.Padding(6);
             this.btTIMKIEM.Name = "btTIMKIEM";
@@ -251,6 +255,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.ttbtk);
+            this.panel1.Controls.Add(this.lbtk);
             this.panel1.Controls.Add(this.txtTenNhanVien);
             this.panel1.Controls.Add(this.txtTTLH);
             this.panel1.Controls.Add(this.txtChucVu);
@@ -268,11 +274,39 @@
             this.panel1.Size = new System.Drawing.Size(1173, 183);
             this.panel1.TabIndex = 5;
             // 
+            // ttbtk
+            // 
+            this.ttbtk.Location = new System.Drawing.Point(1002, 91);
+            this.ttbtk.Name = "ttbtk";
+            this.ttbtk.Size = new System.Drawing.Size(148, 30);
+            this.ttbtk.TabIndex = 6;
+            this.ttbtk.TextChanged += new System.EventHandler(this.ttbtk_TextChanged);
+            // 
+            // lbtk
+            // 
+            this.lbtk.AutoSize = true;
+            this.lbtk.Location = new System.Drawing.Point(906, 94);
+            this.lbtk.Name = "lbtk";
+            this.lbtk.Size = new System.Drawing.Size(90, 22);
+            this.lbtk.TabIndex = 5;
+            this.lbtk.Text = "Tìm Kiếm";
+            // 
+            // btnql
+            // 
+            this.btnql.Location = new System.Drawing.Point(975, 672);
+            this.btnql.Name = "btnql";
+            this.btnql.Size = new System.Drawing.Size(105, 39);
+            this.btnql.TabIndex = 6;
+            this.btnql.Text = "Quay Lại";
+            this.btnql.UseVisualStyleBackColor = true;
+            this.btnql.Click += new System.EventHandler(this.button1_Click);
+            // 
             // NhanViencs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1489, 726);
+            this.Controls.Add(this.btnql);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgvnv);
             this.Controls.Add(this.label4);
@@ -317,5 +351,8 @@
         private System.Windows.Forms.Button btXOA;
         private System.Windows.Forms.Button btTIMKIEM;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox ttbtk;
+        private System.Windows.Forms.Label lbtk;
+        private System.Windows.Forms.Button btnql;
     }
 }

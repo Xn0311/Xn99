@@ -17,15 +17,9 @@ namespace QuanLyBanMayTinh
         {
             InitializeComponent();
         }
-
-
-
-
-
-
+        SqlConnection con = new SqlConnection(Connect.ConnectDTB);
         void load_data()
-        {
-            SqlConnection con = new SqlConnection(Connect.ConnectDTB);
+        {         
             SqlDataAdapter da = new SqlDataAdapter("select * from NhanVien", con);
             DataTable dt = new DataTable();
             con.Open();
@@ -43,17 +37,9 @@ namespace QuanLyBanMayTinh
 
         private void btTHEM_Click(object sender, EventArgs e)
         {
-            string Manv = txtMaNv.Text;
-            string Ten = txtTenNhanVien.Text;
-            DateTime date = dtpNgaySinh.Value;
-            string gt = txtGioiTinh.Text;
-            string chucvu = txtChucVu.Text;
-            string tt = txtTTLH.Text;
             try
             {
-                SqlConnection con = new SqlConnection(Connect.ConnectDTB);
-
-                SqlCommand cmd = new SqlCommand("insert into Nhanvien values('" + Manv + "',N'" + Ten + "','" + date + "',N'" + gt + "',N'" + chucvu + "','" + tt + "')", con);
+                SqlCommand cmd = new SqlCommand("insert into Nhanvien values('" + txtMaNv.Text + "',N'" + txtTenNhanVien.Text + "','" + dtpNgaySinh.Value.ToString("yyyy-MM-dd") + "',N'" + txtGioiTinh.Text + "',N'" + txtChucVu.Text + "','" + txtTTLH.Text + "')", con);
                 con.Open();
                 int ret = cmd.ExecuteNonQuery();
                 if (ret == 1)
@@ -72,15 +58,8 @@ namespace QuanLyBanMayTinh
         {
             try
             {
-                string Manv = txtMaNv.Text;
-                string Ten = txtTenNhanVien.Text;
-                DateTime date = dtpNgaySinh.Value;
-                string gt = txtGioiTinh.Text;
-                string chucvu = txtChucVu.Text;
-                string tt = txtTTLH.Text;
-
-                SqlConnection con = new SqlConnection(Connect.ConnectDTB);
-                SqlCommand cmd = new SqlCommand("update NhanVien set TenNV = N'" + Ten + "',NgaySinh = '" + date + "',GioiTinh = N'" + gt + "',ChucVu = N'" + chucvu + "',ThongTinLienHe = N'" + tt + "'where MaNV='" + Manv + "'", con);
+  
+                SqlCommand cmd = new SqlCommand("update NhanVien set MaNV = '" + txtMaNv.Text + "' , TenNV = N'" + txtTenNhanVien.Text + "', NgaySinh = '" + dtpNgaySinh.Value.ToString("yyyy-MM-dd") + "', GioiTinh = N'" + txtGioiTinh.Text + "', ChucVu = N'" + txtChucVu.Text + "', ThongTinLienHe = N'" + txtTTLH.Text + "'where MaNV='" + txtMaNv.Text + "'", con);
                 con.Open();
                 int ret = cmd.ExecuteNonQuery();
                 if (ret == 1)
@@ -99,7 +78,6 @@ namespace QuanLyBanMayTinh
 
             try
             {
-                SqlConnection con = new SqlConnection(Connect.ConnectDTB);
                 SqlCommand cmd = new SqlCommand("delete from NhanVien where MaNV ='" + txtMaNv.Text + "'", con);
                 con.Open();
                 int ret = cmd.ExecuteNonQuery();
@@ -118,14 +96,37 @@ namespace QuanLyBanMayTinh
 
         private void btTIMKIEM_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(Connect.ConnectDTB);
-            SqlDataAdapter da = new SqlDataAdapter("select * from NhanVien where TenNV LIKE '%" + txtTenNhanVien.Text + "%'", con);
-            DataTable dt = new DataTable();
             con.Open();
+            string query = "select * from NhanVien where MaNV = '" + ttbtk.Text + "'";
+            SqlCommand cmd = new SqlCommand(query, con);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
             da.Fill(dt);
-            dgvnv.DataSource = dt;
-
             con.Close();
+            dgvnv.DataSource = dt;
+        }
+
+        private void ttbtk_TextChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void dgvnv_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int t = dgvnv.CurrentCell.RowIndex;
+            txtMaNv.Text = dgvnv.Rows[t].Cells[0].Value.ToString();
+            txtTenNhanVien.Text = dgvnv.Rows[t].Cells[1].Value.ToString();
+            dtpNgaySinh.Text = dgvnv.Rows[t].Cells[2].Value.ToString();
+            txtGioiTinh.Text = dgvnv.Rows[t].Cells[3].Value.ToString();
+            txtChucVu.Text = dgvnv.Rows[t].Cells[4].Value.ToString();
+            txtTTLH.Text = dgvnv.Rows[t].Cells[5].Value.ToString();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            TrangChu c = new TrangChu();
+            c.Show();
+            this.Hide();
         }
     }
 }

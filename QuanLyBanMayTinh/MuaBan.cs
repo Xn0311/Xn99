@@ -28,9 +28,9 @@ namespace QuanLyBanMayTinh
             this.Show();
         }
 
-        SqlCommand cmd;
-        SqlConnection con;
-        SqlDataAdapter da;
+        //SqlCommand cmd;
+      //  SqlConnection con;
+      //  SqlDataAdapter da;
         public string QueryKhachHang = "Select * from KhachHang kh";
         public string QuerySanPham = "select * from SanPham sp";
         private void muaHàngToolStripMenuItem_Click(object sender, EventArgs e)
@@ -79,7 +79,7 @@ namespace QuanLyBanMayTinh
 
         private void dgvDongMay_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            string tensp;
+          //  string tensp;
 
             Masp = dgvSanPham.Rows[e.RowIndex].Cells[0].Value.ToString();
             string Tensp = dgvSanPham.Rows[e.RowIndex].Cells[1].Value.ToString();

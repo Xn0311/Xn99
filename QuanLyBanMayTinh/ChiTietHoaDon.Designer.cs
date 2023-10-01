@@ -47,6 +47,8 @@
             this.btnquaylai = new System.Windows.Forms.Button();
             this.btnsua = new System.Windows.Forms.Button();
             this.btnthem = new System.Windows.Forms.Button();
+            this.lbtk = new System.Windows.Forms.Label();
+            this.txttk = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvct)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -141,9 +143,12 @@
             this.dgvct.RowTemplate.Height = 24;
             this.dgvct.Size = new System.Drawing.Size(788, 539);
             this.dgvct.TabIndex = 5;
+            this.dgvct.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvct_CellContentClick);
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.txttk);
+            this.panel1.Controls.Add(this.lbtk);
             this.panel1.Controls.Add(this.ttbtongtien);
             this.panel1.Controls.Add(this.lbtongtien);
             this.panel1.Controls.Add(this.ttbgia);
@@ -154,9 +159,9 @@
             this.panel1.Controls.Add(this.lbsoluong);
             this.panel1.Controls.Add(this.lbmasp);
             this.panel1.Controls.Add(this.lbmahd);
-            this.panel1.Location = new System.Drawing.Point(12, 114);
+            this.panel1.Location = new System.Drawing.Point(8, 97);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(353, 214);
+            this.panel1.Size = new System.Drawing.Size(353, 249);
             this.panel1.TabIndex = 6;
             // 
             // ttbtongtien
@@ -169,7 +174,7 @@
             // lbtongtien
             // 
             this.lbtongtien.AutoSize = true;
-            this.lbtongtien.Location = new System.Drawing.Point(34, 167);
+            this.lbtongtien.Location = new System.Drawing.Point(35, 167);
             this.lbtongtien.Name = "lbtongtien";
             this.lbtongtien.Size = new System.Drawing.Size(90, 22);
             this.lbtongtien.TabIndex = 5;
@@ -182,7 +187,7 @@
             this.panel2.Controls.Add(this.btnquaylai);
             this.panel2.Controls.Add(this.btnsua);
             this.panel2.Controls.Add(this.btnthem);
-            this.panel2.Location = new System.Drawing.Point(12, 356);
+            this.panel2.Location = new System.Drawing.Point(12, 364);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(352, 155);
             this.panel2.TabIndex = 7;
@@ -195,6 +200,7 @@
             this.btntimkiem.TabIndex = 0;
             this.btntimkiem.Text = "Tìm kiếm";
             this.btntimkiem.UseVisualStyleBackColor = true;
+            this.btntimkiem.Click += new System.EventHandler(this.btntimkiem_Click);
             // 
             // btnxoa
             // 
@@ -204,6 +210,7 @@
             this.btnxoa.TabIndex = 0;
             this.btnxoa.Text = "Xóa";
             this.btnxoa.UseVisualStyleBackColor = true;
+            this.btnxoa.Click += new System.EventHandler(this.btnxoa_Click);
             // 
             // btnquaylai
             // 
@@ -213,6 +220,7 @@
             this.btnquaylai.TabIndex = 0;
             this.btnquaylai.Text = "Quay lại";
             this.btnquaylai.UseVisualStyleBackColor = true;
+            this.btnquaylai.Click += new System.EventHandler(this.btnquaylai_Click);
             // 
             // btnsua
             // 
@@ -233,6 +241,22 @@
             this.btnthem.Text = "Thêm";
             this.btnthem.UseVisualStyleBackColor = true;
             this.btnthem.Click += new System.EventHandler(this.them_Click);
+            // 
+            // lbtk
+            // 
+            this.lbtk.AutoSize = true;
+            this.lbtk.Location = new System.Drawing.Point(34, 203);
+            this.lbtk.Name = "lbtk";
+            this.lbtk.Size = new System.Drawing.Size(90, 22);
+            this.lbtk.TabIndex = 7;
+            this.lbtk.Text = "Tìm Kiếm";
+            // 
+            // txttk
+            // 
+            this.txttk.Location = new System.Drawing.Point(131, 200);
+            this.txttk.Name = "txttk";
+            this.txttk.Size = new System.Drawing.Size(169, 30);
+            this.txttk.TabIndex = 8;
             // 
             // ChiTietHoaDon
             // 
@@ -279,5 +303,7 @@
         private System.Windows.Forms.Button btnthem;
         private System.Windows.Forms.TextBox ttbtongtien;
         private System.Windows.Forms.Label lbtongtien;
+        private System.Windows.Forms.TextBox txttk;
+        private System.Windows.Forms.Label lbtk;
     }
 }
