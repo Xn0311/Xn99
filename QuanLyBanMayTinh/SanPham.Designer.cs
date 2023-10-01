@@ -320,6 +320,7 @@
             this.Controls.Add(this.lbMASP);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "SanPham";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

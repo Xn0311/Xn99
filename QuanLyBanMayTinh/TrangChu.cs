@@ -74,13 +74,27 @@ namespace QuanLyBanMayTinh
         private void trợGiúpToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             MessageBox.Show("Vui lòng liên hệ 'Liêu Xuân Nghĩa' để giải quyết tình huống mắc phải");
-             MessageBox.Show("Dưới đây là link fb của anh ta");
-                string url = "https://www.facebook.com/LieuXuanNghia";
+            MessageBox.Show("Dưới đây là link fb của anh ta");
+            string url = "https://www.facebook.com/LieuXuanNghia";
             DialogResult result = MessageBox.Show("Bạn có muốn mở URL này không?", "Xác nhận", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
                 Process.Start(url);
             }
+        }
+
+        private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult dt = MessageBox.Show("Bạn muốn đóng chương trình", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dt == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

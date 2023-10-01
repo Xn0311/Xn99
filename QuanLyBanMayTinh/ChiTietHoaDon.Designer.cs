@@ -39,6 +39,8 @@
             this.ttbgia = new System.Windows.Forms.TextBox();
             this.dgvct = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txttk = new System.Windows.Forms.TextBox();
+            this.lbtk = new System.Windows.Forms.Label();
             this.ttbtongtien = new System.Windows.Forms.TextBox();
             this.lbtongtien = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -47,8 +49,6 @@
             this.btnquaylai = new System.Windows.Forms.Button();
             this.btnsua = new System.Windows.Forms.Button();
             this.btnthem = new System.Windows.Forms.Button();
-            this.lbtk = new System.Windows.Forms.Label();
-            this.txttk = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvct)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -164,6 +164,22 @@
             this.panel1.Size = new System.Drawing.Size(353, 249);
             this.panel1.TabIndex = 6;
             // 
+            // txttk
+            // 
+            this.txttk.Location = new System.Drawing.Point(131, 200);
+            this.txttk.Name = "txttk";
+            this.txttk.Size = new System.Drawing.Size(169, 30);
+            this.txttk.TabIndex = 8;
+            // 
+            // lbtk
+            // 
+            this.lbtk.AutoSize = true;
+            this.lbtk.Location = new System.Drawing.Point(34, 203);
+            this.lbtk.Name = "lbtk";
+            this.lbtk.Size = new System.Drawing.Size(90, 22);
+            this.lbtk.TabIndex = 7;
+            this.lbtk.Text = "Tìm Kiếm";
+            // 
             // ttbtongtien
             // 
             this.ttbtongtien.Location = new System.Drawing.Point(131, 164);
@@ -242,22 +258,6 @@
             this.btnthem.UseVisualStyleBackColor = true;
             this.btnthem.Click += new System.EventHandler(this.them_Click);
             // 
-            // lbtk
-            // 
-            this.lbtk.AutoSize = true;
-            this.lbtk.Location = new System.Drawing.Point(34, 203);
-            this.lbtk.Name = "lbtk";
-            this.lbtk.Size = new System.Drawing.Size(90, 22);
-            this.lbtk.TabIndex = 7;
-            this.lbtk.Text = "Tìm Kiếm";
-            // 
-            // txttk
-            // 
-            this.txttk.Location = new System.Drawing.Point(131, 200);
-            this.txttk.Name = "txttk";
-            this.txttk.Size = new System.Drawing.Size(169, 30);
-            this.txttk.TabIndex = 8;
-            // 
             // ChiTietHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
@@ -268,6 +268,7 @@
             this.Controls.Add(this.dgvct);
             this.Controls.Add(this.lbcthd);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ChiTietHoaDon";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

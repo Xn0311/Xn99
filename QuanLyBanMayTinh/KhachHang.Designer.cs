@@ -47,9 +47,9 @@
             this.btXOA = new System.Windows.Forms.Button();
             this.btTIMKIEM = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnql = new System.Windows.Forms.Button();
-            this.lbtk = new System.Windows.Forms.Label();
             this.txttk = new System.Windows.Forms.TextBox();
+            this.lbtk = new System.Windows.Forms.Label();
+            this.btnql = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvkh)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -270,15 +270,13 @@
             this.panel1.Size = new System.Drawing.Size(483, 409);
             this.panel1.TabIndex = 5;
             // 
-            // btnql
+            // txttk
             // 
-            this.btnql.Location = new System.Drawing.Point(181, 539);
-            this.btnql.Name = "btnql";
-            this.btnql.Size = new System.Drawing.Size(92, 45);
-            this.btnql.TabIndex = 6;
-            this.btnql.Text = "Quay Lại";
-            this.btnql.UseVisualStyleBackColor = true;
-            this.btnql.Click += new System.EventHandler(this.button1_Click);
+            this.txttk.Location = new System.Drawing.Point(195, 356);
+            this.txttk.Multiline = true;
+            this.txttk.Name = "txttk";
+            this.txttk.Size = new System.Drawing.Size(196, 36);
+            this.txttk.TabIndex = 6;
             // 
             // lbtk
             // 
@@ -289,13 +287,15 @@
             this.lbtk.TabIndex = 5;
             this.lbtk.Text = "Tìm Kiếm";
             // 
-            // txttk
+            // btnql
             // 
-            this.txttk.Location = new System.Drawing.Point(195, 356);
-            this.txttk.Multiline = true;
-            this.txttk.Name = "txttk";
-            this.txttk.Size = new System.Drawing.Size(196, 36);
-            this.txttk.TabIndex = 6;
+            this.btnql.Location = new System.Drawing.Point(181, 539);
+            this.btnql.Name = "btnql";
+            this.btnql.Size = new System.Drawing.Size(92, 45);
+            this.btnql.TabIndex = 6;
+            this.btnql.Text = "Quay Lại";
+            this.btnql.UseVisualStyleBackColor = true;
+            this.btnql.Click += new System.EventHandler(this.button1_Click);
             // 
             // KHACHHANG
             // 
@@ -311,6 +311,7 @@
             this.Controls.Add(this.btSUA);
             this.Controls.Add(this.btTHEM);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "KHACHHANG";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -28,7 +28,7 @@ namespace QuanLyBanMayTinh
                 TrangChu tc = new TrangChu();
                 this.Hide();
                 tc.ShowDialog();
-                this.Show();
+               // this.Show();
 
             }
             else
@@ -66,6 +66,11 @@ namespace QuanLyBanMayTinh
         }
 
         private void Logincs_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbtaikhoan_Click(object sender, EventArgs e)
         {
 
         }
