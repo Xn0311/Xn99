@@ -70,7 +70,7 @@ namespace QuanLyBanMayTinh
             }
         }
         string Masp;
-        int MaHd = 5;
+        int MaHd = 1;
         string Hangsx;
         string Gia;
         string MaKh;
@@ -99,27 +99,6 @@ namespace QuanLyBanMayTinh
             if (int.TryParse(Gia, out Giaca))
             {
                 int result = Giaca;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
             }
             double TongTien = Giaca * SoLuong;
