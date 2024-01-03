@@ -214,7 +214,7 @@
             // btSUA
             // 
             this.btSUA.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btSUA.Location = new System.Drawing.Point(199, 485);
+            this.btSUA.Location = new System.Drawing.Point(185, 485);
             this.btSUA.Margin = new System.Windows.Forms.Padding(6);
             this.btSUA.Name = "btSUA";
             this.btSUA.Size = new System.Drawing.Size(119, 32);

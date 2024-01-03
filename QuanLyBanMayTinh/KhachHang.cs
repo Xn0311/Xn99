@@ -67,7 +67,7 @@ namespace QuanLyBanMayTinh
         {
             string query = "select kh.MaKhachHang, kh.TenKhachHang,kh.GioiTinh,kh.NgaySinh,kh.DiaChi,kh.SDT from KhachHang kh  where TenKhachHang LIKE '%" + txttk.Text + "%'";
             QuanLy.Executenonquery(query,dgvkh);
-            Hienthikhachhang();
+            dgvkh.Refresh();
         }
     }
 }
