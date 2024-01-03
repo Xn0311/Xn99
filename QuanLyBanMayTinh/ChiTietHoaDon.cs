@@ -20,20 +20,7 @@ namespace QuanLyBanMayTinh
 
         SqlConnection conn = new SqlConnection(Connect.ConnectDTB);
 
-        private void them_Click(object sender, EventArgs e)
-        {
-            conn.Open();
-            string query = "Insert into ChiTietHoaDon values ('" + ttbmahd.Text + "', '" + ttbmasp.Text + "', '" + ttbsoluong.Text + "', '" + ttbgia.Text + "')";
-            SqlCommand cmd = new SqlCommand(query, conn);
-            int result = cmd.ExecuteNonQuery();
-            if (result < 0)
-                MessageBox.Show("Lỗi thêm dữ liệu!");
-            else
-                MessageBox.Show("Thêm dữ liệu thành công!");
-            conn.Close();
-            HienThiChiTietHoaDon();
-        }
-
+     
         public void HienThiChiTietHoaDon()
         {
             conn.Open();
@@ -90,13 +77,6 @@ namespace QuanLyBanMayTinh
             da.Fill(dt);
             conn.Close();
             dgvct.DataSource = dt;
-        }
-
-        private void btnquaylai_Click(object sender, EventArgs e)
-        {
-            TrangChu tc = new TrangChu();
-            this.Hide();
-            tc.ShowDialog();
         }
 
         private void dgvct_CellClick(object sender, DataGridViewCellEventArgs e)

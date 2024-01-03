@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChiTietHoaDon));
             this.lbcthd = new System.Windows.Forms.Label();
             this.lbmahd = new System.Windows.Forms.Label();
             this.lbmasp = new System.Windows.Forms.Label();
@@ -46,9 +47,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btntimkiem = new System.Windows.Forms.Button();
             this.btnxoa = new System.Windows.Forms.Button();
-            this.btnquaylai = new System.Windows.Forms.Button();
             this.btnsua = new System.Windows.Forms.Button();
-            this.btnthem = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvct)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -140,6 +139,7 @@
             this.dgvct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvct.Location = new System.Drawing.Point(377, 12);
             this.dgvct.Name = "dgvct";
+            this.dgvct.RowHeadersWidth = 51;
             this.dgvct.RowTemplate.Height = 24;
             this.dgvct.Size = new System.Drawing.Size(788, 539);
             this.dgvct.TabIndex = 5;
@@ -185,7 +185,7 @@
             this.ttbtongtien.Location = new System.Drawing.Point(131, 164);
             this.ttbtongtien.Name = "ttbtongtien";
             this.ttbtongtien.Size = new System.Drawing.Size(169, 30);
-            this.ttbtongtien.TabIndex = 6;
+            this.ttbtongtien.TabIndex = 5;
             // 
             // lbtongtien
             // 
@@ -200,9 +200,7 @@
             // 
             this.panel2.Controls.Add(this.btntimkiem);
             this.panel2.Controls.Add(this.btnxoa);
-            this.panel2.Controls.Add(this.btnquaylai);
             this.panel2.Controls.Add(this.btnsua);
-            this.panel2.Controls.Add(this.btnthem);
             this.panel2.Location = new System.Drawing.Point(12, 364);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(352, 155);
@@ -210,53 +208,33 @@
             // 
             // btntimkiem
             // 
-            this.btntimkiem.Location = new System.Drawing.Point(30, 99);
+            this.btntimkiem.Location = new System.Drawing.Point(256, 57);
             this.btntimkiem.Name = "btntimkiem";
-            this.btntimkiem.Size = new System.Drawing.Size(93, 35);
-            this.btntimkiem.TabIndex = 0;
+            this.btntimkiem.Size = new System.Drawing.Size(93, 30);
+            this.btntimkiem.TabIndex = 9;
             this.btntimkiem.Text = "Tìm kiếm";
             this.btntimkiem.UseVisualStyleBackColor = true;
             this.btntimkiem.Click += new System.EventHandler(this.btntimkiem_Click);
             // 
             // btnxoa
             // 
-            this.btnxoa.Location = new System.Drawing.Point(271, 3);
+            this.btnxoa.Location = new System.Drawing.Point(128, 57);
             this.btnxoa.Name = "btnxoa";
-            this.btnxoa.Size = new System.Drawing.Size(78, 35);
-            this.btnxoa.TabIndex = 0;
+            this.btnxoa.Size = new System.Drawing.Size(98, 30);
+            this.btnxoa.TabIndex = 7;
             this.btnxoa.Text = "Xóa";
             this.btnxoa.UseVisualStyleBackColor = true;
             this.btnxoa.Click += new System.EventHandler(this.btnxoa_Click);
             // 
-            // btnquaylai
-            // 
-            this.btnquaylai.Location = new System.Drawing.Point(212, 99);
-            this.btnquaylai.Name = "btnquaylai";
-            this.btnquaylai.Size = new System.Drawing.Size(110, 35);
-            this.btnquaylai.TabIndex = 0;
-            this.btnquaylai.Text = "Quay lại";
-            this.btnquaylai.UseVisualStyleBackColor = true;
-            this.btnquaylai.Click += new System.EventHandler(this.btnquaylai_Click);
-            // 
             // btnsua
             // 
-            this.btnsua.Location = new System.Drawing.Point(142, 3);
+            this.btnsua.Location = new System.Drawing.Point(3, 57);
             this.btnsua.Name = "btnsua";
-            this.btnsua.Size = new System.Drawing.Size(78, 35);
-            this.btnsua.TabIndex = 0;
+            this.btnsua.Size = new System.Drawing.Size(78, 30);
+            this.btnsua.TabIndex = 6;
             this.btnsua.Text = "Sửa";
             this.btnsua.UseVisualStyleBackColor = true;
             this.btnsua.Click += new System.EventHandler(this.btnSuaCT_Click);
-            // 
-            // btnthem
-            // 
-            this.btnthem.Location = new System.Drawing.Point(3, 3);
-            this.btnthem.Name = "btnthem";
-            this.btnthem.Size = new System.Drawing.Size(78, 35);
-            this.btnthem.TabIndex = 0;
-            this.btnthem.Text = "Thêm";
-            this.btnthem.UseVisualStyleBackColor = true;
-            this.btnthem.Click += new System.EventHandler(this.them_Click);
             // 
             // ChiTietHoaDon
             // 
@@ -268,7 +246,7 @@
             this.Controls.Add(this.dgvct);
             this.Controls.Add(this.lbcthd);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ChiTietHoaDon";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -299,9 +277,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btntimkiem;
         private System.Windows.Forms.Button btnxoa;
-        private System.Windows.Forms.Button btnquaylai;
         private System.Windows.Forms.Button btnsua;
-        private System.Windows.Forms.Button btnthem;
         private System.Windows.Forms.TextBox ttbtongtien;
         private System.Windows.Forms.Label lbtongtien;
         private System.Windows.Forms.TextBox txttk;

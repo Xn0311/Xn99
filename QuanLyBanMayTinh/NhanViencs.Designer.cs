@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NhanViencs));
             this.btTHEM = new System.Windows.Forms.Button();
             this.dtpNgaySinh = new System.Windows.Forms.DateTimePicker();
             this.lbGIOITINH = new System.Windows.Forms.Label();
@@ -50,7 +51,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.ttbtk = new System.Windows.Forms.TextBox();
             this.lbtk = new System.Windows.Forms.Label();
-            this.btnql = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvnv)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -58,11 +58,11 @@
             // btTHEM
             // 
             this.btTHEM.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btTHEM.Location = new System.Drawing.Point(430, 672);
+            this.btTHEM.Location = new System.Drawing.Point(286, 672);
             this.btTHEM.Margin = new System.Windows.Forms.Padding(6);
             this.btTHEM.Name = "btTHEM";
-            this.btTHEM.Size = new System.Drawing.Size(95, 39);
-            this.btTHEM.TabIndex = 0;
+            this.btTHEM.Size = new System.Drawing.Size(146, 39);
+            this.btTHEM.TabIndex = 7;
             this.btTHEM.Text = "Thêm ";
             this.btTHEM.UseVisualStyleBackColor = true;
             this.btTHEM.Click += new System.EventHandler(this.btTHEM_Click);
@@ -76,7 +76,7 @@
             this.dtpNgaySinh.Margin = new System.Windows.Forms.Padding(6);
             this.dtpNgaySinh.Name = "dtpNgaySinh";
             this.dtpNgaySinh.Size = new System.Drawing.Size(150, 30);
-            this.dtpNgaySinh.TabIndex = 1;
+            this.dtpNgaySinh.TabIndex = 3;
             // 
             // lbGIOITINH
             // 
@@ -183,7 +183,7 @@
             this.txtMaNv.Margin = new System.Windows.Forms.Padding(6);
             this.txtMaNv.Name = "txtMaNv";
             this.txtMaNv.Size = new System.Drawing.Size(250, 30);
-            this.txtMaNv.TabIndex = 4;
+            this.txtMaNv.TabIndex = 1;
             // 
             // txtTenNhanVien
             // 
@@ -191,7 +191,7 @@
             this.txtTenNhanVien.Margin = new System.Windows.Forms.Padding(6);
             this.txtTenNhanVien.Name = "txtTenNhanVien";
             this.txtTenNhanVien.Size = new System.Drawing.Size(250, 30);
-            this.txtTenNhanVien.TabIndex = 4;
+            this.txtTenNhanVien.TabIndex = 2;
             // 
             // txtGioiTinh
             // 
@@ -207,7 +207,7 @@
             this.txtChucVu.Margin = new System.Windows.Forms.Padding(6);
             this.txtChucVu.Name = "txtChucVu";
             this.txtChucVu.Size = new System.Drawing.Size(257, 30);
-            this.txtChucVu.TabIndex = 4;
+            this.txtChucVu.TabIndex = 5;
             // 
             // txtTTLH
             // 
@@ -215,16 +215,16 @@
             this.txtTTLH.Margin = new System.Windows.Forms.Padding(6);
             this.txtTTLH.Name = "txtTTLH";
             this.txtTTLH.Size = new System.Drawing.Size(257, 30);
-            this.txtTTLH.TabIndex = 4;
+            this.txtTTLH.TabIndex = 6;
             // 
             // btSUA
             // 
             this.btSUA.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btSUA.Location = new System.Drawing.Point(559, 672);
+            this.btSUA.Location = new System.Drawing.Point(546, 672);
             this.btSUA.Margin = new System.Windows.Forms.Padding(6);
             this.btSUA.Name = "btSUA";
-            this.btSUA.Size = new System.Drawing.Size(86, 39);
-            this.btSUA.TabIndex = 0;
+            this.btSUA.Size = new System.Drawing.Size(137, 39);
+            this.btSUA.TabIndex = 8;
             this.btSUA.Text = "Sửa ";
             this.btSUA.UseVisualStyleBackColor = true;
             this.btSUA.Click += new System.EventHandler(this.btSUA_Click);
@@ -232,11 +232,11 @@
             // btXOA
             // 
             this.btXOA.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btXOA.Location = new System.Drawing.Point(682, 672);
+            this.btXOA.Location = new System.Drawing.Point(764, 672);
             this.btXOA.Margin = new System.Windows.Forms.Padding(6);
             this.btXOA.Name = "btXOA";
-            this.btXOA.Size = new System.Drawing.Size(92, 39);
-            this.btXOA.TabIndex = 0;
+            this.btXOA.Size = new System.Drawing.Size(143, 39);
+            this.btXOA.TabIndex = 9;
             this.btXOA.Text = "Xóa";
             this.btXOA.UseVisualStyleBackColor = true;
             this.btXOA.Click += new System.EventHandler(this.btXOA_Click);
@@ -244,11 +244,11 @@
             // btTIMKIEM
             // 
             this.btTIMKIEM.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btTIMKIEM.Location = new System.Drawing.Point(817, 672);
+            this.btTIMKIEM.Location = new System.Drawing.Point(1001, 672);
             this.btTIMKIEM.Margin = new System.Windows.Forms.Padding(6);
             this.btTIMKIEM.Name = "btTIMKIEM";
-            this.btTIMKIEM.Size = new System.Drawing.Size(116, 39);
-            this.btTIMKIEM.TabIndex = 0;
+            this.btTIMKIEM.Size = new System.Drawing.Size(167, 39);
+            this.btTIMKIEM.TabIndex = 11;
             this.btTIMKIEM.Text = "Tìm Kiếm";
             this.btTIMKIEM.UseVisualStyleBackColor = true;
             this.btTIMKIEM.Click += new System.EventHandler(this.btTIMKIEM_Click);
@@ -279,7 +279,7 @@
             this.ttbtk.Location = new System.Drawing.Point(1002, 91);
             this.ttbtk.Name = "ttbtk";
             this.ttbtk.Size = new System.Drawing.Size(148, 30);
-            this.ttbtk.TabIndex = 6;
+            this.ttbtk.TabIndex = 10;
             this.ttbtk.TextChanged += new System.EventHandler(this.ttbtk_TextChanged);
             // 
             // lbtk
@@ -291,22 +291,11 @@
             this.lbtk.TabIndex = 5;
             this.lbtk.Text = "Tìm Kiếm";
             // 
-            // btnql
-            // 
-            this.btnql.Location = new System.Drawing.Point(975, 672);
-            this.btnql.Name = "btnql";
-            this.btnql.Size = new System.Drawing.Size(105, 39);
-            this.btnql.TabIndex = 6;
-            this.btnql.Text = "Quay Lại";
-            this.btnql.UseVisualStyleBackColor = true;
-            this.btnql.Click += new System.EventHandler(this.button1_Click);
-            // 
             // NhanViencs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1489, 726);
-            this.Controls.Add(this.btnql);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgvnv);
             this.Controls.Add(this.label4);
@@ -316,7 +305,7 @@
             this.Controls.Add(this.btSUA);
             this.Controls.Add(this.btTHEM);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "NhanViencs";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -354,6 +343,5 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox ttbtk;
         private System.Windows.Forms.Label lbtk;
-        private System.Windows.Forms.Button btnql;
     }
 }

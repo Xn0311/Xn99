@@ -19,24 +19,12 @@ namespace QuanLyBanMayTinh
         }
         SqlConnection conn = new SqlConnection(Connect.ConnectDTB);
 
-        private void btnthem_Click_1(object sender, EventArgs e)
-        {
-            conn.Open();
-            string query = "Insert into HoaDon values ('" + ttbmahd.Text + "', N'" + ttbmakh.Text + "', N'" + ttbmanv.Text + "', N'" + dtpngaydat.Value.ToString("yyyy-MM-dd") + "', N'" + dtpngaynhan.Value.ToString("yyyy-MM-dd") + "', '" + ttbnoinhan.Text + "')";
-            SqlCommand cmd = new SqlCommand(query, conn);
-            int result = cmd.ExecuteNonQuery();
-            if (result < 0)
-                MessageBox.Show("Lỗi thêm dữ liệu!");
-            else
-                MessageBox.Show("Thêm dữ liệu thành công!");
-            conn.Close();
-            HienThiHoaDon();
-        }
+        
 
         public void HienThiHoaDon()
         {
             conn.Open();
-            string query = "SELECT * FROM HoaDon";
+            string query = "select hd.MaHoaDon , hd.MaKhachHang, hd.NgayDat as 'Ngay Mua' from HoaDon hd";
             SqlCommand cmd = new SqlCommand(query, conn);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
@@ -53,7 +41,7 @@ namespace QuanLyBanMayTinh
         private void btnSuaHD_Click(object sender, EventArgs e)
         {
             conn.Open();
-            string query = "update HoaDon set MaHoaDon ='" + ttbmahd.Text + "' , MaKhachHang = N'" + ttbmakh.Text + "' , MaNV= N'" + ttbmanv.Text + "', NgayDat = '" + dtpngaydat.Value.ToString("yyyy-MM-dd") + "', NgayNhan = N'" + dtpngaynhan.Value.ToString("yyyy-MM-dd") + "', NoiNhan = '" + ttbnoinhan.Text + "' where MaHoaDon =  '" + ttbmahd.Text + "'";
+            string query = "update HoaDon set MaHoaDon ='" + ttbmahd.Text + "' , MaKhachHang = N'" + ttbmakh.Text + "', NgayDat = '" + dtpngaydat.Value.ToString("yyyy-MM-dd") + "' where MaHoaDon =  '" + ttbmahd.Text + "'";
             SqlCommand cmd = new SqlCommand(query, conn);
             int result = cmd.ExecuteNonQuery();
             if (result < 0)
@@ -78,12 +66,6 @@ namespace QuanLyBanMayTinh
             HienThiHoaDon();
         }
 
-        private void btnquaylai_Click(object sender, EventArgs e)
-        {
-            TrangChu tc = new TrangChu();
-            this.Hide();
-            tc.ShowDialog();
-        }
 
         private void dgv1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -92,10 +74,8 @@ namespace QuanLyBanMayTinh
                 DataGridViewRow row = dgv1.Rows[e.RowIndex];
                 ttbmahd.Text = row.Cells[0].Value.ToString();
                 ttbmakh.Text = row.Cells[1].Value.ToString();
-                ttbmanv.Text = row.Cells[2].Value.ToString();
-                dtpngaydat.Text = row.Cells[3].Value.ToString();
-                dtpngaynhan.Text = row.Cells[4].Value.ToString();
-                ttbnoinhan.Text = row.Cells[5].Value.ToString();
+                dtpngaydat.Text = row.Cells[2].Value.ToString();
+               
             }
         }
     }

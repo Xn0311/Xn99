@@ -77,7 +77,7 @@
             this.txtTimDongMay.Name = "txtTimDongMay";
             this.txtTimDongMay.Size = new System.Drawing.Size(165, 22);
             this.txtTimDongMay.TabIndex = 5;
-            this.txtTimDongMay.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTimDongMay_KeyDown);
+            this.txtTimDongMay.TextChanged += new System.EventHandler(this.txtTimDongMay_TextChanged);
             // 
             // pictureBox1
             // 
@@ -95,7 +95,7 @@
             this.txtTimKhach.Name = "txtTimKhach";
             this.txtTimKhach.Size = new System.Drawing.Size(188, 22);
             this.txtTimKhach.TabIndex = 5;
-            this.txtTimKhach.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTimKhach_KeyDown);
+            this.txtTimKhach.TextChanged += new System.EventHandler(this.txtTimKhach_TextChanged);
             // 
             // pictureBox3
             // 
@@ -160,6 +160,7 @@
             this.Controls.Add(this.txtTimDongMay);
             this.Controls.Add(this.dgvKhachHang);
             this.Controls.Add(this.dgvSanPham);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MuaBan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mua Hàng";

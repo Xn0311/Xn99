@@ -17,87 +17,39 @@ namespace QuanLyBanMayTinh
         {
             InitializeComponent();
         }
-        SqlConnection conn = new SqlConnection(Connect.ConnectDTB);
-
+        QuanLy QuanLy = new QuanLy();
         private void btTHEM_Click(object sender, EventArgs e)
         {
-
-            conn.Open();
             string query = "Insert into KhachHang values ('" + txtMaKhachHang.Text + "', N'" + txtTenKH.Text + "', N'" + txtGioiTinh.Text + "', '" + dtpngaysinh.Value.ToString("yyyy-MM-dd") + "', N'" + txtDiaChi.Text + "', '" + txtSdt.Text + "')";
-            SqlCommand cmd = new SqlCommand(query, conn);
-            int result = cmd.ExecuteNonQuery();
-            if (result < 0)
-                MessageBox.Show("Lỗi thêm dữ liệu!");
-            else
-                MessageBox.Show("Thêm dữ liệu thành công!");
-            conn.Close();
-            HienThiKhachHang();
+            QuanLy.Executenonquery(query, dgvkh);
+            dgvkh.Refresh();   
         }
-
-        public void HienThiKhachHang()
+        public void Hienthikhachhang()
         {
-            conn.Open();
-            string query = "SELECT * FROM KhachHang";
-            SqlCommand cmd = new SqlCommand(query, conn);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            conn.Close();
-            dgvkh.DataSource = dt;
+            QuanLy.Executenonquery("select * from khachhang", dgvkh);
         }
-
         private void KHACHHANG_Load(object sender, EventArgs e)
         {
-            HienThiKhachHang();
+            Hienthikhachhang();
         }       
-
         private void btnSuaKH_Click(object sender, EventArgs e)
         {
-            conn.Open();
             string query = "update KhachHang set MaKhachHang ='" + txtMaKhachHang.Text + "' , TenKhachHang = N'" + txtTenKH.Text + "' , GioiTinh= N'" + txtGioiTinh.Text + "', NgaySinh = '" + dtpngaysinh.Value.ToString("yyyy-MM-dd") + "', DiaChi = N'" + txtDiaChi.Text + "', SDT = '" + txtSdt.Text + "' where MaKhachHang =  '" + txtMaKhachHang.Text + "'";
-            SqlCommand cmd = new SqlCommand(query, conn);
-            int result = cmd.ExecuteNonQuery();
-            if (result < 0)
-                MessageBox.Show("Lỗi cập nhật dữ liệu!");
-            else
-                MessageBox.Show("Cập nhật dữ liệu thành công!");
-            conn.Close();
-            HienThiKhachHang();
+            if (MessageBox.Show("Bạn có muốn sửa bản ghi này không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                QuanLy.Executenonquery(query,dgvkh);
+            }
+            Hienthikhachhang();
         }
-
         private void btXOA_Click(object sender, EventArgs e)
         {
-            conn.Open();
             string query = "delete KhachHang where MaKhachHang= '" + txtMaKhachHang.Text + "'";
-            SqlCommand cmd = new SqlCommand(query, conn);
-            int result = cmd.ExecuteNonQuery();
-            if (result < 0)
-                MessageBox.Show("Lỗi cập nhật dữ liệu!");
-            else
-                MessageBox.Show("Xóa dữ liệu thành công!");
-            conn.Close();
-            HienThiKhachHang();
+            if (MessageBox.Show("Bạn có muốn xoá bản ghi này không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                QuanLy.Executenonquery(query,dgvkh);
+            }
+            Hienthikhachhang();
         }
-
-        private void btTIMKIEM_Click(object sender, EventArgs e)
-        {
-            conn.Open();
-            string query = "select * from KhachHang where MaKhachHang = '" + txttk.Text + "'";
-            SqlCommand cmd = new SqlCommand(query, conn);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            conn.Close();
-            dgvkh.DataSource = dt;
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            TrangChu tc = new TrangChu();
-            this.Hide();
-            tc.ShowDialog();
-        }
-
         private void dgvkh_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -110,6 +62,12 @@ namespace QuanLyBanMayTinh
                 txtDiaChi.Text = row.Cells[4].Value.ToString();
                 txtSdt.Text = row.Cells[5].Value.ToString();
             }
+        }
+        private void txttk_TextChanged(object sender, EventArgs e)
+        {
+            string query = "select kh.MaKhachHang, kh.TenKhachHang,kh.GioiTinh,kh.NgaySinh,kh.DiaChi,kh.SDT from KhachHang kh  where TenKhachHang LIKE '%" + txttk.Text + "%'";
+            QuanLy.Executenonquery(query,dgvkh);
+            Hienthikhachhang();
         }
     }
 }

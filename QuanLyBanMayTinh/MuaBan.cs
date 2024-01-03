@@ -19,7 +19,7 @@ namespace QuanLyBanMayTinh
             InitializeComponent();
 
         }
-        MuaBanManager mb = new MuaBanManager();
+        
         private void quảnLýNhânViênToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -27,10 +27,7 @@ namespace QuanLyBanMayTinh
             nv.ShowDialog();
             this.Show();
         }
-
-        //SqlCommand cmd;
-      //  SqlConnection con;
-      //  SqlDataAdapter da;
+        QuanLy QuanLy = new QuanLy();
         public string QueryKhachHang = "Select * from KhachHang kh";
         public string QuerySanPham = "select * from SanPham sp";
         private void muaHàngToolStripMenuItem_Click(object sender, EventArgs e)
@@ -43,53 +40,26 @@ namespace QuanLyBanMayTinh
         private void MuaBan_Load(object sender, EventArgs e)
         {
 
-            mb.showData(dgvSanPham, QuerySanPham);
-
-            mb.showData(dgvKhachHang, QueryKhachHang);
+            QuanLy.Executenonquery(QuerySanPham, dgvSanPham);
+            QuanLy.Executenonquery(QueryKhachHang, dgvKhachHang);
 
         }
-        private void txtTimDongMay_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                string str = "select sp.MaSanPham, sp.TenSanPham,sp.HangSX,sp.TGBaoHanh,sp.ThongSo,sp.SoLuong,sp.GiaTien from SanPham sp where TenSanPham LIKE '%" + txtTimDongMay.Text + "%'";
-                mb.showData(dgvSanPham, str);
-                dgvSanPham.Refresh();
-
-            }
-        }
-
-        private void txtTimKhach_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                string str = "select kh.MaKhachHang, kh.TenKhachHang,kh.GioiTinh,kh.NgaySinh,kh.DiaChi,kh.SDT from KhachHang kh  where TenKhachHang LIKE '%" + txtTimKhach.Text + "%'";
-                mb.showData(dgvKhachHang, str);
-                dgvKhachHang.Refresh();
-
-            }
-        }
+      
         string Masp;
         int MaHd = 1;
         string Hangsx;
         string Gia;
         string MaKh;
         DateTime GetNow = DateTime.Now;
-
-
         private void dgvDongMay_CellClick(object sender, DataGridViewCellEventArgs e)
         {
           //  string tensp;
-
             Masp = dgvSanPham.Rows[e.RowIndex].Cells[0].Value.ToString();
             string Tensp = dgvSanPham.Rows[e.RowIndex].Cells[1].Value.ToString();
             Hangsx = dgvSanPham.Rows[e.RowIndex].Cells[2].Value.ToString();
             string a = dgvSanPham.Rows[e.RowIndex].Cells[3].Value.ToString();
             string b = dgvSanPham.Rows[e.RowIndex].Cells[4].Value.ToString();
             Gia = dgvSanPham.Rows[e.RowIndex].Cells[6].Value.ToString();
-
-
-
         }
         private void btnMua_Click(object sender, EventArgs e)
         {
@@ -99,7 +69,6 @@ namespace QuanLyBanMayTinh
             if (int.TryParse(Gia, out Giaca))
             {
                 int result = Giaca;
-
             }
             double TongTien = Giaca * SoLuong;
             string insertHoaDon = "insert into HoaDon values('" + Convert.ToString(MaHd) + "','" + MaKh + "','" + GetNow + "')";
@@ -114,12 +83,22 @@ namespace QuanLyBanMayTinh
             con.Close();
             MaHd += 1;
         }
-
         private void dgvKhachHang_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             MaKh = dgvKhachHang.Rows[e.RowIndex].Cells[0].Value.ToString();
         }
+        private void txtTimDongMay_TextChanged(object sender, EventArgs e)
+        {
+            string query = "select sp.MaSanPham, sp.TenSanPham,sp.HangSX,sp.TGBaoHanh,sp.ThongSo,sp.SoLuong,sp.GiaTien from SanPham sp where TenSanPham LIKE '%" + txtTimDongMay.Text + "%'";
+            QuanLy.Executenonquery(query, dgvSanPham);
+        }
 
+        private void txtTimKhach_TextChanged(object sender, EventArgs e)
+        {  
+            string str = "select kh.MaKhachHang, kh.TenKhachHang,kh.GioiTinh,kh.NgaySinh,kh.DiaChi,kh.SDT from KhachHang kh  where TenKhachHang LIKE '%" + txtTimKhach.Text + "%'";
+            QuanLy.Executenonquery(str, dgvKhachHang);
+            dgvKhachHang.Refresh();
+        }
     }
 }
 

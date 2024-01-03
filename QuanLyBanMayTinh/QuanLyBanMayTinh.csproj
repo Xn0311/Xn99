@@ -78,13 +78,13 @@
     <Compile Include="MuaBan.Designer.cs">
       <DependentUpon>MuaBan.cs</DependentUpon>
     </Compile>
-    <Compile Include="MuaBanManager.cs" />
     <Compile Include="NhanViencs.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="NhanViencs.Designer.cs">
       <DependentUpon>NhanViencs.cs</DependentUpon>
     </Compile>
+    <Compile Include="QuanLy.cs" />
     <Compile Include="SanPham.cs">
       <SubType>Form</SubType>
     </Compile>

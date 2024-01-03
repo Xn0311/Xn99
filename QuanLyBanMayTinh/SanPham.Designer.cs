@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SanPham));
             this.label1 = new System.Windows.Forms.Label();
             this.ttbmasp = new System.Windows.Forms.TextBox();
             this.btTHEM = new System.Windows.Forms.Button();
@@ -44,7 +45,6 @@
             this.btSUA = new System.Windows.Forms.Button();
             this.btXOA = new System.Windows.Forms.Button();
             this.btTIMKIEM = new System.Windows.Forms.Button();
-            this.btQUAYLAI = new System.Windows.Forms.Button();
             this.lbsoluong = new System.Windows.Forms.Label();
             this.ttbsoluong = new System.Windows.Forms.TextBox();
             this.lbgiatien = new System.Windows.Forms.Label();
@@ -66,20 +66,20 @@
             // 
             // ttbmasp
             // 
-            this.ttbmasp.Location = new System.Drawing.Point(341, 97);
+            this.ttbmasp.Location = new System.Drawing.Point(295, 72);
             this.ttbmasp.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ttbmasp.Name = "ttbmasp";
             this.ttbmasp.Size = new System.Drawing.Size(224, 30);
-            this.ttbmasp.TabIndex = 2;
+            this.ttbmasp.TabIndex = 1;
             // 
             // btTHEM
             // 
             this.btTHEM.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btTHEM.Location = new System.Drawing.Point(293, 606);
+            this.btTHEM.Location = new System.Drawing.Point(350, 579);
             this.btTHEM.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btTHEM.Name = "btTHEM";
-            this.btTHEM.Size = new System.Drawing.Size(106, 31);
-            this.btTHEM.TabIndex = 3;
+            this.btTHEM.Size = new System.Drawing.Size(147, 31);
+            this.btTHEM.TabIndex = 9;
             this.btTHEM.Text = "Thêm";
             this.btTHEM.UseVisualStyleBackColor = true;
             this.btTHEM.Click += new System.EventHandler(this.btTHEM_Click);
@@ -89,9 +89,10 @@
             this.dgvsp.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvsp.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvsp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvsp.Location = new System.Drawing.Point(152, 239);
+            this.dgvsp.Location = new System.Drawing.Point(165, 212);
             this.dgvsp.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dgvsp.Name = "dgvsp";
+            this.dgvsp.RowHeadersWidth = 51;
             this.dgvsp.Size = new System.Drawing.Size(1131, 361);
             this.dgvsp.TabIndex = 4;
             this.dgvsp.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvsp_CellClick);
@@ -110,7 +111,7 @@
             // lbTGBH
             // 
             this.lbTGBH.AutoSize = true;
-            this.lbTGBH.Location = new System.Drawing.Point(717, 149);
+            this.lbTGBH.Location = new System.Drawing.Point(719, 123);
             this.lbTGBH.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbTGBH.Name = "lbTGBH";
             this.lbTGBH.Size = new System.Drawing.Size(174, 22);
@@ -120,7 +121,7 @@
             // lbTHONGSO
             // 
             this.lbTHONGSO.AutoSize = true;
-            this.lbTHONGSO.Location = new System.Drawing.Point(800, 101);
+            this.lbTHONGSO.Location = new System.Drawing.Point(719, 75);
             this.lbTHONGSO.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbTHONGSO.Name = "lbTHONGSO";
             this.lbTHONGSO.Size = new System.Drawing.Size(85, 22);
@@ -131,7 +132,7 @@
             // 
             this.lbMASP.AutoSize = true;
             this.lbMASP.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbMASP.Location = new System.Drawing.Point(210, 101);
+            this.lbMASP.Location = new System.Drawing.Point(164, 76);
             this.lbMASP.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbMASP.Name = "lbMASP";
             this.lbMASP.Size = new System.Drawing.Size(118, 22);
@@ -141,7 +142,7 @@
             // lbHANGSX
             // 
             this.lbHANGSX.AutoSize = true;
-            this.lbHANGSX.Location = new System.Drawing.Point(202, 201);
+            this.lbHANGSX.Location = new System.Drawing.Point(156, 176);
             this.lbHANGSX.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbHANGSX.Name = "lbHANGSX";
             this.lbHANGSX.Size = new System.Drawing.Size(127, 22);
@@ -151,7 +152,7 @@
             // lbTENSV
             // 
             this.lbTENSV.AutoSize = true;
-            this.lbTENSV.Location = new System.Drawing.Point(207, 149);
+            this.lbTENSV.Location = new System.Drawing.Point(161, 124);
             this.lbTENSV.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbTENSV.Name = "lbTENSV";
             this.lbTENSV.Size = new System.Drawing.Size(122, 22);
@@ -160,7 +161,7 @@
             // 
             // ttbtensp
             // 
-            this.ttbtensp.Location = new System.Drawing.Point(341, 146);
+            this.ttbtensp.Location = new System.Drawing.Point(295, 121);
             this.ttbtensp.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ttbtensp.Name = "ttbtensp";
             this.ttbtensp.Size = new System.Drawing.Size(225, 30);
@@ -168,29 +169,29 @@
             // 
             // ttbhangsx
             // 
-            this.ttbhangsx.Location = new System.Drawing.Point(341, 201);
+            this.ttbhangsx.Location = new System.Drawing.Point(295, 176);
             this.ttbhangsx.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ttbhangsx.Name = "ttbhangsx";
             this.ttbhangsx.Size = new System.Drawing.Size(225, 30);
-            this.ttbhangsx.TabIndex = 2;
+            this.ttbhangsx.TabIndex = 3;
             this.ttbhangsx.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // ttbthongso
             // 
-            this.ttbthongso.Location = new System.Drawing.Point(893, 97);
+            this.ttbthongso.Location = new System.Drawing.Point(895, 71);
             this.ttbthongso.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ttbthongso.Name = "ttbthongso";
             this.ttbthongso.Size = new System.Drawing.Size(390, 30);
-            this.ttbthongso.TabIndex = 2;
+            this.ttbthongso.TabIndex = 1;
             // 
             // btSUA
             // 
             this.btSUA.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btSUA.Location = new System.Drawing.Point(461, 606);
+            this.btSUA.Location = new System.Drawing.Point(518, 579);
             this.btSUA.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btSUA.Name = "btSUA";
-            this.btSUA.Size = new System.Drawing.Size(106, 31);
-            this.btSUA.TabIndex = 3;
+            this.btSUA.Size = new System.Drawing.Size(147, 31);
+            this.btSUA.TabIndex = 10;
             this.btSUA.Text = "Sửa";
             this.btSUA.UseVisualStyleBackColor = true;
             this.btSUA.Click += new System.EventHandler(this.btnSuaSP_Click);
@@ -198,11 +199,11 @@
             // btXOA
             // 
             this.btXOA.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btXOA.Location = new System.Drawing.Point(617, 606);
+            this.btXOA.Location = new System.Drawing.Point(674, 579);
             this.btXOA.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btXOA.Name = "btXOA";
-            this.btXOA.Size = new System.Drawing.Size(106, 31);
-            this.btXOA.TabIndex = 3;
+            this.btXOA.Size = new System.Drawing.Size(147, 31);
+            this.btXOA.TabIndex = 11;
             this.btXOA.Text = "Xóa";
             this.btXOA.UseVisualStyleBackColor = true;
             this.btXOA.Click += new System.EventHandler(this.btXOA_Click);
@@ -210,31 +211,20 @@
             // btTIMKIEM
             // 
             this.btTIMKIEM.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btTIMKIEM.Location = new System.Drawing.Point(776, 606);
+            this.btTIMKIEM.Location = new System.Drawing.Point(833, 579);
             this.btTIMKIEM.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btTIMKIEM.Name = "btTIMKIEM";
-            this.btTIMKIEM.Size = new System.Drawing.Size(125, 31);
+            this.btTIMKIEM.Size = new System.Drawing.Size(166, 31);
             this.btTIMKIEM.TabIndex = 3;
+            this.btTIMKIEM.Tag = "12";
             this.btTIMKIEM.Text = "Tìm Kiếm";
             this.btTIMKIEM.UseVisualStyleBackColor = true;
             this.btTIMKIEM.Click += new System.EventHandler(this.btTIMKIEM_Click);
             // 
-            // btQUAYLAI
-            // 
-            this.btQUAYLAI.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btQUAYLAI.Location = new System.Drawing.Point(962, 606);
-            this.btQUAYLAI.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btQUAYLAI.Name = "btQUAYLAI";
-            this.btQUAYLAI.Size = new System.Drawing.Size(122, 31);
-            this.btQUAYLAI.TabIndex = 3;
-            this.btQUAYLAI.Text = "Quay Lại";
-            this.btQUAYLAI.UseVisualStyleBackColor = true;
-            this.btQUAYLAI.Click += new System.EventHandler(this.btQUAYLAI_Click);
-            // 
             // lbsoluong
             // 
             this.lbsoluong.AutoSize = true;
-            this.lbsoluong.Location = new System.Drawing.Point(1057, 149);
+            this.lbsoluong.Location = new System.Drawing.Point(1059, 123);
             this.lbsoluong.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbsoluong.Name = "lbsoluong";
             this.lbsoluong.Size = new System.Drawing.Size(87, 22);
@@ -243,7 +233,7 @@
             // 
             // ttbsoluong
             // 
-            this.ttbsoluong.Location = new System.Drawing.Point(1152, 146);
+            this.ttbsoluong.Location = new System.Drawing.Point(1154, 120);
             this.ttbsoluong.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ttbsoluong.Name = "ttbsoluong";
             this.ttbsoluong.Size = new System.Drawing.Size(131, 30);
@@ -252,7 +242,7 @@
             // lbgiatien
             // 
             this.lbgiatien.AutoSize = true;
-            this.lbgiatien.Location = new System.Drawing.Point(806, 196);
+            this.lbgiatien.Location = new System.Drawing.Point(725, 175);
             this.lbgiatien.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbgiatien.Name = "lbgiatien";
             this.lbgiatien.Size = new System.Drawing.Size(79, 22);
@@ -261,23 +251,23 @@
             // 
             // ttbgiatien
             // 
-            this.ttbgiatien.Location = new System.Drawing.Point(893, 193);
+            this.ttbgiatien.Location = new System.Drawing.Point(895, 167);
             this.ttbgiatien.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ttbgiatien.Name = "ttbgiatien";
             this.ttbgiatien.Size = new System.Drawing.Size(148, 30);
-            this.ttbgiatien.TabIndex = 8;
+            this.ttbgiatien.TabIndex = 7;
             // 
             // ttbtgbh
             // 
-            this.ttbtgbh.Location = new System.Drawing.Point(893, 146);
+            this.ttbtgbh.Location = new System.Drawing.Point(895, 120);
             this.ttbtgbh.Name = "ttbtgbh";
-            this.ttbtgbh.Size = new System.Drawing.Size(133, 30);
-            this.ttbtgbh.TabIndex = 9;
+            this.ttbtgbh.Size = new System.Drawing.Size(148, 30);
+            this.ttbtgbh.TabIndex = 5;
             // 
             // lbtk
             // 
             this.lbtk.AutoSize = true;
-            this.lbtk.Location = new System.Drawing.Point(1056, 196);
+            this.lbtk.Location = new System.Drawing.Point(1058, 170);
             this.lbtk.Name = "lbtk";
             this.lbtk.Size = new System.Drawing.Size(90, 22);
             this.lbtk.TabIndex = 10;
@@ -285,10 +275,10 @@
             // 
             // ttbtk
             // 
-            this.ttbtk.Location = new System.Drawing.Point(1152, 193);
+            this.ttbtk.Location = new System.Drawing.Point(1154, 167);
             this.ttbtk.Name = "ttbtk";
             this.ttbtk.Size = new System.Drawing.Size(131, 30);
-            this.ttbtk.TabIndex = 11;
+            this.ttbtk.TabIndex = 7;
             // 
             // SanPham
             // 
@@ -303,7 +293,6 @@
             this.Controls.Add(this.ttbsoluong);
             this.Controls.Add(this.lbsoluong);
             this.Controls.Add(this.dgvsp);
-            this.Controls.Add(this.btQUAYLAI);
             this.Controls.Add(this.btTIMKIEM);
             this.Controls.Add(this.btXOA);
             this.Controls.Add(this.btSUA);
@@ -320,7 +309,7 @@
             this.Controls.Add(this.lbMASP);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "SanPham";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -350,7 +339,6 @@
         private System.Windows.Forms.Button btSUA;
         private System.Windows.Forms.Button btXOA;
         private System.Windows.Forms.Button btTIMKIEM;
-        private System.Windows.Forms.Button btQUAYLAI;
         private System.Windows.Forms.Label lbsoluong;
         private System.Windows.Forms.TextBox ttbsoluong;
         private System.Windows.Forms.Label lbgiatien;
