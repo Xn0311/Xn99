@@ -45,7 +45,6 @@
             this.ttbtongtien = new System.Windows.Forms.TextBox();
             this.lbtongtien = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btntimkiem = new System.Windows.Forms.Button();
             this.btnxoa = new System.Windows.Forms.Button();
             this.btnsua = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvct)).BeginInit();
@@ -135,7 +134,7 @@
             // dgvct
             // 
             this.dgvct.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvct.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dgvct.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvct.Location = new System.Drawing.Point(377, 12);
             this.dgvct.Name = "dgvct";
@@ -170,6 +169,7 @@
             this.txttk.Name = "txttk";
             this.txttk.Size = new System.Drawing.Size(169, 30);
             this.txttk.TabIndex = 8;
+            this.txttk.TextChanged += new System.EventHandler(this.txttk_TextChanged);
             // 
             // lbtk
             // 
@@ -198,7 +198,6 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.btntimkiem);
             this.panel2.Controls.Add(this.btnxoa);
             this.panel2.Controls.Add(this.btnsua);
             this.panel2.Location = new System.Drawing.Point(12, 364);
@@ -206,19 +205,9 @@
             this.panel2.Size = new System.Drawing.Size(352, 155);
             this.panel2.TabIndex = 7;
             // 
-            // btntimkiem
-            // 
-            this.btntimkiem.Location = new System.Drawing.Point(256, 57);
-            this.btntimkiem.Name = "btntimkiem";
-            this.btntimkiem.Size = new System.Drawing.Size(93, 30);
-            this.btntimkiem.TabIndex = 9;
-            this.btntimkiem.Text = "Tìm kiếm";
-            this.btntimkiem.UseVisualStyleBackColor = true;
-            this.btntimkiem.Click += new System.EventHandler(this.btntimkiem_Click);
-            // 
             // btnxoa
             // 
-            this.btnxoa.Location = new System.Drawing.Point(128, 57);
+            this.btnxoa.Location = new System.Drawing.Point(198, 57);
             this.btnxoa.Name = "btnxoa";
             this.btnxoa.Size = new System.Drawing.Size(98, 30);
             this.btnxoa.TabIndex = 7;
@@ -228,7 +217,7 @@
             // 
             // btnsua
             // 
-            this.btnsua.Location = new System.Drawing.Point(3, 57);
+            this.btnsua.Location = new System.Drawing.Point(56, 57);
             this.btnsua.Name = "btnsua";
             this.btnsua.Size = new System.Drawing.Size(78, 30);
             this.btnsua.TabIndex = 6;
@@ -243,8 +232,8 @@
             this.ClientSize = new System.Drawing.Size(1177, 563);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.dgvct);
             this.Controls.Add(this.lbcthd);
+            this.Controls.Add(this.dgvct);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -275,7 +264,6 @@
         private System.Windows.Forms.DataGridView dgvct;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btntimkiem;
         private System.Windows.Forms.Button btnxoa;
         private System.Windows.Forms.Button btnsua;
         private System.Windows.Forms.TextBox ttbtongtien;

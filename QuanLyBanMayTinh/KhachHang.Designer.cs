@@ -88,7 +88,7 @@
             // dgvkh
             // 
             this.dgvkh.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvkh.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dgvkh.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvkh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvkh.Location = new System.Drawing.Point(499, 60);
             this.dgvkh.Margin = new System.Windows.Forms.Padding(6);

@@ -17,37 +17,19 @@ namespace QuanLyBanMayTinh
         {
             InitializeComponent();
         }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-        SqlConnection conn = new SqlConnection(Connect.ConnectDTB);
-
+      
         private void btTHEM_Click(object sender, EventArgs e)
         {
-            conn.Open();
+          
             string query = "Insert into SanPham values ('" + ttbmasp.Text + "', N'" + ttbtensp.Text + "', N'" + ttbhangsx.Text + "', N'" + ttbtgbh.Text + "', N'" + ttbthongso.Text + "', '" +ttbsoluong.Text + "', '" + ttbgiatien.Text+ "')";
-            SqlCommand cmd = new SqlCommand(query, conn);
-            int result = cmd.ExecuteNonQuery();
-            if (result < 0)
-                MessageBox.Show("Lỗi thêm dữ liệu!");
-            else
-                MessageBox.Show("Thêm dữ liệu thành công!");
-            conn.Close();
+            QuanLy.Executenonquery(query, dgvsp);
             HienThiSanPham();
         }
 
         public void HienThiSanPham()
         {
-            conn.Open();    
             string query = "SELECT * FROM SanPham";
-            SqlCommand cmd = new SqlCommand(query, conn);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            conn.Close();
-            dgvsp.DataSource = dt;
+            QuanLy.Executenonquery(query,dgvsp);
         }
 
         private void SanPham_Load(object sender, EventArgs e)
@@ -57,48 +39,27 @@ namespace QuanLyBanMayTinh
 
         private void btnSuaSP_Click(object sender, EventArgs e)
         {
-            conn.Open();
+        
             string query = "update SanPham set MaSanPham ='" + ttbmasp.Text + "' , TenSanPham = N'" + ttbtensp.Text + "' , HangSX= N'" + ttbhangsx.Text + "', TGBaoHanh = '" + ttbtgbh.Text + "', ThongSo = N'" + ttbthongso.Text + "', SoLuong = '"+ ttbsoluong.Text + "', GiaTien = '" +ttbgiatien.Text + "' where MaSanPham =  '" + ttbmasp.Text + "'";
-            SqlCommand cmd = new SqlCommand(query, conn);           
-            int result = cmd.ExecuteNonQuery();
-                    if (result < 0)
-                        MessageBox.Show("Lỗi cập nhật dữ liệu!");
-                    else
-                        MessageBox.Show("Cập nhật dữ liệu thành công!");
-            conn.Close();
-            HienThiSanPham();
+            if (MessageBox.Show("Bạn có muốn sửa bản ghi này không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                QuanLy.Executenonquery(query, dgvsp);
+            }
+
+                HienThiSanPham();
         }
 
-        private void btTIMKIEM_Click(object sender, EventArgs e)
-        {
-            conn.Open();
-            string query = "select * from SanPham where MaSanPham = '" + ttbtk.Text + "'";
-            SqlCommand cmd = new SqlCommand(query, conn);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            conn.Close();
-            dgvsp.DataSource = dt;
-        }
-
-        private void btQUAYLAI_Click(object sender, EventArgs e)
-        {
-            TrangChu tc = new TrangChu();
-            this.Hide();
-            tc.ShowDialog();
-        }
 
         private void btXOA_Click(object sender, EventArgs e)
         {
-            conn.Open();
+       
             string query = "delete SanPham where MaSanPham= '" + ttbmasp.Text + "'";
-            SqlCommand cmd = new SqlCommand(query, conn);
-            int result = cmd.ExecuteNonQuery();
-            if (result < 0)
-                MessageBox.Show("Lỗi cập nhật dữ liệu!");
-            else
-                MessageBox.Show("Xóa dữ liệu thành công!");
-            conn.Close();
+            if (MessageBox.Show("Bạn có muốn xoá bản ghi này không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                QuanLy.Executenonquery(query, dgvsp);
+            }
+
+                
             HienThiSanPham();
         }
 
@@ -117,6 +78,13 @@ namespace QuanLyBanMayTinh
                 ttbgiatien.Text = row.Cells[6].Value.ToString();
             }
             
+        }
+
+        private void ttbtk_TextChanged(object sender, EventArgs e)
+        {
+            string query = "select * from SanPham where TenSanPham LIKE N'%" + txtTimKiem.Text + "%'"; 
+            QuanLy.Executenonquery(query,dgvsp);
+            dgvsp.Refresh();
         }
     }
 }

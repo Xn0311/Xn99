@@ -65,7 +65,7 @@ namespace QuanLyBanMayTinh
         }
         private void txttk_TextChanged(object sender, EventArgs e)
         {
-            string query = "select kh.MaKhachHang, kh.TenKhachHang,kh.GioiTinh,kh.NgaySinh,kh.DiaChi,kh.SDT from KhachHang kh  where TenKhachHang LIKE '%" + txttk.Text + "%'";
+            string query = "select kh.MaKhachHang, kh.TenKhachHang,kh.GioiTinh,kh.NgaySinh,kh.DiaChi,kh.SDT from KhachHang kh  where TenKhachHang LIKE N'%" + txttk.Text + "%'";
             QuanLy.Executenonquery(query,dgvkh);
             dgvkh.Refresh();
         }

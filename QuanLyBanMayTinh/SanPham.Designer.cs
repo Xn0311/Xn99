@@ -44,14 +44,13 @@
             this.ttbthongso = new System.Windows.Forms.TextBox();
             this.btSUA = new System.Windows.Forms.Button();
             this.btXOA = new System.Windows.Forms.Button();
-            this.btTIMKIEM = new System.Windows.Forms.Button();
             this.lbsoluong = new System.Windows.Forms.Label();
             this.ttbsoluong = new System.Windows.Forms.TextBox();
             this.lbgiatien = new System.Windows.Forms.Label();
             this.ttbgiatien = new System.Windows.Forms.TextBox();
             this.ttbtgbh = new System.Windows.Forms.TextBox();
             this.lbtk = new System.Windows.Forms.Label();
-            this.ttbtk = new System.Windows.Forms.TextBox();
+            this.txtTimKiem = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvsp)).BeginInit();
             this.SuspendLayout();
             // 
@@ -174,7 +173,6 @@
             this.ttbhangsx.Name = "ttbhangsx";
             this.ttbhangsx.Size = new System.Drawing.Size(225, 30);
             this.ttbhangsx.TabIndex = 3;
-            this.ttbhangsx.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // ttbthongso
             // 
@@ -187,7 +185,7 @@
             // btSUA
             // 
             this.btSUA.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btSUA.Location = new System.Drawing.Point(518, 579);
+            this.btSUA.Location = new System.Drawing.Point(645, 579);
             this.btSUA.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btSUA.Name = "btSUA";
             this.btSUA.Size = new System.Drawing.Size(147, 31);
@@ -199,7 +197,7 @@
             // btXOA
             // 
             this.btXOA.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btXOA.Location = new System.Drawing.Point(674, 579);
+            this.btXOA.Location = new System.Drawing.Point(907, 579);
             this.btXOA.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btXOA.Name = "btXOA";
             this.btXOA.Size = new System.Drawing.Size(147, 31);
@@ -207,19 +205,6 @@
             this.btXOA.Text = "Xóa";
             this.btXOA.UseVisualStyleBackColor = true;
             this.btXOA.Click += new System.EventHandler(this.btXOA_Click);
-            // 
-            // btTIMKIEM
-            // 
-            this.btTIMKIEM.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btTIMKIEM.Location = new System.Drawing.Point(833, 579);
-            this.btTIMKIEM.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btTIMKIEM.Name = "btTIMKIEM";
-            this.btTIMKIEM.Size = new System.Drawing.Size(166, 31);
-            this.btTIMKIEM.TabIndex = 3;
-            this.btTIMKIEM.Tag = "12";
-            this.btTIMKIEM.Text = "Tìm Kiếm";
-            this.btTIMKIEM.UseVisualStyleBackColor = true;
-            this.btTIMKIEM.Click += new System.EventHandler(this.btTIMKIEM_Click);
             // 
             // lbsoluong
             // 
@@ -273,19 +258,20 @@
             this.lbtk.TabIndex = 10;
             this.lbtk.Text = "Tìm Kiếm";
             // 
-            // ttbtk
+            // txtTimKiem
             // 
-            this.ttbtk.Location = new System.Drawing.Point(1154, 167);
-            this.ttbtk.Name = "ttbtk";
-            this.ttbtk.Size = new System.Drawing.Size(131, 30);
-            this.ttbtk.TabIndex = 7;
+            this.txtTimKiem.Location = new System.Drawing.Point(1154, 167);
+            this.txtTimKiem.Name = "txtTimKiem";
+            this.txtTimKiem.Size = new System.Drawing.Size(131, 30);
+            this.txtTimKiem.TabIndex = 7;
+            this.txtTimKiem.TextChanged += new System.EventHandler(this.ttbtk_TextChanged);
             // 
             // SanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1406, 651);
-            this.Controls.Add(this.ttbtk);
+            this.Controls.Add(this.txtTimKiem);
             this.Controls.Add(this.lbtk);
             this.Controls.Add(this.ttbtgbh);
             this.Controls.Add(this.ttbgiatien);
@@ -293,7 +279,6 @@
             this.Controls.Add(this.ttbsoluong);
             this.Controls.Add(this.lbsoluong);
             this.Controls.Add(this.dgvsp);
-            this.Controls.Add(this.btTIMKIEM);
             this.Controls.Add(this.btXOA);
             this.Controls.Add(this.btSUA);
             this.Controls.Add(this.btTHEM);
@@ -338,13 +323,12 @@
         private System.Windows.Forms.TextBox ttbthongso;
         private System.Windows.Forms.Button btSUA;
         private System.Windows.Forms.Button btXOA;
-        private System.Windows.Forms.Button btTIMKIEM;
         private System.Windows.Forms.Label lbsoluong;
         private System.Windows.Forms.TextBox ttbsoluong;
         private System.Windows.Forms.Label lbgiatien;
         private System.Windows.Forms.TextBox ttbgiatien;
         private System.Windows.Forms.TextBox ttbtgbh;
         private System.Windows.Forms.Label lbtk;
-        private System.Windows.Forms.TextBox ttbtk;
+        private System.Windows.Forms.TextBox txtTimKiem;
     }
 }

@@ -44,7 +44,19 @@ namespace QuanLyBanMayTinh
             QuanLy.Executenonquery(QueryKhachHang, dgvKhachHang);
 
         }
-      
+        public int indexmahd()
+        {
+            // Mở kết nối
+            SqlConnection connection = new SqlConnection(Connect.ConnectDTB);
+            connection.Open();
+            string sql = "SELECT MAX(MaHoaDon) from HoaDon";
+            SqlCommand command = new SqlCommand(sql, connection);
+            command.ExecuteNonQuery();
+            // Lấy kết quả
+            int maHoaDon = (int)command.ExecuteScalar();
+            return maHoaDon;
+        }
+ 
         string Masp;
         int MaHd = 1;
         string Hangsx;
@@ -89,13 +101,13 @@ namespace QuanLyBanMayTinh
         }
         private void txtTimDongMay_TextChanged(object sender, EventArgs e)
         {
-            string query = "select sp.MaSanPham, sp.TenSanPham,sp.HangSX,sp.TGBaoHanh,sp.ThongSo,sp.SoLuong,sp.GiaTien from SanPham sp where TenSanPham LIKE '%" + txtTimDongMay.Text + "%'";
+            string query = "select sp.MaSanPham, sp.TenSanPham,sp.HangSX,sp.TGBaoHanh,sp.ThongSo,sp.SoLuong,sp.GiaTien from SanPham sp where TenSanPham LIKE N'%" + txtTimDongMay.Text + "%'";
             QuanLy.Executenonquery(query, dgvSanPham);
         }
 
         private void txtTimKhach_TextChanged(object sender, EventArgs e)
         {  
-            string str = "select kh.MaKhachHang, kh.TenKhachHang,kh.GioiTinh,kh.NgaySinh,kh.DiaChi,kh.SDT from KhachHang kh  where TenKhachHang LIKE '%" + txtTimKhach.Text + "%'";
+            string str = "select kh.MaKhachHang, kh.TenKhachHang,kh.GioiTinh,kh.NgaySinh,kh.DiaChi,kh.SDT from KhachHang kh  where TenKhachHang LIKE N'%" + txtTimKhach.Text + "%'";
             QuanLy.Executenonquery(str, dgvKhachHang);
             dgvKhachHang.Refresh();
         }

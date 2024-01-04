@@ -24,7 +24,7 @@ namespace QuanLyBanMayTinh
         public void HienThiHoaDon()
         {
             conn.Open();
-            string query = "select hd.MaHoaDon , hd.MaKhachHang, hd.NgayDat as 'Ngay Mua' from HoaDon hd";
+            string query = "select hd.MaHoaDon,hd.MaKhachHang,ct.MaSanPham,ct.SoLuong, ct.Gia,ct.TongTien,hd.NgayDat from  HoaDon hd, ChiTietHoaDon ct where hd.MaHoaDon = ct.MaHoaDon ";
             SqlCommand cmd = new SqlCommand(query, conn);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
@@ -38,45 +38,10 @@ namespace QuanLyBanMayTinh
             HienThiHoaDon();
         }  
 
-        private void btnSuaHD_Click(object sender, EventArgs e)
-        {
-            conn.Open();
-            string query = "update HoaDon set MaHoaDon ='" + ttbmahd.Text + "' , MaKhachHang = N'" + ttbmakh.Text + "', NgayDat = '" + dtpngaydat.Value.ToString("yyyy-MM-dd") + "' where MaHoaDon =  '" + ttbmahd.Text + "'";
-            SqlCommand cmd = new SqlCommand(query, conn);
-            int result = cmd.ExecuteNonQuery();
-            if (result < 0)
-                MessageBox.Show("Lỗi cập nhật dữ liệu!");
-            else
-                MessageBox.Show("Cập nhật dữ liệu thành công!");
-            conn.Close();
-            HienThiHoaDon();
-        }
-
-        private void btnxoa_Click(object sender, EventArgs e)
-        {
-            conn.Open();
-            string query = "delete HoaDon where MaHoaDon= '" + ttbmahd.Text + "'";
-            SqlCommand cmd = new SqlCommand(query, conn);
-            int result = cmd.ExecuteNonQuery();
-            if (result < 0)
-                MessageBox.Show("Lỗi cập nhật dữ liệu!");
-            else
-                MessageBox.Show("Xóa dữ liệu thành công!");
-            conn.Close();
-            HienThiHoaDon();
-        }
-
 
         private void dgv1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
-            {
-                DataGridViewRow row = dgv1.Rows[e.RowIndex];
-                ttbmahd.Text = row.Cells[0].Value.ToString();
-                ttbmakh.Text = row.Cells[1].Value.ToString();
-                dtpngaydat.Text = row.Cells[2].Value.ToString();
-               
-            }
+            
         }
     }
 }
