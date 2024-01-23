@@ -9,7 +9,7 @@ namespace QuanLyBanMayTinh
     internal class Connect
     {   // chuoi ket noio
 
-        public static string ConnectDTB = "server = Dino\\SQLEXPRESS ; database = QlBanMayTinh  ;integrated security = true";
+        public static string ConnectDTB = "server = Dino\\SQLEXPRESS ; database = QlBanMayTinh2  ;integrated security = true";
      
     }
 }

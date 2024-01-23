@@ -44,12 +44,12 @@
             this.txtTenNhanVien = new System.Windows.Forms.TextBox();
             this.txtGioiTinh = new System.Windows.Forms.TextBox();
             this.txtChucVu = new System.Windows.Forms.TextBox();
-            this.txtTTLH = new System.Windows.Forms.TextBox();
             this.btSUA = new System.Windows.Forms.Button();
             this.btXOA = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.lbtk = new System.Windows.Forms.Label();
+            this.txtTTLH = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvnv)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -208,14 +208,6 @@
             this.txtChucVu.Size = new System.Drawing.Size(186, 30);
             this.txtChucVu.TabIndex = 5;
             // 
-            // txtTTLH
-            // 
-            this.txtTTLH.Location = new System.Drawing.Point(606, 140);
-            this.txtTTLH.Margin = new System.Windows.Forms.Padding(6);
-            this.txtTTLH.Name = "txtTTLH";
-            this.txtTTLH.Size = new System.Drawing.Size(186, 30);
-            this.txtTTLH.TabIndex = 6;
-            // 
             // btSUA
             // 
             this.btSUA.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -278,6 +270,14 @@
             this.lbtk.TabIndex = 5;
             this.lbtk.Text = "Tìm Kiếm";
             // 
+            // txtTTLH
+            // 
+            this.txtTTLH.Location = new System.Drawing.Point(606, 140);
+            this.txtTTLH.Margin = new System.Windows.Forms.Padding(6);
+            this.txtTTLH.Name = "txtTTLH";
+            this.txtTTLH.Size = new System.Drawing.Size(186, 30);
+            this.txtTTLH.TabIndex = 5;
+            // 
             // NhanViencs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
@@ -322,11 +322,11 @@
         private System.Windows.Forms.TextBox txtTenNhanVien;
         private System.Windows.Forms.TextBox txtGioiTinh;
         private System.Windows.Forms.TextBox txtChucVu;
-        private System.Windows.Forms.TextBox txtTTLH;
         private System.Windows.Forms.Button btSUA;
         private System.Windows.Forms.Button btXOA;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox txtTimKiem;
         private System.Windows.Forms.Label lbtk;
+        private System.Windows.Forms.TextBox txtTTLH;
     }
 }

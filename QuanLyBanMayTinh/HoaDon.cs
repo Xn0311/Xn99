@@ -39,9 +39,6 @@ namespace QuanLyBanMayTinh
         }  
 
 
-        private void dgv1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }
+        
     }
 }

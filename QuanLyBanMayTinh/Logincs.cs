@@ -16,18 +16,43 @@ namespace QuanLyBanMayTinh
         public Logincs()
         {
             InitializeComponent();
+            
         }
+        
+        QuanLy quanLy = new QuanLy();
+        public static string username;
+        public static string password;
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            string username = txtUsername.Text;
-            string password = txtPassword.Text;
-
-            if (AuthenticateUser(username, password))
+            username = txtUsername.Text;
+            password = txtPassword.Text;
+            if (txtPassword.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("Bạn phải nhập mật khẩu", "Thông báo !", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtPassword.Focus();
+                return;
+            }
+            if (txtUsername.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("Bạn phải nhập tài khoản", "Thông báo !", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtUsername.Focus();
+                return;
+            }
+            if (quanLy.AuthenticateUser(username, password))
             {
                 // Đăng nhập thành công
                 TrangChu tc = new TrangChu();
-                this.Hide();
-                tc.ShowDialog();
+                TrangchuUser tcu = new TrangchuUser();
+                if(quanLy.typeacc(username,password) == 1)
+                {
+                    this.Hide();
+                    tc.ShowDialog();
+                }
+                else
+                {
+                    this.Hide();
+                    tcu.ShowDialog();
+                }
                // this.Show();
 
             }
@@ -38,32 +63,16 @@ namespace QuanLyBanMayTinh
             }
         }
 
-        private bool AuthenticateUser(string username, string password)
-        {
-            using (SqlConnection connection = new SqlConnection(Connect.ConnectDTB))
-            {
-                string query = "SELECT COUNT(*) FROM DangNhap WHERE Usename = @Usename AND Pass = @Pass";
-                SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@Usename", username);
-                command.Parameters.AddWithValue("@Pass", password);
-                connection.Open();
-                int count = (int)command.ExecuteScalar();
-                return count > 0;
-            }
-        }
+
+        
+
 
         private void btnthoat_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void Logincs_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (MessageBox.Show("Bạn có thật sự muốn thoát chương trình?", "Thông báo", MessageBoxButtons.OKCancel) != System.Windows.Forms.DialogResult.OK)
-            {
-                e.Cancel = true;
-            }
-        }
+       
     }
 }
 

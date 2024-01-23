@@ -15,9 +15,10 @@ namespace QuanLyBanMayTinh
     {
         public TrangChu()
         {
-            InitializeComponent();
+            InitializeComponent(); 
+            //Logincs logincs = new Logincs();
         }
-
+        //public int  MyVariable = logincs.MyVariable;
         private void quảnLýNhânViênToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -29,8 +30,8 @@ namespace QuanLyBanMayTinh
         private void muaHàngToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
-            MuaBan mb = new MuaBan();
-            mb.ShowDialog();
+            ThongkeBc nv = new ThongkeBc();
+            nv.ShowDialog();
             this.Show();
         }
 
@@ -66,34 +67,42 @@ namespace QuanLyBanMayTinh
             this.Show();
         }
 
-        private void trợGiúpToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void trợGiúpToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             MessageBox.Show("Vui lòng liên hệ 'Liêu Xuân Nghĩa' để giải quyết tình huống mắc phải");
-            MessageBox.Show("Dưới đây là link fb của anh ta");
             string url = "https://www.facebook.com/LieuXuanNghia";
-            DialogResult result = MessageBox.Show("Bạn có muốn mở URL này không?", "Xác nhận", MessageBoxButtons.YesNo);
+            DialogResult result = MessageBox.Show("Bạn có muốn liên hệ trang cá nhân này không ?", "Xác nhận", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
                 Process.Start(url);
             }
         }
-
-        private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            DialogResult dt = MessageBox.Show("Bạn muốn đóng chương trình", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (dt == DialogResult.Yes)
-            {
-                Application.Exit();
-            }
-        }
-
         private void label10_Click(object sender, EventArgs e)
         {
+
+        }
+
+
+
+        private void grbpic_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void quảnLýTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            QLTaiKhoan qltk = new QLTaiKhoan();
+            this.Hide();
+            qltk.ShowDialog();
+            this.Show();
+        }
+
+        private void lậpHóaĐơnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AddHoaDon mb = new AddHoaDon();
+            mb.ShowDialog();
+            this.Show();
 
         }
     }

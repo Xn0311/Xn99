@@ -20,9 +20,40 @@ namespace QuanLyBanMayTinh
         QuanLy QuanLy = new QuanLy();
         private void btTHEM_Click(object sender, EventArgs e)
         {
+            if (txtMaKhachHang.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("Bạn phải nhập mã khách hàng", "Thông báo !", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtMaKhachHang.Focus();
+                return;
+            }
+            if(txtTenKH.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("Bạn phải nhập tên khách hàng", "Thông báo !", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtTenKH.Focus();
+                return;
+            }
+            if(txtGioiTinh.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("Bạn phải nhập giới tính", "Thông báo !", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtGioiTinh.Focus();
+                return;
+            }
+            if(txtDiaChi.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("Bạn phải nhập địa chỉ", "Thông báo !", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtDiaChi.Focus();
+                return;
+            }
+            if (txtSdt.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("Bạn phải nhập Số điện thoại", "Thông báo !", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtSdt.Focus();
+                return;
+            }
+
             string query = "Insert into KhachHang values ('" + txtMaKhachHang.Text + "', N'" + txtTenKH.Text + "', N'" + txtGioiTinh.Text + "', '" + dtpngaysinh.Value.ToString("yyyy-MM-dd") + "', N'" + txtDiaChi.Text + "', '" + txtSdt.Text + "')";
             QuanLy.Executenonquery(query, dgvkh);
-            dgvkh.Refresh();   
+            Hienthikhachhang();
         }
         public void Hienthikhachhang()
         {
@@ -69,5 +100,7 @@ namespace QuanLyBanMayTinh
             QuanLy.Executenonquery(query,dgvkh);
             dgvkh.Refresh();
         }
+        QLTaiKhoan qltk = new QLTaiKhoan();
+        
     }
 }

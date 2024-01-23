@@ -79,7 +79,6 @@ D:\Học Lập Trình\QLBanMayTinh\QuanLyBanMayTinh\obj\Debug\QuanLyBanMayTinh.C
 D:\Học Lập Trình\QLBanMayTinh\QuanLyBanMayTinh\obj\Debug\QuanLyBanMayTinh.HoaDon.resources
 D:\Học Lập Trình\QLBanMayTinh\QuanLyBanMayTinh\obj\Debug\QuanLyBanMayTinh.KHACHHANG.resources
 D:\Học Lập Trình\QLBanMayTinh\QuanLyBanMayTinh\obj\Debug\QuanLyBanMayTinh.Logincs.resources
-D:\Học Lập Trình\QLBanMayTinh\QuanLyBanMayTinh\obj\Debug\QuanLyBanMayTinh.MuaBan.resources
 D:\Học Lập Trình\QLBanMayTinh\QuanLyBanMayTinh\obj\Debug\QuanLyBanMayTinh.NhanViencs.resources
 D:\Học Lập Trình\QLBanMayTinh\QuanLyBanMayTinh\obj\Debug\QuanLyBanMayTinh.SanPham.resources
 D:\Học Lập Trình\QLBanMayTinh\QuanLyBanMayTinh\obj\Debug\QuanLyBanMayTinh.TrangChu.resources
@@ -88,3 +87,7 @@ D:\Học Lập Trình\QLBanMayTinh\QuanLyBanMayTinh\obj\Debug\QuanLyBanMayTinh.c
 D:\Học Lập Trình\QLBanMayTinh\QuanLyBanMayTinh\obj\Debug\QuanLyBanMayTinh.csproj.CoreCompileInputs.cache
 D:\Học Lập Trình\QLBanMayTinh\QuanLyBanMayTinh\obj\Debug\QuanLyBanMayTinh.exe
 D:\Học Lập Trình\QLBanMayTinh\QuanLyBanMayTinh\obj\Debug\QuanLyBanMayTinh.pdb
+D:\Học Lập Trình\QLBanMayTinh\QuanLyBanMayTinh\obj\Debug\QuanLyBanMayTinh.TrangchuUser.resources
+D:\Học Lập Trình\QLBanMayTinh\QuanLyBanMayTinh\obj\Debug\QuanLyBanMayTinh.QLTaiKhoan.resources
+D:\Học Lập Trình\QLBanMayTinh\QuanLyBanMayTinh\obj\Debug\QuanLyBanMayTinh.AddHoaDon.resources
+D:\Học Lập Trình\QLBanMayTinh\QuanLyBanMayTinh\obj\Debug\QuanLyBanMayTinh.ThongkeBc.resources
